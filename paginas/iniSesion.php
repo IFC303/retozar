@@ -16,7 +16,7 @@
 
             if(!isset($_POST['Aceptar']))
                 {
-                    header('Location:../index.php');
+                    header('Location:./../index.php');
                     die();
                 }
 
@@ -30,7 +30,7 @@
             
                     $consulta = $conexion->prepare($sql);
                     $consulta->execute();
-
+              
                     $filas=$consulta->rowCount();
                                 
              
@@ -38,11 +38,24 @@
                         {
                             $fila = $consulta->fetch();   
                             $_SESSION['nombreL']=$fila->dni;
-                            header('Location:iniAlumno.php');
+                            $_SESSION['tipo']=$fila->tipo;
+                            
+
+                            if ($_SESSION['tipo']=="alumno"){
+                                header('Location:iniAlumno.php');
+                            }else if ($_SESSION['tipo']=="profesor"){
+                                header('Location:iniProfesor.php');
+                            }else if ($_SESSION['tipo']=="admin centro"){
+                                header('Location:iniAdminCentro.php');
+                            }else{
+                                header('Location:iniAdminGeneral.php');
+                            }
+                                 
                         } 
                     else if ($filas==0)
                         {
                             echo "Nombre de usuario y/o contraseña incorrecto.";
+                            header("refresh:1;url=./../index.php");
                         }
                     else
                         {

@@ -8,12 +8,15 @@
 
         <body>
 
-            <h2>Area Alumnos</h2>
+            <h2>Area Administrador General</h2>
             <br>
 
             <?php
                 echo "Bienvenido ".$_SESSION['nombreL'];
             ?>
+            
+        
+            
 
         </body>
 
