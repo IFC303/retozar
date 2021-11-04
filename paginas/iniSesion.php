@@ -6,7 +6,7 @@
 
     <head>
         <?php
-            include "includes/funciones.php";
+            include "../includes/funciones.php";
         ?>    
     </head>
 
@@ -16,7 +16,7 @@
 
             if(!isset($_POST['Aceptar']))
                 {
-                    header("refresh:1;url=index.php");
+                    header('Location:../index.php');
                     die();
                 }
 
@@ -38,7 +38,7 @@
                         {
                             $fila = $consulta->fetch();   
                             $_SESSION['nombreL']=$fila->dni;
-                            header("refresh:1;url=iniAlumno.php");
+                            header('Location:iniAlumno.php');
                         } 
                     else if ($filas==0)
                         {
