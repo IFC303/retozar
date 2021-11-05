@@ -4,8 +4,8 @@
         function conectarBD(){
 
             $servidor="localhost:3306";
-            $usuario="root";
-            $password="toor";
+            $usuario="admin";
+            $password="admin";
             $baseDatos="disc";
 
             $opciones = array(
