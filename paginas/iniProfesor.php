@@ -19,24 +19,15 @@
             <?php
                 echo "Bienvenido ".$_SESSION['nombreL'];
             ?>
-            
+         
+            <ul></ul>
+                <li><a href="altaAlumnos.php">Alta alumnos</a></li>
+                <li><a href="modiAlumnos.php">Modificar alumnos</a></li>
+                <li><a href="bajaAlumnos.php">Baja alumnos</a></li>
+                <li><a href="verAlumnos.php">Ver alumnos</a></li>
             <br><br>
-            <input type="submit" value="Gestion Alumnos">
-            <br><br>
-            <input type="submit" value="Gestion Grupos">
-
-            <input type="submit" value="ver alumnos" onclick="document.write('<?php ver() ?>')">
-            <br><br>
             
 
-        <?php
-            function ver(){
-            
-                    
-
-            }
-
-        ?>
 
 
         </body>

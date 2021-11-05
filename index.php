@@ -1,4 +1,11 @@
+<?php
+    session_start();
+   
+?>
+
 <!DOCTYPE html>
+
+
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -18,11 +25,11 @@
         
         <div id="formulario">
             <h3>Form Login</h3>
-            <form action="" method="post" name="formLogin">
+            <form action="paginas/iniSesion.php" method="post" name="formLogin">
                 Nombre: <input type="text" name="nombreL" id="nombreL" placeholder="Nombre" required><br> <br>
                 Contraseña: <input type="password" name="claveL" id="claveL" placeholder="Contraseña" required> <br> <br>
+                <input type="submit" name="Aceptar" value="Aceptar" id="boton3">
             </form>
-            <input type="submit" value="Aceptar" id="boton3">
         </div>
 
     </main>
