@@ -4,8 +4,8 @@
         function conectarBD(){
 
             $servidor="localhost:3306";
-            $usuario="admin";
-            $password="admin";
+            $usuario="root";
+            $password="toor";
             $baseDatos="disc";
 
             $opciones = array(
@@ -27,16 +27,49 @@
 
         function altaAlumnos(){
 
+            $nombre=$_POST['nombreA'];
+            $apellidos=$_POST['apellidosA'];
+            $dni=$_POST['dni'];
+            $password=$_POST['clave'];
+
+            $conexion=conectarBD();
+            $sql="INSERT into usuarios values ('$dni','$nombre','$apellidos','$password','CPIFP Bajo Aragon','alumno');";
+            $consulta=$conexion->prepare($sql);
+            $consulta->execute();
+            echo "Alumno insertado correctamente";
+
+
         }
-
-
+        
+        
         function modiAlumnos(){
+            if (isset($_POST['dni'])){
 
-        }
+                $nombre=$_POST['nombreA'];
+                $apellidos=$_POST['apellidosA'];
+                $dni=$_POST['dni'];
+                $password=$_POST['clave'];
 
+                $conexion=conectarBD();
+                $sql="UPDATE usuarios SET nombre = '$nombre', apellidosA = '$apellidos', clave='$password' where dni='$dni';";
+                $consulta=$conexion->prepare($sql);
+                $consulta->execute();
+                echo "Alumno eliminado correctamente";
+            }
 
+            
+        }    
+        
+        
         function bajaAlumnos(){
-
+            if (isset($_POST['dni'])){
+                $dni=$_POST['dni'];
+                $conexion=conectarBD();
+                $sql="DELETE from usuarios WHERE dni='$dni'";
+                $consulta=$conexion->prepare($sql);
+                $consulta->execute();
+                echo "Alumno eliminado correctamente";
+            }
 
         }
 
