@@ -21,12 +21,6 @@
             Apellidos: <input type="text" name="apellidosA" id="apellidosA" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" required><br> <br>
             Contraseña: <input type="password" name="clave" id="clave" required> <br> <br>
 
-        
-        
-        
-        
-        
-        
             <input type="submit" value="Aceptar" name ="Aceptar" id="boton1" onclick="validarForm1()">
     </form>
 
