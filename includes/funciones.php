@@ -3,9 +3,9 @@
 
         function conectarBD(){
 
-            $servidor="localhost:3306";
-            $usuario="root";
-            $password="toor";
+            $servidor="192.168.4.245";
+            $usuario="admin";
+            $password="admin";
             $baseDatos="disc";
 
             $opciones = array(
@@ -33,7 +33,7 @@
             $password=$_POST['clave'];
 
             $conexion=conectarBD();
-            $sql="INSERT into usuarios values ('$dni','$nombre','$apellidos','$password','CPIFP Bajo Aragon','alumno');";
+            $sql="INSERT into usuarios values ('$dni','$nombre','$apellidos','$password','Q4400415H','alumno');";
             $consulta=$conexion->prepare($sql);
             $consulta->execute();
             echo "Alumno insertado correctamente";
