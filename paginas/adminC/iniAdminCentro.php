@@ -43,7 +43,7 @@
 
 
         </body>
-        <script src="iniProfesor.js"></script>
+        <script src="./../iniMostrar.js"></script>
  
 
         

@@ -43,13 +43,13 @@
                             
 
                             if ($_SESSION['tipo']=="alumno"){
-                                header('Location:iniAlumno.php');
+                                header('Location:alumno/iniAlumno.php');
                             }else if ($_SESSION['tipo']=="profesor"){
-                                header('Location:iniProfesor.php');
+                                header('Location:profesor/iniProfesor.php');
                             }else if ($_SESSION['tipo']=="admin centro"){
-                                header('Location:iniAdminCentro.php');
+                                header('Location:adminC/iniAdminCentro.php');
                             }else if ($_SESSION['tipo']=="admin general"){
-                                header('Location:iniAdminGeneral.php');
+                                header('Location:adminG/iniAdminGeneral.php');
                             }
                                  
                         } 

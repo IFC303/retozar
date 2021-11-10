@@ -6,7 +6,7 @@
 
         <head>
             <?php
-                include "../includes/funciones.php";
+                include "./../../includes/funciones.php";
             ?>    
         </head>
 
@@ -54,7 +54,7 @@
         </body>
 
 
-    <script src="iniProfesor.js"></script>
+    <script src="./../iniMostrar.js"></script>
 
 
 </html>
