@@ -3,7 +3,7 @@
 
         function conectarBD(){
 
-            $servidor="192.168.4.245";
+            $servidor="localhost";
             $usuario="root";
             $password="toor";
             $baseDatos="disc";
