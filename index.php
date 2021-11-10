@@ -1,6 +1,5 @@
 <?php
     session_start();
-   
 ?>
 
 <!DOCTYPE html>
@@ -19,18 +18,29 @@
     <main>
 
         <div id="img1">
-            <img src="img/logocpfip.png" alt="logo_cpifp">
+        <picture>
+            <source media="(min-width:650px)" srcset="img/logocpfip.png">
+            <source media="(min-width:465px)" srcset="img/logocpfip_bkzdvb_c_scale,w_200.png">
+            <img src="img/logocpfip_bkzdvb_c_scale,w_200.png" alt="Flowers" style="width:auto;">
+        </picture>
         </div>
 
         
         <div id="formulario">
-            <h3>Form Login</h3>
             <form action="paginas/iniSesion.php" method="post" name="formLogin">
-                Nombre: <input type="text" name="nombreL" id="nombreL" placeholder="Nombre" required><br> <br>
-                Contraseña: <input type="password" name="claveL" id="claveL" placeholder="Contraseña" required> <br> <br>
-                <input type="submit" name="Aceptar" value="Aceptar" id="boton3">
+                <div class="divF">
+                    <img class="iconc" src="img/usuario.png" alt=""><input class="inp" type="text" name="nombreL" id="nombreL" placeholder="Nombre" required>
+                </div> 
+
+                <div class="divF">
+                <img class="iconc" src="img/lock.png" alt=""><input class="inp" type="password" name="claveL" id="claveL" placeholder="Contraseña" required>  
+                </div>    
+
+                <input type="submit" name="Aceptar" value="Iniciar Sesión" id="boton3">
             </form>
+            
         </div>
+        
 
     </main>
     

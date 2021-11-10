@@ -20,9 +20,19 @@ body{
 main{
     flex: 1;
 }
+
 #formulario{
+    display: flex;
+    justify-content: center;
     margin-top: 20vh;
-    text-align: center;
+}
+
+.inp{
+    background-color: #f5f5f5;
+    border: none;
+    border-bottom:2px solid black;
+    padding: 5px;
+    width: 250px;
 }
 
 footer{
@@ -32,11 +42,51 @@ footer{
     padding: 20px;
     justify-content:space-between
 }
+.iconc{  
+    margin-right: 10px;
+    margin-top: 5px;
+}
+i{
+    margin-right: 10px;
+    margin-top: 5px;
+    font-size: 25px; 
+}
+.divF{
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 #boton3{
-    padding: 15px;
+    border: none;
+    margin-top: 10px;
+    float: right;
+    padding: 10px;
+    font-size: 14px;
     background-color: #102140;
     color: white;
     font-weight: bold;
+    cursor: pointer;
+    opacity: 1;
+   
+}
+
+#boton3:hover{
+    transition: 0.3s;
+    opacity: 0.9;
+}
+
+@media (max-width: 650px) {
+    #t1{
+        margin-top: 25px;
+        color:#102140;
+        font-size: 30px;
+        font-weight: 600;
+    }
+    #t2{
+        color:#102140;
+        font-size: 12px;
+    }
 }
 
