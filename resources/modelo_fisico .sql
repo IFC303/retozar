@@ -11,7 +11,7 @@ USE `disc` ;
 CREATE TABLE IF NOT EXISTS `disc`.`centros` (
   `nombre` VARCHAR(45) NOT NULL,
   `direccion` VARCHAR(45) NOT NULL,
-  `poblacion` VARCHAR(45) NOT NULL,
+  `localidad` VARCHAR(45) NOT NULL,
   `codigopostal` VARCHAR(5) NOT NULL,
   `provincia` VARCHAR(20) NOT NULL,
   `telefono` VARCHAR(12) NOT NULL,
