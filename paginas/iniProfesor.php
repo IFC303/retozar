@@ -13,24 +13,48 @@
 
         <body>
 
-            <h2>Area de profesores</h2>
-            <br>
-
-            <?php
-                echo "Bienvenido ".$_SESSION['nombreL'];
-            ?>
-         
-            <ul></ul>
-                <li><a href="altaAlumnos.php">Alta alumnos</a></li>
-                <li><a href="modiAlumnos.php">Modificar alumnos</a></li>
-                <li><a href="bajaAlumnos.php">Baja alumnos</a></li>
-                <li><a href="verAlumnos.php">Ver alumnos</a></li>
-            <br><br>
+                <h2>Area de profesores</h2>
             
+                <?php
+                    echo "Bienvenido ".$_SESSION['nombreL'];
+                ?>
 
+
+                <br><br>
+                
+
+                    
+                            <a name="alumnos" onclick="mostrar(this.name);">Gestion alumnos</a>
+                            <br><br>
+                            <a name="grupos" onclick="mostrar(this.name);">Gestion grupos</a>
+                            <br><br>
+                            <a name="resultados" onclick="mostrar(this.name);">Ver resultados</a>
+                   
+                
+
+                    <ul id="gAlumnos" style="display:none">
+                        <li><a href="altaAlumnos.php">Alta alumnos</a></li>
+                        <li><a href="verAlumnos.php">Ver alumnos</a></li>
+                    </ul>              
+               
+                    <ul id="gGrupos" style="display:none">
+                        <li><a href="altaAlumnos.php">Alta grupo</a></li>
+                        <li><a href="verAlumnos.php">Ver grupos</a></li>
+                    </ul>
+
+                    <ul id="resultados" style="display:none">
+                        <li><a href="altaAlumnos.php">Resultado por alumno</a></li>
+                        <li><a href="verAlumnos.php">Resultado por grupos</a></li>
+                    </ul>
+
+                    <br><br>
+                
 
 
         </body>
+
+
+    <script src="iniProfesor.js"></script>
 
 
 </html>

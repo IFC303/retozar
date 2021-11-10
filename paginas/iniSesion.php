@@ -39,6 +39,7 @@
                             $fila = $consulta->fetch();   
                             $_SESSION['nombreL']=$fila->dni;
                             $_SESSION['tipo']=$fila->tipo;
+
                             
 
                             if ($_SESSION['tipo']=="alumno"){
@@ -47,7 +48,7 @@
                                 header('Location:iniProfesor.php');
                             }else if ($_SESSION['tipo']=="admin centro"){
                                 header('Location:iniAdminCentro.php');
-                            }else{
+                            }else if ($_SESSION['tipo']=="admin general"){
                                 header('Location:iniAdminGeneral.php');
                             }
                                  
