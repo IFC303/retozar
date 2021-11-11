@@ -7,7 +7,7 @@
 
         <head>
             <?php
-                include "../includes/funciones.php";
+                include "./../../includes/funciones.php";
             ?>    
         </head>
 

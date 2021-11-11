@@ -39,7 +39,7 @@
  
 
                     <ul id="gCentro">
-                        <li><a href="aCentros.php">Alta centro</a></li>
+                        <li><a href="aCentro.php">Alta centro</a></li>
                         <li><a href="aAdminCentro.php">Alta admin centro</a></li>
                         <li><a href="centros.php">Ver centro</a></li>
                     </ul>              

@@ -38,13 +38,13 @@
                     </ul>              
                
                     <ul id="gGrupos" style="display:none">
-                        <li><a href="altaAlumnos.php">Alta grupo</a></li>
-                        <li><a href="verAlumnos.php">Ver grupos</a></li>
+                        <li><a href="#">Alta grupo</a></li>
+                        <li><a href="#">Ver grupos</a></li>
                     </ul>
 
                     <ul id="resultados" style="display:none">
-                        <li><a href="altaAlumnos.php">Resultado por alumno</a></li>
-                        <li><a href="verAlumnos.php">Resultado por grupos</a></li>
+                        <li><a href="#">Resultado por alumno</a></li>
+                        <li><a href="#">Resultado por grupos</a></li>
                     </ul>
 
                     <br><br>
