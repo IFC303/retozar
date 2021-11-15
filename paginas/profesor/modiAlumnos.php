@@ -21,7 +21,7 @@
 
         
         <form action="" method="POST" name="formAlum">
-           <label for="dni">Dni: </label><input type="text" name="dni" id="dni" value="<?php echo $_POST['dni'];?>" required><br> <br>
+           <label for="dni">Dni: </label><input type="text" name="dni" id="dni" required placeholder="<?php echo $_POST['dni'];?>" readonly><br> <br>
            <label for="nombreA">Nombre: </label><input type="text" name="nombreA" id="nombreA" value="<?php echo $_POST['nombre'];?>" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" required><br> <br>
            <label for="apellidosA">Apellidos: </label><input type="text" name="apellidosA" id="apellidosA"  value="<?php echo $_POST['apellidos'];?>" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" required><br> <br>
            <label for="clave">Contraseña: </label><input type="password" name="clave" id="clave" required> <br> <br>

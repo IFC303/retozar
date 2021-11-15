@@ -37,13 +37,15 @@ function modiAlumnos(){
 
        function modiCurso(){
 
+
             if (isset($_POST['nombre'])){
 
                 $nombre=$_POST['nombre'];
                 $departamento=$_POST['departamento'];
 
                 $conexion=conectarBD();
-                $sql="UPDATE cursos SET codigo='$nombre', departamento='$departamento' where codigo='$nombre';";
+                $sql="UPDATE cursos SET departamento='$departamento' where codigo='$nombre';";
+                echo $sql;
                 $consulta=$conexion->prepare($sql);
                 $consulta->execute();
             } 

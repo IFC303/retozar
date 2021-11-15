@@ -19,11 +19,11 @@
         <legend>EDITAR PROFESOR</legend>
         <form action="" method="POST" name="formPro">
                 <br>
+               <label for="dniP">DNI </label><input type="text" name="dniP" id="dniP" maxlength="9" required placeholder="<?php echo $_POST['dniP'];?>" readonly>
+                <br><br>
                 <label for="nombre">Nombre </label><input type="text" name="nombreP" id="nombre" value="<?php echo $_POST['nombreP'];?>" required pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}">
                 <br><br>
                 <label for="apellidos">Apellidos </label><input type="text" name="apellidosP" id="apellidosP" value="<?php echo $_POST['apellidosP'];?>"  required pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}">
-                <br><br>
-                <label for="dniP">DNI </label><input type="text" name="dniP" id="dniP" maxlength="9" value="<?php echo $_POST['dniP'];?>" required>
                 <br><br>
                 <label for="password">Password </label><input type="password" name="password" id="password" required>
                 <br><br>

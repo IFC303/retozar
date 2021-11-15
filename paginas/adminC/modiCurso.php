@@ -16,7 +16,7 @@
 
   
                 <form action="" method="POST" name="formCurso">
-                    <label for="nombre">Nombre </label><input type="text" name="nombre" id="nombre" value ="<?php echo $_POST['nombre'];?>" >
+                    <label for="nombre">Nombre </label><input type="text" name="nombre" id="nombre" placeholder="<?php echo $_POST['nombre'];?>" readonly>
                     <br><br>
                     <label for="departamento">Departamento </label><input type="text" name="departamento" id="departamento" value ="<?php echo $_POST['departamento'];?>" required pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}">
                     <br><br>
