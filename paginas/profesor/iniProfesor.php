@@ -1,5 +1,6 @@
 <?php
     session_start();
+     include "./../../includes/funciones.php";
 ?>
 
 <!DOCTYPE html>
@@ -8,11 +9,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <?php
-        include "./../../includes/funciones.php";
-    ?>   
+    <title>Document</title>   
     <link rel="stylesheet" href="../../css/inipro.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;1,500&display=swap" rel="stylesheet">
 </head>
     <body>
         <main>
@@ -39,7 +38,7 @@
         </ul>
     </div> <!-- fin enlaces -->     
           
-    <div id="result">
+    <div id="result" style="visibility:hidden">
     
         <ul id="gAlumnos" style="display:none">
             <li><a href="altaAlumnos.php">Alta alumnos</a></li><br>
