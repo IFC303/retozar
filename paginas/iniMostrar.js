@@ -1,6 +1,6 @@
 
 function mostrar(nombre){
-    console.log(nombre);
+    
     var resu = document.getElementById("result");
     resu.style.visibility = "visible";
 

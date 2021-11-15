@@ -31,16 +31,18 @@
                   <br>
               </ul> 
 
-
-              <ul id="gCentro" style="display:none">
+        <div id="result" style="visibility:hidden">
+              
+            <ul id="gCentro" style="display:none">
                 <li><a href="altaCentro.php">Alta centro</a></li><br>
                 <li><a href="verCentro.php">Ver ventros</a></li>
             </ul>     
-            
-               
+             
             <ul id="gTest" style="display:none">
                 <li><a href="#">Nuevo test</a></li><br>
             </ul>
+        
+        </div>
 
     
 </body>

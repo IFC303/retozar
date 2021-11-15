@@ -31,16 +31,18 @@
               </ul> 
 
           
+        <div id="result" style="visibility:hidden">
               <ul id="gProfesor" style="display:none">
                 <li><a href="altaProfesor.php">Alta profesor</a></li><br>
                 <li><a href="verProfesor.php">Ver profesores</a></li>
-            </ul>     
+              </ul>     
             
                
             <ul id="gCurso" style="display:none">
                 <li><a href="altaCurso.php">Alta curso</a></li><br>
                 <li><a href="verCurso.php">Ver cursos</a></li>
             </ul>
+        </div>
 
     
 </body>
