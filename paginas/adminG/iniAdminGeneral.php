@@ -35,7 +35,7 @@
               
             <ul id="gCentro" style="display:none">
                 <li><a href="altaCentro.php">Alta centro</a></li><br>
-                <li><a href="verCentro.php">Ver ventros</a></li>
+                <li><a href="verCentro.php">Ver centros</a></li>
             </ul>     
              
             <ul id="gTest" style="display:none">

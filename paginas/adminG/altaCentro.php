@@ -8,14 +8,14 @@
         <head>
             <?php
                 include "./../../includes/funciones.php";
-                include "./../../includes/funciones.php";
                 include "./../../includes/alta.php";
                 include "./../../includes/baja.php";
                 include "./../../includes/modi.php";
             ?>    
         </head>
 
-<form action="" method="POST" name="formCentro">
+
+        <form action="" method="POST" name="formCentro">
      
             <h3>DATOS DE CENTRO</h3>
             
@@ -68,4 +68,3 @@
 <?php
     alta_centro_y_admin();
 ?>
-<a href="iniAdminGeneral.php">Volver al menu</a>

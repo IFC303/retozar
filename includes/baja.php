@@ -45,10 +45,16 @@
                 if(isset($_POST['n_centro'])){
                     $nombre=$_POST['n_centro'];
 
-                    $conexion=conectarBD();
-                    $sql="DELETE from centros WHERE nombre='$nombre'";
-                    $consulta=$conexion->prepare($sql);
-                    $consulta->execute();
+                    $conexion2=conectarBD();
+                    $sql2="DELETE from usuarios WHERE centros_nombre='$nombre'" ;
+                    $consulta2=$conexion2->prepare($sql2);
+                    $consulta2->execute();
+
+                    $conexion1=conectarBD();
+                    $sql1="DELETE from centros WHERE nombre='$nombre'" ;
+                    $consulta1=$conexion1->prepare($sql1);
+                    $consulta1->execute();
+
                     echo "Centro eliminado correctamente";
                     header("refresh:1;url=iniAdminGeneral.php");
                 }

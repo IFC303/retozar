@@ -11,6 +11,8 @@
                  include "./../../includes/alta.php";
                  include "./../../includes/baja.php";
                  include "./../../includes/modi.php";
+              
+                 
             ?>    
         </head>
 
