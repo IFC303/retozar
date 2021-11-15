@@ -1,7 +1,7 @@
 <?php
     session_start();
     include "./../../includes/funciones.php";
-    $ver=altaAlumnos();
+    
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -63,6 +63,8 @@
 </body>
 </html>
 
-
+<?php
+    altaAlumnos();
+?>
     
 

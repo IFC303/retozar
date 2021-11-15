@@ -2,7 +2,7 @@
 
 
     function altaAlumnos(){
-        if (isset($_POST['dniP'])){
+        if (isset($_POST['dniA'])){
             $nombre=$_POST['nombreA'];
             $apellidos=$_POST['apellidosA'];
             $dni=$_POST['dniA'];
