@@ -1,4 +1,3 @@
-
 <?php
     session_start();
 ?>
@@ -17,5 +16,5 @@
 
 
         <?php
-           bajaAlumnos();
+            bajaCentro();
         ?>

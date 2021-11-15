@@ -16,5 +16,9 @@
 
 
         <?php
-           verAlumnos();
+            verCentro();
         ?>
+
+
+<br><br>
+<a href="iniAdminGeneral.php">Volver al menu</a>

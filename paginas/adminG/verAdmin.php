@@ -1,4 +1,3 @@
-
 <?php
     session_start();
 ?>
@@ -16,5 +15,5 @@
 
 
         <?php
-           verAlumnos();
+            verAdmin();
         ?>

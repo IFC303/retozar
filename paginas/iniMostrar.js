@@ -16,18 +16,18 @@ function mostrar(nombre){
             document.getElementById("gGrupos").style.display="none";
             document.getElementById("gAlumnos").style.display="none";
         }else if (nombre=="profesor"){
-            document.getElementById("altaProfesor").style.display="block";
-            document.getElementById("altaCurso").style.display="none";
+            document.getElementById("gProfesor").style.display="block";
+            document.getElementById("gCurso").style.display="none";
         }else if (nombre=="curso"){
-            document.getElementById("altaProfesor").style.display="none";
-            document.getElementById("altaCurso").style.display="block";
+            document.getElementById("gProfesor").style.display="none";
+            document.getElementById("gCurso").style.display="block";
         }else if (nombre=="centro"){
             document.getElementById("gCentro").style.display="block";
             document.getElementById("gTest").style.display="none";
         }else if(nombre=="test"){
             document.getElementById("gCentro").style.display="none";
             document.getElementById("gTest").style.display="block";
-        }  
+        }   
  
 
 

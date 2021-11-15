@@ -16,5 +16,8 @@
 
 
         <?php
-           verAlumnos();
+            verProfesor();
         ?>
+
+<br><br>
+<a href="iniAdminCentro.php">Volver al menu</a>

@@ -15,8 +15,6 @@ CREATE TABLE IF NOT EXISTS `disc`.`centros` (
   `localidad` VARCHAR(45),
   `codigopostal` VARCHAR(5),
   `provincia` VARCHAR(20),
-  `telefono` VARCHAR(12),
-  `email` VARCHAR(30),
   PRIMARY KEY (`nombre`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
@@ -62,7 +60,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- Table `disc`.`cursos`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `disc`.`cursos` (
-  `codigo` INT NOT NULL,
+  `codigo` VARCHAR(10) NOT NULL,
   `departamento` VARCHAR(45) NULL DEFAULT NULL,
   `centros_nombre` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`codigo`, `centros_nombre`),
@@ -92,7 +90,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 CREATE TABLE IF NOT EXISTS `disc`.`alumnos` (
   `usuarios_dni` VARCHAR(9) NOT NULL,
   `equipos_nombre` VARCHAR(45) NOT NULL,
-  `cursos_codigo` INT NOT NULL,
+  `cursos_codigo` VARCHAR(10) NOT NULL,
   `cursos_centros_nombre` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`usuarios_dni`),
   INDEX `fk_alumnos_equipos1_idx` (`equipos_nombre` ASC) VISIBLE,
@@ -168,7 +166,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `disc`.`profesores_has_cursos` (
   `profesores_usuarios_dni` VARCHAR(9) NOT NULL,
-  `cursos_codigo` INT NOT NULL,
+  `cursos_codigo` VARCHAR(10) NOT NULL,
   `cursos_centros_nombre` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`profesores_usuarios_dni`, `cursos_codigo`, `cursos_centros_nombre`),
   INDEX `fk_profesores_has_cursos_cursos1_idx` (`cursos_codigo` ASC, `cursos_centros_nombre` ASC) VISIBLE,
