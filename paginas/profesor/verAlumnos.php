@@ -19,3 +19,5 @@
         <?php
            verAlumnos();
         ?>
+
+<a class="btnvolver" href="iniProfesor.php" > Volver al menú</a>

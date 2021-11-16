@@ -10,10 +10,9 @@
             $curso=$_POST['curso'];
 
             $conexion=conectarBD();
-            $sql="INSERT into usuarios values ('$dni','$nombre','$apellidos','$password','Q440415H','alumno');";
+            $sql="INSERT into usuarios values ('$dni','$nombre','$apellidos','$password','Q4400415H','alumno');";
             $consulta=$conexion->prepare($sql);
             $consulta->execute();
-            echo "Alumno insertado correctamente";
         }
     }
 

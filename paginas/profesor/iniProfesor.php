@@ -4,7 +4,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,56 +14,56 @@
     <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;1,500&display=swap" rel="stylesheet">
 </head>
     <body>
-        <main>
-        <div id="texto" >
-            <p id="t1">Disc Aragón</p>
-            <p id="t2">Test para formación de equipos de trabajo</p>
-        </div>
         
+        <main>
 
-    <div id="contenedormain">    
-    <div class="bienv">
-        <?php
-            echo "Bienvenido ".$_SESSION['nombreL'];
-        ?>
-    </div>
+            <div id="texto" >
+                <p id="t1">Disc Aragón</p>
+                <p id="t2">Test para formación de equipos de trabajo</p>
+            </div>
+        
+            <div id="contenedormain">    
+                    
+                    <div class="bienv">
+                        <?php
+                            echo "Bienvenido ".$_SESSION['nombreL'];
+                        ?>
+                    </div>
 
-    <div id="contenedoraux">
+                <div id="contenedoraux">
 
-    <div id="enlaces">
-        <ul>
-            <li><a name="alumnos" onclick="mostrar(this.name);">Gestion alumnos</a></li>
-            <li><a name="grupos" onclick="mostrar(this.name);">Gestion grupos</a></li>
-            <li><a name="resultados" onclick="mostrar(this.name);">Ver resultados</a></li>
-        </ul>
-    </div> <!-- fin enlaces -->     
-          
-    <div id="result" style="visibility:hidden">
-    
-        <ul id="gAlumnos" style="display:none">
-            <li><a href="altaAlumnos.php">Alta alumnos</a></li><br>
-            <li><a href="verAlumnos.php">Ver alumnos</a></li>
-        </ul>              
-               
-        <ul id="gGrupos" style="display:none">
-            <li><a href="#">Alta grupo</a></li><br>
-            <li><a href="#">Ver grupos</a></li>
-        </ul>
+                    <div id="enlaces">
+                        <ul>
+                            <li><a name="alumnos" onclick="mostrar(this.name);">Gestion alumnos</a></li>
+                            <li><a name="grupos" onclick="mostrar(this.name);">Gestion aulas</a></li>
+                            <li><a name="resultados" onclick="mostrar(this.name);">Ver resultados</a></li>
+                        </ul>
+                    </div> <!-- fin enlaces -->     
+                    
 
-        <ul id="resultados" style="display:none">
-            <li><a href="#">Resultado por alumno</a></li><br>
-            <li><a href="#">Resultado por grupos</a></li>
-        </ul>
+                    <div id="result" style="visibility:hidden">
+                        <ul id="gAlumnos" style="display:none">
+                            <li><a href="altaAlumnos.php">Alta alumnos</a></li><br>
+                            <li><a href="verAlumnos.php">Ver alumnos</a></li>
+                        </ul>              
+                        <ul id="gGrupos" style="display:none">
+                            <li><a href="#">Alta grupo</a></li><br>
+                            <li><a href="#">Ver grupos</a></li>
+                        </ul>
+                        <ul id="resultados" style="display:none">
+                            <li><a href="#">Resultado por alumno</a></li><br>
+                            <li><a href="#">Resultado por grupos</a></li>
+                        </ul>
+                    </div> <!-- fin result -->
 
-    </div> <!-- fin result -->
+                </div> <!-- fin contenedoraux-->
 
-    </div> <!-- fin contenedoraux-->
-
-    </div> <!-- fin contenedor main -->
+            </div> <!-- fin contenedor main -->
 
 
         </main> <!-- fin main -->
         
+
         <footer>
             <div id="img1">
                 <picture>

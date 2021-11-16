@@ -45,7 +45,6 @@ function modiAlumnos(){
 
                 $conexion=conectarBD();
                 $sql="UPDATE cursos SET departamento='$departamento' where codigo='$nombre';";
-                echo $sql;
                 $consulta=$conexion->prepare($sql);
                 $consulta->execute();
             } 

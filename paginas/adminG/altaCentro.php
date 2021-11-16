@@ -33,20 +33,6 @@
      
            <h3>DATOS DEL ADMINISTRADOR</h3>
 
-        <!--   <label for="centro">Centro </label>
-            <select>
-                <option>-- Selecciona un centro --</option>
-                <optgroup label="Huesca">
-                    <option>Aaaaa de Sabiñanigo</option>
-                </optgroup>
-                <optgroup label="Zaragoza">
-                    <option>Aaaaa de Utebo</option>
-                </optgroup>
-                <optgroup label="Teruel">
-                    <option>Aaaaa de Alcañiz</option>
-                </optgroup>
-            </select> -->
-
             <label for="nombreA"> Nombre: </label><input type="text" name="nombreA" id="nombreA" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" required><br> <br>
             <label for="apellidosA">Apellidos: </label><input type="text" name="apellidosA" id="apellidosA" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" required><br> <br>
             <label for="dniA">Dni: </label><input type="text" name="dniA" id="dniA" required><br> <br>

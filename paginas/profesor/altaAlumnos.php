@@ -4,7 +4,6 @@
     include "./../../includes/alta.php";
     include "./../../includes/baja.php";
     include "./../../includes/modi.php";
-    
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -15,6 +14,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="../../css/altaalum.css"> 
     <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;1,500&display=swap" rel="stylesheet">
+
+
 </head>
 <body>
     <header>
@@ -28,20 +29,19 @@
     <div id="contenido">
         <h3>NUEVO ALUMNO</h3>
 
-        <form action="" method="POST" name="formAlum" class="styleform">
+        <form action="altaAlumnos.php" method="POST" name="formAlum" class="styleform">
             <input type="text" class="inp" name="nombreA" id="nombreA" placeholder="Nombre" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" required><br> <br>
             <input type="text" class="inp" name="apellidosA" id="apellidosA" placeholder="Apellidos" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" required><br> <br>
             <input type="text" class="inp" name="dniA" id="dniA" required placeholder="DNI"><br> <br>
             <input type="password" class="inp" name="claveA" id="claveA" placeholder="Contraseña" required><br><br>
             <input type="text" class="inp" name="curso" id="curso" placeholder="Curso"><br><br>
+            <input type="submit" value="Aceptar" name ="Aceptar" id="boton1" onclick="validarForm1()" >
         </form>
 
-        <input type="submit" value="Aceptar" name ="Aceptar" id="boton1" onclick="validarForm1()"> <br>
+         <br>
         <a class="btnvolver" href="iniProfesor.php" > Volver al menú</a>
     </div><!-- fin contenido -->
 
-     
-    
     </main>
 
     <footer>
@@ -63,11 +63,19 @@
 
     </footer><!-- fin footer -->
 
+    
+    <?php
+    if(isset($_POST['Aceptar']))
+            {
+             echo "Ahora hacemos el alta.";
+                altaAlumnos();
+            }
+    ?>
+    
+    
+
 </body>
 </html>
 
-<?php
-    altaAlumnos();
-?>
-    
+
 

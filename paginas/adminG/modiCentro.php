@@ -35,13 +35,11 @@
                     <br><br>
 
                     <h3>DATOS DEL ADMINISTRADOR</h3>
-
-                        
-                    <label for="nombreA">Nombre: </label><input type="text" name="nombreA" id="nombreA" placeholder="<?php echo $_POST['nombre'];?>"  readonly pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" required><br> <br>
-                    <label for="apellidosA">Apellidos: </label><input type="text" name="apellidosA" id="apellidosA"value="<?php echo $_POST['apellidos'];?>"  pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" required><br> <br>
-                    <label for="dniA">Dni: </label><input type="text" name="dniA" id="dniA" value="<?php echo $_POST['dni'];?>"  required><br> <br>
-                    <label for="claveA">Contraseña: </label><input type="password" name="claveA" id="claveA" value="<?php echo $_POST['clave'];?>" required><br><br>
-                    <label for="departamento">Departamento: </label><input type="text" name="departamento" id="departamento" value="<?php echo $_POST['departamento'];?>"  ><br><br>
+                    <label for="dniA">Dni: </label><input type="text" name="dniA" id="dniA" placeholder="<?php echo $_POST['dniA'];?>"  readonly required><br> <br>   
+                    <label for="nombreA">Nombre: </label><input type="text" name="nombreA" id="nombreA" value="<?php echo $_POST['nombreA'];?>" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" required><br> <br>
+                    <label for="apellidosA">Apellidos: </label><input type="text" name="apellidosA" id="apellidosA"value="<?php echo $_POST['apellidosA'];?>"  pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" required><br> <br>
+                    <label for="claveA">Contraseña: </label><input type="password" name="claveA" id="claveA" value="<?php echo $_POST['claveA'];?>" required><br><br>
+                    <label for="departamento">Departamento: </label><input type="text" name="departamento" id="departamento"><br><br>
                 
                         
 

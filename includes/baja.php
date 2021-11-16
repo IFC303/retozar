@@ -8,7 +8,7 @@
                     $consulta=$conexion->prepare($sql);
                     $consulta->execute();
                     echo "Alumno borrado correctamente";
-                    header("refresh:1;url=iniProfesor.php");
+                    header("refresh:1;url=verAlumnos.php");
                 }
             }
 
@@ -21,7 +21,7 @@
                     $consulta=$conexion->prepare($sql);
                     $consulta->execute();
                     echo "Profesor borrado correctamente";
-                    header("refresh:1;url=iniAdminCentro.php");
+                    header("refresh:1;url=verProfesor.php");
                 }
             }
 
@@ -35,7 +35,7 @@
                     $consulta=$conexion->prepare($sql);
                     $consulta->execute();
                     echo "Curso borrado correctamente";
-                    header("refresh:1;url=iniAdminCentro.php");
+                    header("refresh:1;url=verCurso.php");
                 }
             }
 
@@ -56,7 +56,7 @@
                     $consulta1->execute();
 
                     echo "Centro eliminado correctamente";
-                    header("refresh:1;url=iniAdminGeneral.php");
+                    header("refresh:1;url=verCentro.php");
                 }
             }
 

@@ -107,11 +107,7 @@
             $consulta=$conexion->prepare($sql);
             $consulta->execute();
               
-            $conexion2=conectarBD();
-            $sql2="SELECT * FROM usuarios";
-            $consulta2=$conexion2->prepare($sql2);
-            $consulta2->execute();
-
+            
             while ($fila=$consulta->fetch(PDO::FETCH_ASSOC) ){
                 echo $fila['nombre'];
                 echo $fila['localidad'];
@@ -125,12 +121,20 @@
                     <input type="hidden" name="localidad" value ="<?php echo $fila['localidad']?>">
                     <input type="hidden" name="c_postal" value ="<?php echo $fila['codigopostal']?>">
                     <input type="hidden" name="provincia" value ="<?php echo $fila['provincia']?>">   
-                    
-                    <input type="hidden" name="dniA" value ="<?php echo $fila['dni']?>">
+                <?php                
+
+                   $centroNombre=$fila['nombre'];
+                    $sql2="SELECT * FROM usuarios where centros_nombre='$centroNombre' and tipo='admin centro'";
+                    $consulta2=$conexion->prepare($sql2);
+                    $consulta2->execute();
+                    $fila2=$consulta2->fetch(PDO::FETCH_ASSOC)
+
+                   ?> 
+                    <input type="hidden" name="dniA" value ="<?php echo $fila2['dni']?>">
                     <input type="hidden" name="nombreA" value ="<?php echo $fila2['nombre']?>">
-                    <input type="hidden" name="apellidosA" value ="<?php echo $fila['apellidos']?>">
+                    <input type="hidden" name="apellidosA" value ="<?php echo $fila2['apellidos']?>">
                     
-                    <input type="hidden" name="claveA" value ="<?php echo $fila['clave']?>">  
+                    <input type="hidden" name="claveA" value ="<?php echo $fila2['clave']?>">  
                     <input type ="submit" value="Modificar">
                 </FORM>
 
