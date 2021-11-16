@@ -40,8 +40,13 @@ echo "Bienvenido " . $_SESSION['nombreL'];
     </ul>
 
     <ul id="gTest" style="display:none">
-        <li><a href="#">Nuevo test</a></li>
-        <br>
+        <form action="../../libs/importar.php" method="post" enctype="multipart/form-data">
+            <fieldset>
+                <legend>Subir preguntas</legend>
+                <input type="file" name="upcsv" accept=".csv" required/>
+                <input type="submit" value="Subir"/>
+            </fieldset>
+        </form>
     </ul>
 
 </div>

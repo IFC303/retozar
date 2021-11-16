@@ -4,7 +4,7 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 DROP SCHEMA IF EXISTS `disc`;
-CREATE SCHEMA IF NOT EXISTS `disc` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci ;
+CREATE SCHEMA IF NOT EXISTS `disc` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci ;
 USE `disc` ;
 -- -----------------------------------------------------
 -- Table `disc`.`centros`
@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS `disc`.`centros` (
   PRIMARY KEY (`nombre`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
+COLLATE = utf8mb4_spanish_ci;
 
 
 -- -----------------------------------------------------
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `disc`.`usuarios` (
     REFERENCES `disc`.`centros` (`nombre`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
+COLLATE = utf8mb4_spanish_ci;
 
 
 -- -----------------------------------------------------
@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS `disc`.`admins` (
     REFERENCES `disc`.`usuarios` (`dni`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
+COLLATE = utf8mb4_spanish_ci;
 
 
 -- -----------------------------------------------------
@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS `disc`.`cursos` (
     REFERENCES `disc`.`centros` (`nombre`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
+COLLATE = utf8mb4_spanish_ci;
 
 
 -- -----------------------------------------------------
@@ -81,7 +81,7 @@ CREATE TABLE IF NOT EXISTS `disc`.`equipos` (
   PRIMARY KEY (`nombre`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
+COLLATE = utf8mb4_spanish_ci;
 
 
 -- -----------------------------------------------------
@@ -106,42 +106,43 @@ CREATE TABLE IF NOT EXISTS `disc`.`alumnos` (
     REFERENCES `disc`.`usuarios` (`dni`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
+COLLATE = utf8mb4_spanish_ci;
 
 
 -- -----------------------------------------------------
 -- Table `disc`.`preguntas`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `disc`.`preguntas` (
-  `numero` INT NOT NULL,
-  `color` VARCHAR(45) NULL DEFAULT NULL,
-  `explicacion` VARCHAR(45) NULL DEFAULT NULL,
-  `termino` VARCHAR(45) NULL DEFAULT NULL,
-  PRIMARY KEY (`numero`))
+  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `term` VARCHAR(255) NULL DEFAULT NULL,
+  `desc` VARCHAR(255) NULL DEFAULT NULL,
+  `color` VARCHAR(25) NULL DEFAULT NULL
+)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
+COLLATE = utf8mb4_spanish_ci;
 
 
 -- -----------------------------------------------------
 -- Table `disc`.`alumnos_has_preguntas`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `disc`.`alumnos_has_preguntas` (
-  `alumnos_usuarios_dni` VARCHAR(9) NOT NULL,
-  `preguntas_numero` INT NOT NULL,
-  `respuestas` VARCHAR(45) NULL DEFAULT NULL,
-  PRIMARY KEY (`alumnos_usuarios_dni`, `preguntas_numero`),
-  INDEX `fk_alumnos_has_preguntas_preguntas1_idx` (`preguntas_numero` ASC) VISIBLE,
-  INDEX `fk_alumnos_has_preguntas_alumnos1_idx` (`alumnos_usuarios_dni` ASC) VISIBLE,
-  CONSTRAINT `fk_alumnos_has_preguntas_alumnos1`
-    FOREIGN KEY (`alumnos_usuarios_dni`)
-    REFERENCES `disc`.`alumnos` (`usuarios_dni`),
-  CONSTRAINT `fk_alumnos_has_preguntas_preguntas1`
-    FOREIGN KEY (`preguntas_numero`)
-    REFERENCES `disc`.`preguntas` (`numero`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
+CREATE TABLE IF NOT EXISTS `disc`.`alumnos_has_preguntas`
+(
+    `alumno_dni`  VARCHAR(9)  NOT NULL PRIMARY KEY,
+    `pregunta_id` INT         NOT NULL,
+    `respuesta`   VARCHAR(45) NULL DEFAULT NULL,
+    INDEX `fk_alumnos_has_preguntas_pregunta_id` (`pregunta_id` ASC) VISIBLE,
+    INDEX `fk_alumnos_has_preguntas_alumno_dni` (`alumno_dni` ASC) VISIBLE,
+    CONSTRAINT `fk_alumnos_has_preguntas_alumnos_dni`
+        FOREIGN KEY (`alumno_dni`)
+            REFERENCES `disc`.`alumnos` (`usuarios_dni`),
+    CONSTRAINT `fk_alumnos_has_preguntas_pregunta_id`
+        FOREIGN KEY (`pregunta_id`)
+            REFERENCES `disc`.`preguntas` (`id`)
+)
+    ENGINE = InnoDB
+    DEFAULT CHARACTER SET = utf8mb4
+    COLLATE = utf8mb4_spanish_ci;
 
 
 -- -----------------------------------------------------
@@ -158,7 +159,7 @@ CREATE TABLE IF NOT EXISTS `disc`.`profesores` (
     REFERENCES `disc`.`usuarios` (`dni`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
+COLLATE = utf8mb4_spanish_ci;
 
 
 -- -----------------------------------------------------
@@ -179,7 +180,7 @@ CREATE TABLE IF NOT EXISTS `disc`.`profesores_has_cursos` (
     REFERENCES `disc`.`profesores` (`usuarios_dni`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
+COLLATE = utf8mb4_spanish_ci;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
