@@ -25,9 +25,15 @@ function mostrar(nombre){
         }else if (nombre=="centro"){
             document.getElementById("gCentro").style.display="block";
             document.getElementById("gTest").style.display="none";
+            document.getElementById("gAdmin").style.display="none";
         }else if(nombre=="test"){
             document.getElementById("gCentro").style.display="none";
             document.getElementById("gTest").style.display="block";
+            document.getElementById("gAdmin").style.display="none";
+        }else if(nombre=="admin"){
+            document.getElementById("gCentro").style.display="none";
+            document.getElementById("gTest").style.display="none";
+            document.getElementById("gAdmin").style.display="block";
         }  
  
 

@@ -63,33 +63,27 @@ function modiAlumnos(){
                 $cPostal=$_POST['c_postal'];
                 $provincia=$_POST['provincia'];
 
+                $nombreA=$_POST['nombreA'];
+                $apellidosA=$_POST['apellidosA'];
+                $dniA=$_POST['dniA'];
+                $passwordA=$_POST['claveA'];
+
                 $conexion=conectarBD();
                 $sql="UPDATE centros SET nombre='$nombre', direccion='$direccion', localidad='$localidad', codigopostal='$cPostal', provincia='$provincia' where nombre='$nombre';";
                 $consulta=$conexion->prepare($sql);
                 $consulta->execute();
-                echo "Centro modificado correctamente";
+
+                $conexion2=conectarBD();
+                $sql2="UPDATE usuarios SET nombre='$nombreA', apellidos='$apellidosA', clave='$passwordA' where dni='$dniA';";
+                $consulta2=$conexion2->prepare($sql2);
+                $consulta2->execute();
+
+     
             } 
         }   
 
 
-            function modiAdmin(){
-                
-                if (isset($_POST['dni'])){
-
-                    $nombre=$_POST['nombreA'];
-                    $apellidos=$_POST['apellidosA'];
-                    $dni=$_POST['dni'];
-                    $password=$_POST['clave'];
-
-                    $conexion=conectarBD();
-                    $sql="UPDATE usuarios SET nombre='$nombre', apellidos='$apellidos', clave='$password' where dni='$dni';";
-                    $consulta=$conexion->prepare($sql);
-                    $consulta->execute();
-                    echo "Administrador modificado correctamente";
-                } 
-            }   
-
-
+         
 
 
 ?>
