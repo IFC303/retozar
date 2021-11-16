@@ -9,14 +9,30 @@
         //$resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
         //var_dump($resultado);
 
-        while($fila = $consulta->fetch(PDO::FETCH_ASSOC)){      
-                echo $fila['dni']; 
-                echo $fila['nombre'];
-                echo $fila['apellidos'];
-                
-                ?>
+        ?>
+                 <table style="border:1px solid blue">
+                    <tr >
+                        <th>DNI</th>
+                        <th>NOMBRE</th>
+                        <th>APELLIDOS</th>
+                    </tr>
+               
+        <?php
+        
+        while($fila = $consulta->fetch(PDO::FETCH_ASSOC)){
 
-                <FORM action="modiAlumnos.php" method="POST">
+            ?>
+
+                <tr>
+                    <td><?php echo $fila['dni'];?> 
+                    <td><?php echo $fila['nombre'];?> 
+                    <td><?php echo $fila['apellidos'];?> 
+                </tr>
+            </table>
+
+
+
+          <!--       <FORM action="modiAlumnos.php" method="POST">
                     <input type="hidden" name="dni" value ="<?php echo $fila['dni']?>">
                     <input type="hidden" name="nombre" value ="<?php echo $fila['nombre']?>">
                     <input type="hidden" name="apellidos" value ="<?php echo $fila['apellidos']?>">
@@ -26,7 +42,7 @@
                 <FORM action="bajaAlumnos.php" method="POST">
                     <input type="hidden" name="dni" value ="<?php echo $fila['dni']?>">
                     <input type ="submit" value="Borrar">
-                </FORM>
+                </FORM> -->
 
             <?php
                 echo "<br>";

@@ -14,8 +14,6 @@
     <title>Document</title>
     <link rel="stylesheet" href="../../css/altaalum.css"> 
     <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;1,500&display=swap" rel="stylesheet">
-
-
 </head>
 <body>
     <header>
@@ -67,7 +65,6 @@
     <?php
     if(isset($_POST['Aceptar']))
             {
-             echo "Ahora hacemos el alta.";
                 altaAlumnos();
             }
     ?>
