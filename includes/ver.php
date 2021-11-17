@@ -1,56 +1,60 @@
 <?php
 
-    function verAlumnos(){
+function verAlumnos(){
 
-        $conexion=conectarBD();
-        $sql= "SELECT dni, nombre, apellidos FROM usuarios where tipo='alumno'";
-        $consulta=$conexion->prepare($sql);
-        $consulta->execute();
-        //$resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
-        //var_dump($resultado);
+    $conexion=conectarBD();
+    $sql= "SELECT dni, nombre, apellidos FROM usuarios where tipo='alumno'";
+    $consulta=$conexion->prepare($sql);
+    $consulta->execute();
+    //$resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
+    //var_dump($resultado);
+
+    ?>
+        <table border="1" >
+            <tr>
+                <th >DNI</th>
+                <th>NOMBRE</th>
+                <th>APELLIDOS</th>
+                <th colspan =2>Opciones</th>
+            </tr>
+           
+    <?php
+    
+    while($fila = $consulta->fetch(PDO::FETCH_ASSOC)){
 
         ?>
-                 <table style="border:1px solid blue">
-                    <tr >
-                        <th>DNI</th>
-                        <th>NOMBRE</th>
-                        <th>APELLIDOS</th>
-                    </tr>
-               
-        <?php
-        
-        while($fila = $consulta->fetch(PDO::FETCH_ASSOC)){
-
-            ?>
-
-                <tr>
-                    <td><?php echo $fila['dni'];?> 
-                    <td><?php echo $fila['nombre'];?> 
-                    <td><?php echo $fila['apellidos'];?> 
-                </tr>
-            </table>
-
-
-
-                <FORM action="modiAlumnos.php" method="POST">
+            <tr>
+                <td><?php echo $fila['dni'];?> </td>
+                <td><?php echo $fila['nombre'];?> </td>
+                <td><?php echo $fila['apellidos'];?> </td>
+                <td>
+                    <FORM action="modiAlumnos.php" method="POST">
                     <input type="hidden" name="dniA" value ="<?php echo $fila['dni']?>">
                     <input type="hidden" name="nombreA" value ="<?php echo $fila['nombre']?>">
                     <input type="hidden" name="apellidosA" value ="<?php echo $fila['apellidos']?>">
                     <input type="hidden" name="claveA" value ="<?php echo $fila['apellidos']?>">
-                    <input type ="submit" value="Modificar">
-                </FORM>
-                
+                    <button type="submit" name="modificarAlumnoA" onclick="modiAlumnos();">
+                        <img src="../../img/edit.svg">
+                    </button>
+        
+                    </FORM>
+                </td>
+            <td>
                 <FORM action="bajaAlumnos.php" method="POST">
                     <input type="hidden" name="dniA" value ="<?php echo $fila['dni']?>">
-                    <input type ="submit" value="Borrar">
+                    <button type="submit" name="borrarAlumno" onclick="bajaAlumnos();">
+                        <img src="../../img/trash.svg">
+                    </button>
                 </FORM> 
-
-            <?php
-                echo "<br>";
-        }
-    }
-
-
+            </td>
+            </tr>
+            <?php   
+    
+    }   ?>     
+    </table>
+    <?php
+            echo "<br>";
+}
 
     function verProfesor(){
 
