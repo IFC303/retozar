@@ -1,8 +1,8 @@
 <?php
 
             function bajaAlumnos(){
-                if (isset($_POST['dni'])){
-                    $dni=$_POST['dni'];
+                if (isset($_POST['dniA'])){
+                    $dni=$_POST['dniA'];
                     $conexion=conectarBD();
                     $sql="DELETE from usuarios WHERE dni='$dni'";
                     $consulta=$conexion->prepare($sql);
