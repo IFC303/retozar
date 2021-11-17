@@ -36,6 +36,7 @@
                     <input type="hidden" name="dniA" value ="<?php echo $fila['dni']?>">
                     <input type="hidden" name="nombreA" value ="<?php echo $fila['nombre']?>">
                     <input type="hidden" name="apellidosA" value ="<?php echo $fila['apellidos']?>">
+                    <input type="hidden" name="claveA" value ="<?php echo $fila['apellidos']?>">
                     <input type ="submit" value="Modificar">
                 </FORM>
                 
