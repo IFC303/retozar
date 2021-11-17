@@ -13,7 +13,6 @@ function modiAlumnos(){
                 $sql="UPDATE usuarios SET nombre='$nombre', apellidos='$apellidos', clave='$password' where dni='$dni';";
                 $consulta=$conexion->prepare($sql);
                 $consulta->execute();
-                echo "Alumno modificado correctamente";
             } 
         }    
 

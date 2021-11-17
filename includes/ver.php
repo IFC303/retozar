@@ -32,7 +32,7 @@
 
 
 
-          <!--       <FORM action="modiAlumnos.php" method="POST">
+           <FORM action="modiAlumnos.php" method="POST">
                     <input type="hidden" name="dni" value ="<?php echo $fila['dni']?>">
                     <input type="hidden" name="nombre" value ="<?php echo $fila['nombre']?>">
                     <input type="hidden" name="apellidos" value ="<?php echo $fila['apellidos']?>">
@@ -42,7 +42,7 @@
                 <FORM action="bajaAlumnos.php" method="POST">
                     <input type="hidden" name="dni" value ="<?php echo $fila['dni']?>">
                     <input type ="submit" value="Borrar">
-                </FORM> -->
+                </FORM> 
 
             <?php
                 echo "<br>";
