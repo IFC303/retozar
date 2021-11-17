@@ -20,7 +20,7 @@
                     $sql="DELETE from usuarios WHERE dni='$dni'";
                     $consulta=$conexion->prepare($sql);
                     $consulta->execute();
-                    echo "Profesor borrado correctamente";
+                    echo "<script> confirm(\"Estas seguro de querer borrar al profesor?\"); </script>";
                     header("refresh:1;url=verProfesor.php");
                 }
             }
@@ -34,7 +34,7 @@
                     $sql="DELETE from cursos WHERE codigo='$nombre'";
                     $consulta=$conexion->prepare($sql);
                     $consulta->execute();
-                    echo "Curso borrado correctamente";
+                    echo "<script> confirm(\"Estas seguro de querer borrar el curso?\"); </script>";
                     header("refresh:1;url=verCurso.php");
                 }
             }

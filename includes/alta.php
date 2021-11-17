@@ -30,6 +30,7 @@
             $consulta=$conexion->prepare($sql);
             $consulta->execute();
             echo "Profesor insertado correctamente";
+         
         }
     }
 
