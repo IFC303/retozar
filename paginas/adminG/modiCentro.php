@@ -20,7 +20,7 @@
                 
                     <h3>DATOS DE CENTRO</h3>
                     
-                    <label for="n_centro">Nombre </label><input type="text" name="n_centro" id="n_centro" placeholder="<?php echo $_POST['n_centro'];?>" readonly required>
+                    <label for="n_centro">Nombre </label><input type="text" name="n_centro" id="n_centro" value="<?php echo $_POST['n_centro'];?>" readonly required>
                     <br><br>
                     <label for="direccion">Direccion </label><input type="text" name="direccion" id="direccion" value="<?php echo $_POST['direccion'];?>" required>
                     <br><br>

@@ -32,15 +32,15 @@
 
 
 
-           <FORM action="modiAlumnos.php" method="POST">
-                    <input type="hidden" name="dni" value ="<?php echo $fila['dni']?>">
-                    <input type="hidden" name="nombre" value ="<?php echo $fila['nombre']?>">
-                    <input type="hidden" name="apellidos" value ="<?php echo $fila['apellidos']?>">
+                <FORM action="modiAlumnos.php" method="POST">
+                    <input type="hidden" name="dniA" value ="<?php echo $fila['dni']?>">
+                    <input type="hidden" name="nombreA" value ="<?php echo $fila['nombre']?>">
+                    <input type="hidden" name="apellidosA" value ="<?php echo $fila['apellidos']?>">
                     <input type ="submit" value="Modificar">
                 </FORM>
                 
                 <FORM action="bajaAlumnos.php" method="POST">
-                    <input type="hidden" name="dni" value ="<?php echo $fila['dni']?>">
+                    <input type="hidden" name="dniA" value ="<?php echo $fila['dni']?>">
                     <input type ="submit" value="Borrar">
                 </FORM> 
 
@@ -91,7 +91,7 @@
         $sql= "SELECT codigo, departamento FROM cursos";
         $consulta=$conexion->prepare($sql);
         $consulta->execute();
-
+    
         while($fila = $consulta->fetch(PDO::FETCH_ASSOC)){      
                 echo $fila['codigo']; 
                 echo $fila['departamento'];

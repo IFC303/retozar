@@ -16,14 +16,15 @@
 
           
         <form action="" method="POST" name="formAlum">
-           <label for="dni">Dni: </label><input type="text" name="dni" id="dni" required placeholder="<?php echo $_POST['dni'];?>" readonly><br> <br>
-           <label for="nombreA">Nombre: </label><input type="text" name="nombreA" id="nombreA" value="<?php echo $_POST['nombre'];?>" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" required><br> <br>
-           <label for="apellidosA">Apellidos: </label><input type="text" name="apellidosA" id="apellidosA"  value="<?php echo $_POST['apellidos'];?>" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" required><br> <br>
-           <label for="clave">Contraseña: </label><input type="password" name="clave" id="clave" required> <br> <br>
+           <label for="dni">Dni: </label><input type="text" name="dniA" id="dniA" required value="<?php echo $_POST['dniA'];?>" readonly><br> <br>
+           <label for="nombreA">Nombre: </label><input type="text" name="nombreA" id="nombreA" value="<?php echo $_POST['nombreA'];?>" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" required><br> <br>
+           <label for="apellidosA">Apellidos: </label><input type="text" name="apellidosA" id="apellidosA"  value="<?php echo $_POST['apellidosA'];?>" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" required><br> <br>
+           <label for="claveA">Contraseña: </label><input type="password" name="claveA" id="claveA" required> <br> <br>
            <label for="curso">Curso: </label><input type="text" name="curso" id="curso"><br><br>
-            <input type="submit" value="Aceptar" name ="Aceptar" id="boton1" onclick="validarForm1()">
+           <input type="submit" value="Aceptar" name ="Aceptar" id="boton1" onclick="validarForm1()">
         </form>
 
+        <a href="verAlumnos.php">Volver</a>
 
         <?php
             modiAlumnos();

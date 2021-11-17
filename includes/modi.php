@@ -2,12 +2,12 @@
 
 function modiAlumnos(){
             
-            if (isset($_POST['dni'])){
+            if (isset($_POST['dniA'])){
 
                 $nombre=$_POST['nombreA'];
                 $apellidos=$_POST['apellidosA'];
-                $dni=$_POST['dni'];
-                $password=$_POST['clave'];
+                $dni=$_POST['dniA'];
+                $password=$_POST['claveA'];
 
                 $conexion=conectarBD();
                 $sql="UPDATE usuarios SET nombre='$nombre', apellidos='$apellidos', clave='$password' where dni='$dni';";
@@ -36,7 +36,6 @@ function modiAlumnos(){
 
        function modiCurso(){
 
-
             if (isset($_POST['nombre'])){
 
                 $nombre=$_POST['nombre'];
@@ -44,6 +43,7 @@ function modiAlumnos(){
 
                 $conexion=conectarBD();
                 $sql="UPDATE cursos SET departamento='$departamento' where codigo='$nombre';";
+                echo $sql;
                 $consulta=$conexion->prepare($sql);
                 $consulta->execute();
             } 
