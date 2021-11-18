@@ -10,7 +10,7 @@ function verAlumnos(){
     //var_dump($resultado);
 
     ?>
-        <table border="1" >
+        <table border="1">
             <tr>
                 <th >DNI</th>
                 <th>NOMBRE</th>
@@ -63,31 +63,54 @@ function verAlumnos(){
         $consulta=$conexion->prepare($sql);
         $consulta->execute();
 
-        while($fila = $consulta->fetch(PDO::FETCH_ASSOC)){      
-                echo $fila['dni']; 
-                echo $fila['nombre'];
-                echo $fila['apellidos'];
-                echo $fila['clave'];
+        ?>
+        <table border="1">
+            <tr>
+                <th>DNI</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th colspan=2>Opciones</th>
+            </tr>
+        <?php
+
+        while($fila = $consulta->fetch(PDO::FETCH_ASSOC)){ 
+            ?>
+            <tr>
+                <td><?php echo $fila['dni'];?> </td>
+                <td><?php echo $fila['nombre'];?> </td>
+                <td><?php echo $fila['apellidos'];?> </td>
                 
-                ?>
+                <td>
+                    <FORM action="modiProfesor.php" method="POST">
+                        <input type="hidden" name="dniP" value ="<?php echo $fila['dni']?>">
+                        <input type="hidden" name="nombreP" value ="<?php echo $fila['nombre']?>">
+                        <input type="hidden" name="apellidosP" value ="<?php echo $fila['apellidos']?>">
+                        <input type="hidden" name="password" value ="<?php echo $fila['clave']?>">
+                        <button type="submit" name="modificarProfe" onclick="modiProfesor();">
+                            <img src="../../img/edit.svg">
+                        </button>
+                    </FORM>
+                </td>
 
-                <FORM action="modiProfesor.php" method="POST">
-                    <input type="hidden" name="dniP" value ="<?php echo $fila['dni']?>">
-                    <input type="hidden" name="nombreP" value ="<?php echo $fila['nombre']?>">
-                    <input type="hidden" name="apellidosP" value ="<?php echo $fila['apellidos']?>">
-                    <input type="hidden" name="password" value ="<?php echo $fila['clave']?>">
-                    <input type ="submit" value="Modificar">
-                </FORM>
-                
-                <FORM action="bajaProfesor.php" method="POST">
-                    <input type="hidden" name="dniP" value ="<?php echo $fila['dni']?>">
-                    <input type ="submit" value="Borrar">
-                </FORM>
+                <td>
+                   <FORM action="bajaProfesor.php" method="POST">
+                        <input type="hidden" name="dniP" value ="<?php echo $fila['dni']?>">
+                        <button type="submit" name="borrarProfesor" onclick="bajaProfesor();">
+                            <img src="../../img/trash.svg">
+                        </button>
+                    </FORM> 
+                </td>
+            </tr>     
+            <?php 
+        
+        } ?>
 
-               <?php
-
-        }
+        </table>
+        <?php
     }
+
+
+
 
 
     function verCurso(){
