@@ -2,8 +2,18 @@
 
 function verAlumnos(){
 
+    $clavelog = $_SESSION['nombreL'];
+        $conexion=conectarBD();
+
+    $sql2 = "SELECT centros_nombre from usuarios where dni = '$clavelog'";
+    $consulta2=$conexion->prepare($sql2);
+    $consulta2->execute();
+    $fila = $consulta2->fetch(PDO::FETCH_ASSOC);
+    $nombrecentro = $fila['centros_nombre'];
+
+
     $conexion=conectarBD();
-    $sql= "SELECT dni, nombre, apellidos FROM usuarios where tipo='alumno'";
+    $sql= "SELECT dni, nombre, apellidos FROM usuarios where tipo='alumno' and centros_nombre = '$nombrecentro'";
     $consulta=$conexion->prepare($sql);
     $consulta->execute();
     //$resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
@@ -57,11 +67,23 @@ function verAlumnos(){
 }
 
     function verProfesor(){
+        
+            $clavelog = $_SESSION['nombreL'];
+            $conexion=conectarBD();
+
+            $sql2 = "SELECT centros_nombre from usuarios where dni = '$clavelog'";
+            $consulta2=$conexion->prepare($sql2);
+            $consulta2->execute();
+            $fila = $consulta2->fetch(PDO::FETCH_ASSOC);
+            $nombrecentro = $fila['centros_nombre'];
+
 
         $conexion=conectarBD();
-        $sql= "SELECT dni, nombre, apellidos,clave FROM usuarios where tipo='profesor'";
+        $sql= "SELECT dni, nombre, apellidos,clave FROM usuarios where tipo='profesor' and centros_nombre = '$nombrecentro'";
         $consulta=$conexion->prepare($sql);
         $consulta->execute();
+
+
 
         ?>
         <table border="1">

@@ -9,8 +9,18 @@
             $password=$_POST['claveA'];
             $curso=$_POST['curso'];
 
+            $clavelog = $_SESSION['nombreL'];
             $conexion=conectarBD();
-            $sql="INSERT into usuarios values ('$dni','$nombre','$apellidos','$password','Q4400415H','alumno');";
+
+            $sql2 = "SELECT centros_nombre from usuarios where dni = '$clavelog'";
+            $consulta2=$conexion->prepare($sql2);
+            $consulta2->execute();
+            $fila = $consulta2->fetch(PDO::FETCH_ASSOC);
+            $nombrecentro = $fila['centros_nombre'];
+
+
+            $conexion=conectarBD();
+            $sql="INSERT into usuarios values ('$dni','$nombre','$apellidos','$password','$nombrecentro','alumno');";
             $consulta=$conexion->prepare($sql);
             $consulta->execute();
         }
@@ -25,12 +35,21 @@
             $password=$_POST['password'];
             $departamento=$_POST['departamento'];
 
+            $clavelog = $_SESSION['nombreL'];
             $conexion=conectarBD();
-            $sql="INSERT into usuarios values ('$dni','$nombre','$apellidos','$password','Q4400415H','profesor');";
+
+            $sql2 = "SELECT centros_nombre from usuarios where dni = '$clavelog'";
+            $consulta2=$conexion->prepare($sql2);
+            $consulta2->execute();
+            $fila = $consulta2->fetch(PDO::FETCH_ASSOC);
+            $nombrecentro = $fila['centros_nombre'];
+
+
+
+            $sql="INSERT into usuarios values ('$dni','$nombre','$apellidos','$password','$nombrecentro','profesor');";
             $consulta=$conexion->prepare($sql);
             $consulta->execute();
             echo "Profesor insertado correctamente";
-         
         }
     }
 
