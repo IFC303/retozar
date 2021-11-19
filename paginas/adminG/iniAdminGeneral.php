@@ -48,7 +48,11 @@ include "./../../includes/funciones.php";
                         <li><a href="verCentro.php">Ver centros</a></li>
                     </ul>
                     <ul id="gTest" style="display:none">
-                        <li><a href="#">Nuevo test</a></li><br>
+                        <li><a href="preguntas/subir.php">Subir preguntas</a></li>
+                        <br>
+                        <li><a href="preguntas/nuevo.php">Nueva pregunta</a></li>
+                        <br>
+                        <li><a href="preguntas/index.php">Ver preguntas</a></li>
                     </ul>
                 </div> <!-- fin result -->
 
