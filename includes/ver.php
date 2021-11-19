@@ -221,7 +221,7 @@ function verAlumnos(){
                 $alumno=$_SESSION['nombreL'];
 
                 $conexion=conectarBD();
-                $sql="SELECT * FROM preguntas where id=1" ;
+                $sql="SELECT * FROM preguntas where id='1'" ;
                 $consulta=$conexion->prepare($sql);
                 $consulta->execute();
 

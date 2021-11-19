@@ -78,8 +78,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `disc`.`equipos` (
   `id` int(3) NOT NULL,
-  `nombre` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`nombre`))
+  PRIMARY KEY (`id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
@@ -90,18 +89,18 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `disc`.`alumnos` (
   `usuarios_dni` VARCHAR(9) NOT NULL,
-  `equipos_nombre` VARCHAR(45) NOT NULL,
+  `equipos_id` int(3) NOT NULL,
   `cursos_codigo` VARCHAR(10) NOT NULL,
   `cursos_centros_nombre` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`usuarios_dni`),
-  INDEX `fk_alumnos_equipos1_idx` (`equipos_nombre` ASC) VISIBLE,
+  INDEX `fk_alumnos_equipos1_idx` (`equipos_id` ASC) VISIBLE,
   INDEX `fk_alumnos_cursos1_idx` (`cursos_codigo` ASC, `cursos_centros_nombre` ASC) VISIBLE,
   CONSTRAINT `fk_alumnos_cursos1`
     FOREIGN KEY (`cursos_codigo` , `cursos_centros_nombre`)
     REFERENCES `disc`.`cursos` (`codigo` , `centros_nombre`),
   CONSTRAINT `fk_alumnos_equipos1`
-    FOREIGN KEY (`equipos_nombre`)
-    REFERENCES `disc`.`equipos` (`nombre`),
+    FOREIGN KEY (`equipos_id`)
+    REFERENCES `disc`.`equipos` (`id`),
   CONSTRAINT `fk_alumnos_usuarios1`
     FOREIGN KEY (`usuarios_dni`)
     REFERENCES `disc`.`usuarios` (`dni`))

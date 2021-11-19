@@ -12,23 +12,31 @@
             $clavelog = $_SESSION['nombreL'];
             $conexion=conectarBD();
 
-            $sql2 = "SELECT centros_nombre from usuarios where dni = '$clavelog'";
-            $consulta2=$conexion->prepare($sql2);
-            $consulta2->execute();
-            $fila = $consulta2->fetch(PDO::FETCH_ASSOC);
+
+            //CONSULTA PAAR RECUPERAR EL NOMBRE DEL CENTRO
+            $sql = "SELECT centros_nombre from usuarios where dni = '$clavelog'";
+            $consulta=$conexion->prepare($sql);
+            $consulta->execute();
+            $fila = $consulta->fetch(PDO::FETCH_ASSOC);
             $nombrecentro = $fila['centros_nombre'];
 
 
-            $conexion=conectarBD();
-            $sql="INSERT into usuarios values ('$dni','$nombre','$apellidos','$password','$nombrecentro','alumno');";
-            $consulta=$conexion->prepare($sql);
-            $consulta->execute();
-/* 
-            $sql3="INSERT into equipos values ('1');";
-            $consulta3=$conexion->prepare($sql3);
-            $consulta3->execute(); */
+            //INSERTAR ALUMNO EN USUARIOS
+            $sql2="INSERT into usuarios values ('$dni','$nombre','$apellidos','$password','$nombrecentro','alumno');";
+            $consulta2=$conexion->prepare($sql2);
+            $consulta2->execute();
 
-            $sql4="INSERT into alumnos values ('$dni','sin equipo','$curso','$nombrecentro');";
+
+            //CONSULTA PARA SACAR EL EQUIPO
+            $sql3="SELECT * FROM equipos";
+            $consulta3=$conexion->prepare($sql3);
+            $consulta3->execute();
+            $fila3 = $consulta3->fetch(PDO::FETCH_ASSOC);
+            $idEquipo = $fila3['id'];
+
+
+            //INSERTAR EN TABLA ALUMNOS
+            $sql4="INSERT into alumnos values ('$dni',$idEquipo,'$curso','$nombrecentro');";
             $consulta4=$conexion->prepare($sql4);
             $consulta4->execute();
 
