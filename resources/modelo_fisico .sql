@@ -77,6 +77,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- Table `disc`.`equipos`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `disc`.`equipos` (
+  `id` int(3) NOT NULL,
   `nombre` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`nombre`))
 ENGINE = InnoDB

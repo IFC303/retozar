@@ -1,6 +1,6 @@
 <?php
 
-
+       
         function conectarBD(){
 
             $servidor="localhost:3306";
@@ -23,8 +23,23 @@
             }
         }
 
+
+
+
+        function nombreLog(){
+
+            $dniLog=$_SESSION['nombreL'];
+    
+            $conexion=conectarBD();
+            $sql="SELECT nombre from usuarios where dni='$dniLog'" ;
+            $consulta=$conexion->prepare($sql);
+            $consulta->execute();
+            
+            $fila=$consulta->fetch(PDO::FETCH_ASSOC);
+            echo "Bienvenido ". $fila['nombre'];
+        }
   
-        
+
 
 ?>
 

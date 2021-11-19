@@ -23,6 +23,17 @@
             $sql="INSERT into usuarios values ('$dni','$nombre','$apellidos','$password','$nombrecentro','alumno');";
             $consulta=$conexion->prepare($sql);
             $consulta->execute();
+/* 
+            $sql3="INSERT into equipos values ('1');";
+            $consulta3=$conexion->prepare($sql3);
+            $consulta3->execute(); */
+
+            $sql4="INSERT into alumnos values ('$dni','sin equipo','$curso','$nombrecentro');";
+            $consulta4=$conexion->prepare($sql4);
+            $consulta4->execute();
+
+
+
         }
     }
 

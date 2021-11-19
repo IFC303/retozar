@@ -27,7 +27,7 @@
                 
                 <div class="bienv">
                     <?php
-                        echo "Bienvenido ".$_SESSION['nombreL'];
+                       nombreLog();
                     ?>
                 </div>
 

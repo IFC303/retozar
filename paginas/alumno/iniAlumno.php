@@ -1,6 +1,10 @@
 <?php
     session_start();
     include "./../../includes/funciones.php";
+    include "./../../includes/alta.php";
+    include "./../../includes/baja.php";
+    include "./../../includes/modi.php";
+    include "./../../includes/ver.php";
 ?>
 
 
@@ -16,20 +20,48 @@
 </head>
 
         <body>
+            
+        <header>
+            <div id="texto" >
+                <p id="t1">Disc Aragón</p>
+                <p id="t2">Test para formación de equipos de trabajo</p>
+            </div>
+        </header>
+    
+
             <main>
-                <div id="texto" >
-                    <p id="t1">Disc Aragón</p>
-                    <p id="t2">Test para formación de equipos de trabajo</p>
-                </div>
+                
                 
                 <div id="contenedormain">    
-                <div class="bienv">
-                    <?php
-                        echo "Bienvenido ".$_SESSION['nombreL'];
-                    ?>
-                </div>
 
-                <div id="contenedoraux">
+                    <div class="bienv">
+                        <?php
+                            /* echo "Bienvenido ".$_SESSION['nombreL']; */
+                            nombreLog();
+                            echo "<br>";
+                            echo "<br>";
+                            echo "Responde todas las preguntas del test ....."
+                        ?>
+                    </div>
+
+                       <!-- <input type="submit" value="iniciar test" name="iniciar test"> -->
+
+                    <?php
+                    verPreguntas();
+                    ?>
+
+                    <br><br>
+<!-- 
+                        <div id="contenedoraux">
+ -->
+                      
+                        <!-- </div>   -->
+
+                  <input type="submit" value="Aceptar" name="Aceptar" onclick="verPreguntas();">           
+                
+                </div>
+                
+               
 
              </main>
 

@@ -1,6 +1,7 @@
 <?php
     session_start();
      include "./../../includes/funciones.php";
+     
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +27,7 @@
                     
                     <div class="bienv">
                         <?php
-                            echo "Bienvenido ".$_SESSION['nombreL'];
+                            nombreLog();
                         ?>
                     </div>
 

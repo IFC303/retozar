@@ -4,9 +4,16 @@
                 if (isset($_POST['dniA'])){
                     $dni=$_POST['dniA'];
                     $conexion=conectarBD();
-                    $sql="DELETE from usuarios WHERE dni='$dni'";
+
+                    //primero borrado en la tabla alumnos
+                    $sql="DELETE from alumnos where usuarios_dni='$dni'";
                     $consulta=$conexion->prepare($sql);
                     $consulta->execute();
+                    //borrado en la tabla usuarios
+                    $sql2="DELETE from usuarios WHERE dni='$dni'";
+                    $consulta2=$conexion->prepare($sql2);
+                    $consulta2->execute();
+
                     echo "Alumno borrado correctamente";
                     header("refresh:1;url=verAlumnos.php");
                 }
