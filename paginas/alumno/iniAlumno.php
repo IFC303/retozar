@@ -43,6 +43,7 @@
                             echo "Responde todas las preguntas del test ....."
                         ?>
                     </div>
+                    <a href="../cerrarSesion.php" class="btnvolver">Cerrar sesión</a>
 
                        <!-- <input type="submit" value="iniciar test" name="iniciar test"> -->
 

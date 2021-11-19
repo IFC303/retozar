@@ -31,6 +31,8 @@
                         ?>
                     </div>
 
+                <a href="../cerrarSesion.php" class="btnvolver">Cerrar sesión</a>
+
                 <div id="contenedoraux">
 
                     <div id="enlaces">

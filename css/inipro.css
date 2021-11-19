@@ -31,6 +31,13 @@ main{
     color: #102140;
     margin-bottom: 30px;
 }
+.btnvolver{
+  margin-top: 15px;
+  text-decoration: none;
+  color:#102140;
+  font-weight: bold;
+  
+}
 
 footer{
     display: flex;
