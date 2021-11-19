@@ -28,4 +28,6 @@ INSERT INTO `disc`.`admins` (`usuarios_dni`)
 VALUES ('1111');
 INSERT INTO `disc`.`profesores` (`usuarios_dni`, `departamento`, `isAdmin`)
 VALUES ('3333', 'informatica', true);
+
+INSERT INTO `disc`.`equipos` (`id`) VALUES ('1');
 -- INSERT INTO `disc`.`alumnos` (`usuarios_dni`, `equipos_nombre`, `cursos_codigo`, `cursos_centros_nombre`) VALUES ('4444', '0', '0', 'Q4400415H');
