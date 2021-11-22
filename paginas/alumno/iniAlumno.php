@@ -38,27 +38,28 @@
                         <?php
                             /* echo "Bienvenido ".$_SESSION['nombreL']; */
                             nombreLog();
-                            echo "<br>";
-                            echo "<br>";
-                            echo "Responde todas las preguntas del test ....."
+                            echo "<br>","<br>";
+                            echo "Responde todas las preguntas del test .....";
+                            echo "<br>" ,"<br>","<br>";
+                      
                         ?>
                     </div>
-                    <a href="../cerrarSesion.php" class="btnvolver">Cerrar sesión</a>
+                   
 
                        <!-- <input type="submit" value="iniciar test" name="iniciar test"> -->
 
                     <?php
                     verPreguntas();
                     ?>
-
                     <br><br>
+                    <a href="../cerrarSesion.php" class="btnvolver">Cerrar sesión</a>
+                    
 <!-- 
                         <div id="contenedoraux">
  -->
                       
                         <!-- </div>   -->
-
-                  <input type="submit" value="Aceptar" name="Aceptar" onclick="verPreguntas();">           
+           
                 
                 </div>
                 

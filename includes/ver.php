@@ -258,5 +258,78 @@ function verAlumnos(){
             </table>
         <?php
         }
+
+
+
+       function verPreguntas(){
+
+                $conexion=conectarBD();
+                $sql="SELECT * FROM preguntas where id=1";
+                $consulta=$conexion->prepare($sql);
+                $consulta->execute();
+                ?>
+
+                <form action="#" method="POST">
+
+                    <?php
+                    while($fila=$consulta->fetch(PDO::FETCH_ASSOC)){
+                        echo $fila['id'].". ";
+                        echo $fila['term'];
+                        echo $fila['desc'];
+                        echo "<br>","<br>";
+
+                        $id=$fila['id'];
+
+                   
+                    ?>
+
+
+                      <label for="respuesta">Verdadero<input type="radio" id=respuesta name="respuesta" value=1>
+                      <label for="respuesta">Falso<input type="radio" id=respuesta name="respuesta" value=0>
+
+
+                    <?php
+                    }
+                        echo "<br>","<br>";
+
+                        $dni=$_SESSION['nombreL'];
+                        
+
+                        if (isset($_POST['respuesta'])){
+
+                            $valor=$_POST['respuesta'];
+                            $sql2="INSERT into alumnos_has_preguntas values ('$dni',$id,'$valor');";
+                            $consulta2=$conexion->prepare($sql2);
+                            $consulta2->execute();
+
+                        }
+
+                        
+            
+               
+                    ?>
+
+                  <input type="submit" value="Aceptar" name="Aceptar" onclick="verPreguntas();">
+                
+                </form>
+                  <?php
+                
+           
+
+        }
         
+
+
+
+
 ?>
+
+
+
+
+
+
+
+
+
+        
