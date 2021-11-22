@@ -198,36 +198,41 @@ function verAlumnos(){
             ?>
                 <table border="1">
                     <tr>
-                        <th >DNI</th>
-                        <th>NOMBRE</th>
-                        <th>APELLIDOS</th>
+                        <th>Codigo Centro</th>
+                        <th>Localidad</th>
+                        <th>Provincia</th>
+                        <th>Codigo Postal</th>
+                        <th>Administrador</th>
                         <th colspan =2>Opciones</th>
                     </tr>
+                    <tr>
+                    
             <?php
 
             while ($fila=$consulta->fetch(PDO::FETCH_ASSOC) ){
+               
+                $centroNombre=$fila['nombre'];
+                $sql2="SELECT * FROM usuarios where centros_nombre='$centroNombre' and tipo='admin centro'";
+                $consulta2=$conexion->prepare($sql2);
+                $consulta2->execute();
+                $fila2=$consulta2->fetch(PDO::FETCH_ASSOC)
 
                 ?>
-                <tr>
+                
                     <td><?php echo $fila['nombre'];?></td>
                     <td><?php echo $fila['localidad'];?></td>
                     <td><?php echo $fila['provincia'];?></td>
+                    <td><?php echo $fila['codigopostal'];?></td>
+                    <td><?php echo $fila2['nombre'];?></td>
+
                     <td>
                         <FORM action="modiCentro.php" method="POST">
-                        <input type="hidden" name="n_centro" value ="<?php echo $fila['nombre']?>">
-                        <input type="hidden" name="direccion" value ="<?php echo $fila['direccion']?>">
-                        <input type="hidden" name="localidad" value ="<?php echo $fila['localidad']?>">
-                        <input type="hidden" name="c_postal" value ="<?php echo $fila['codigopostal']?>">
-                        <input type="hidden" name="provincia" value ="<?php echo $fila['provincia']?>">   
-                    <?php                
-
-                        $centroNombre=$fila['nombre'];
-                        $sql2="SELECT * FROM usuarios where centros_nombre='$centroNombre' and tipo='admin centro'";
-                        $consulta2=$conexion->prepare($sql2);
-                        $consulta2->execute();
-                        $fila2=$consulta2->fetch(PDO::FETCH_ASSOC)
-
-                        ?> 
+                            <input type="hidden" name="n_centro" value ="<?php echo $fila['nombre']?>">
+                            <input type="hidden" name="direccion" value ="<?php echo $fila['direccion']?>">
+                            <input type="hidden" name="localidad" value ="<?php echo $fila['localidad']?>">
+                            <input type="hidden" name="c_postal" value ="<?php echo $fila['codigopostal']?>">
+                            <input type="hidden" name="provincia" value ="<?php echo $fila['provincia']?>">   
+                    
                             <input type="hidden" name="dniA" value ="<?php echo $fila2['dni']?>">
                             <input type="hidden" name="nombreA" value ="<?php echo $fila2['nombre']?>">
                             <input type="hidden" name="apellidosA" value ="<?php echo $fila2['apellidos']?>">
@@ -238,6 +243,7 @@ function verAlumnos(){
                             </button>
                         </FORM>  
                     </td>
+                    
                     <td>
                         <FORM action="bajaCentro.php" method="POST">
                             <input type="hidden" name="n_centro" value ="<?php echo $fila['nombre']?>">
