@@ -43,20 +43,21 @@ function verAlumnos(){
                     <input type="hidden" name="nombreA" value ="<?php echo $fila['nombre']?>">
                     <input type="hidden" name="apellidosA" value ="<?php echo $fila['apellidos']?>">
                     <input type="hidden" name="claveA" value ="<?php echo $fila['apellidos']?>">
+                    
                     <button type="submit" name="modificarAlumnoA" onclick="modiAlumnos();">
                         <img src="../../img/edit.svg">
                     </button>
         
                     </FORM>
                 </td>
-            <td>
-                <FORM action="bajaAlumnos.php" method="POST">
-                    <input type="hidden" name="dniA" value ="<?php echo $fila['dni']?>">
-                    <button type="submit" name="borrarAlumno" onclick="bajaAlumnos();">
-                        <img src="../../img/trash.svg">
-                    </button>
-                </FORM> 
-            </td>
+                <td>
+                    <FORM action="bajaAlumnos.php" method="POST">
+                        <input type="hidden" name="dniA" value ="<?php echo $fila['dni']?>">
+                        <button type="submit" name="borrarAlumno" onclick="bajaAlumnos();">
+                            <img src="../../img/trash.svg">
+                        </button>
+                    </FORM> 
+                </td>
             </tr>
             <?php   
     
@@ -142,27 +143,48 @@ function verAlumnos(){
         $consulta=$conexion->prepare($sql);
         $consulta->execute();
     
-        while($fila = $consulta->fetch(PDO::FETCH_ASSOC)){      
-                echo $fila['codigo']; 
-                echo $fila['departamento'];
-                
+
+        ?>
+        <table border="1">
+            <tr>
+                <th>NOMBRE</th>
+                <th>DEPARTAMENTO</th>
+                <th colspan =2>Opciones</th>
+            </tr>
+        <?php
+
+        while($fila = $consulta->fetch(PDO::FETCH_ASSOC)){     
+            ?>
+            
+                <tr>
+                    <td><?php echo $fila['codigo'];?> </td>
+                    <td><?php echo $fila['departamento'];?> </td>   
+                    <td>
+                        <FORM action="modiCurso.php" method="POST">
+                            <input type="hidden" name="nombre" value ="<?php echo $fila['codigo']?>">
+                            <input type="hidden" name="departamento" value ="<?php echo $fila['departamento']?>">
+                            <button type="submit" name="modificarAlumnoA" onclick="modiCurso();">
+                                <img src="../../img/edit.svg">
+                            </button>
+                        </FORM>
+                    </td>
+                    <td>
+                        <FORM action="bajaCurso.php" method="POST">
+                            <input type="hidden" name="nombre" value ="<?php echo $fila['codigo']?>">
+                            <button type="submit" name="borrarAlumno" onclick="bajaCurso();">
+                                <img src="../../img/trash.svg">
+                            </button>
+                        </FORM>
+                    </td>
+                </tr> 
+                <?php
+                }
                 ?>
-
-                <FORM action="modiCurso.php" method="POST">
-                    <input type="hidden" name="nombre" value ="<?php echo $fila['codigo']?>">
-                    <input type="hidden" name="departamento" value ="<?php echo $fila['departamento']?>">
-                    <input type ="submit" value="Modificar">
-                </FORM>
-                
-                <FORM action="bajaCurso.php" method="POST">
-                    <input type="hidden" name="nombre" value ="<?php echo $fila['codigo']?>">
-                    <input type ="submit" value="Borrar">
-                </FORM>
-
+        </table>
                <?php
-
-        }
+               echo "<br>";
     }
+
 
 
 
@@ -172,106 +194,63 @@ function verAlumnos(){
             $sql="SELECT * FROM centros";
             $consulta=$conexion->prepare($sql);
             $consulta->execute();
-              
-            
-            while ($fila=$consulta->fetch(PDO::FETCH_ASSOC) ){
-                echo $fila['nombre'];
-                echo $fila['localidad'];
-                echo $fila['provincia'];
-
             
             ?>
-                <FORM action="modiCentro.php" method="POST">
-                    <input type="hidden" name="n_centro" value ="<?php echo $fila['nombre']?>">
-                    <input type="hidden" name="direccion" value ="<?php echo $fila['direccion']?>">
-                    <input type="hidden" name="localidad" value ="<?php echo $fila['localidad']?>">
-                    <input type="hidden" name="c_postal" value ="<?php echo $fila['codigopostal']?>">
-                    <input type="hidden" name="provincia" value ="<?php echo $fila['provincia']?>">   
-                <?php                
-
-                   $centroNombre=$fila['nombre'];
-                    $sql2="SELECT * FROM usuarios where centros_nombre='$centroNombre' and tipo='admin centro'";
-                    $consulta2=$conexion->prepare($sql2);
-                    $consulta2->execute();
-                    $fila2=$consulta2->fetch(PDO::FETCH_ASSOC)
-
-                   ?> 
-                    <input type="hidden" name="dniA" value ="<?php echo $fila2['dni']?>">
-                    <input type="hidden" name="nombreA" value ="<?php echo $fila2['nombre']?>">
-                    <input type="hidden" name="apellidosA" value ="<?php echo $fila2['apellidos']?>">
-                    
-                    <input type="hidden" name="claveA" value ="<?php echo $fila2['clave']?>">  
-                    <input type ="submit" value="Modificar">
-                </FORM>
-
-                <FORM action="bajaCentro.php" method="POST">
-                    <input type="hidden" name="n_centro" value ="<?php echo $fila['nombre']?>">
-                    <input type ="submit" value="Borrar">
-                </FORM>
-
+                <table border="1">
+                    <tr>
+                        <th >DNI</th>
+                        <th>NOMBRE</th>
+                        <th>APELLIDOS</th>
+                        <th colspan =2>Opciones</th>
+                    </tr>
             <?php
-             
-            }
 
+            while ($fila=$consulta->fetch(PDO::FETCH_ASSOC) ){
+
+                ?>
+                <tr>
+                    <td><?php echo $fila['nombre'];?></td>
+                    <td><?php echo $fila['localidad'];?></td>
+                    <td><?php echo $fila['provincia'];?></td>
+                    <td>
+                        <FORM action="modiCentro.php" method="POST">
+                        <input type="hidden" name="n_centro" value ="<?php echo $fila['nombre']?>">
+                        <input type="hidden" name="direccion" value ="<?php echo $fila['direccion']?>">
+                        <input type="hidden" name="localidad" value ="<?php echo $fila['localidad']?>">
+                        <input type="hidden" name="c_postal" value ="<?php echo $fila['codigopostal']?>">
+                        <input type="hidden" name="provincia" value ="<?php echo $fila['provincia']?>">   
+                    <?php                
+
+                        $centroNombre=$fila['nombre'];
+                        $sql2="SELECT * FROM usuarios where centros_nombre='$centroNombre' and tipo='admin centro'";
+                        $consulta2=$conexion->prepare($sql2);
+                        $consulta2->execute();
+                        $fila2=$consulta2->fetch(PDO::FETCH_ASSOC)
+
+                        ?> 
+                            <input type="hidden" name="dniA" value ="<?php echo $fila2['dni']?>">
+                            <input type="hidden" name="nombreA" value ="<?php echo $fila2['nombre']?>">
+                            <input type="hidden" name="apellidosA" value ="<?php echo $fila2['apellidos']?>">
+                            
+                            <input type="hidden" name="claveA" value ="<?php echo $fila2['clave']?>">  
+                            <button type="submit" name="modificarAlumnoA" onclick="modiCentro();">
+                                <img src="../../img/edit.svg">
+                            </button>
+                        </FORM>  
+                    </td>
+                    <td>
+                        <FORM action="bajaCentro.php" method="POST">
+                            <input type="hidden" name="n_centro" value ="<?php echo $fila['nombre']?>">
+                            <button type="submit" name="borrarAlumno" onclick="bajaCentro();">
+                                <img src="../../img/trash.svg">
+                            </button>
+                        </FORM>
+                    </td>
+                </tr>
+                <?php 
+            } ?>
+            </table>
+        <?php
         }
         
-
-        function verPreguntas(){
-            
-                $alumno=$_SESSION['nombreL'];
-
-                $conexion=conectarBD();
-                $sql="SELECT * FROM preguntas where id='1'" ;
-                $consulta=$conexion->prepare($sql);
-                $consulta->execute();
-
-      
-                while ($fila=$consulta->fetch(PDO::FETCH_ASSOC) ){
-
-                    $id=$fila['id'];
-                   
-
-                    echo $fila['id']." .";
-                    echo "&nbsp &nbsp";
-                    echo $fila['term'];
-                    echo "&nbsp &nbsp";
-                    echo $fila['desc']; 
-
-                    echo "<br>";
-                    echo "<br>";
-                
-            
-                    ?>
-                    <form action="#" method="POST">
-                        <label for="respuesta">Verdadero <input type="radio" id="respuesta" name="respuesta" value="1">
-                        <label for="respuesta">Falso <input type="radio" id="respuesta" name="respuesta" value="0">
-                    </form> 
-                  <?php  
-                  
-                   if (isset($_POST['respuesta'])){
-                           echo "<br>";
-                           $respuesta=$_POST['respuesta']; 
-                           echo $respuesta;
-                                
-                            $sql2="INSERT into alumnos_has_preguntas values ('$alumno',$id,$respuesta);";
-                            $consulta2=$conexion->prepare($sql2);
-                            $consulta2->execute();
-                        
-                    }
-            }
-
-        }
-
-
-    
-
-
-
-
-
-
-   
-
-
-
 ?>
