@@ -28,7 +28,7 @@
 
         <div id="contenido">
             <h3>DATOS DEL CENTRO</h3>
-        <form action="altaCentro.php" method="POST" name="formCentro" class="styleform">
+        <form action="altaCentro" method="POST" name="formCentro" class="styleform">
             <input type="text" class="inp" name="n_centro" id="n_centro" placeholder="Nombre" required pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}">
             <br><br>
             <input type="text" class="inp" name="direccion" id="direccion" placeholder="Direccion" required>
@@ -55,7 +55,7 @@
         </form>
 
         <br>
-        <a class="btnvolver" href="iniAdminGeneral.php"> Volver al menú</a>
+        <a class="btnvolver" href="iniAdminGeneral"> Volver al menú</a>
         </div><!-- fin contenido -->
 
         </main>

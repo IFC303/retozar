@@ -29,7 +29,7 @@
             <?php
                 verCentro();
             ?>
-            <a class="btnvolver" href="iniAdminGeneral.php">Volver al menu</a>
+            <a class="btnvolver" href="iniAdminGeneral">Volver al menu</a>
         </div>
     </main>
     <footer>

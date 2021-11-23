@@ -12,6 +12,6 @@
         <td><?php echo $pregunta->term; ?></td>
         <td><?php echo $pregunta->desc; ?></td>
         <td><?php echo $pregunta->color; ?></td>
-        <td><a href="../preguntas">Volver</a></td>
+        <td><a href="/paginas/adminG/preguntas">Volver</a></td>
     </tr>
 </table><br>

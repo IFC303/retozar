@@ -27,7 +27,7 @@
     <div id="contenido">
         <h3>NUEVO ALUMNO</h3>
 
-        <form action="altaAlumnos.php" method="POST" name="formAlum" class="styleform">
+        <form action="altaAlumnos" method="POST" name="formAlum" class="styleform">
             <input type="text" class="inp" name="nombreA" id="nombreA" placeholder="Nombre" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" required><br> <br>
             <input type="text" class="inp" name="apellidosA" id="apellidosA" placeholder="Apellidos" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" required><br> <br>
             <input type="text" class="inp" name="dniA" id="dniA" required placeholder="DNI"><br> <br>
@@ -37,7 +37,7 @@
         </form>
 
          <br>
-        <a class="btnvolver" href="iniProfesor.php" > Volver al menú</a>
+        <a class="btnvolver" href="iniProfesor" > Volver al menú</a>
     </div><!-- fin contenido -->
 
     </main>

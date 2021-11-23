@@ -29,7 +29,7 @@
                        nombreLog();
                     ?>
                 </div>
-                <a href="../cerrarSesion.php" class="btnvolver">Cerrar sesión</a>
+                <a href="../cerrarSesion" class="btnvolver">Cerrar sesión</a>
 
                 <div id="contenedoraux">
 
@@ -43,14 +43,14 @@
           
                 <div id="result" style="visibility:hidden">
                     <ul id="gProfesor" style="display:none">
-                        <li><a href="altaProfesor.php">Alta profesor</a></li><br>
-                        <li><a href="verProfesor.php">Ver profesores</a></li>
+                        <li><a href="altaProfesor">Alta profesor</a></li><br>
+                        <li><a href="verProfesor">Ver profesores</a></li>
                     </ul>     
                     
                     
                     <ul id="gCurso" style="display:none">
-                        <li><a href="altaCurso.php">Alta curso</a></li><br>
-                        <li><a href="verCurso.php">Ver cursos</a></li>
+                        <li><a href="altaCurso">Alta curso</a></li><br>
+                        <li><a href="verCurso">Ver cursos</a></li>
                     </ul>
                 </div>
 

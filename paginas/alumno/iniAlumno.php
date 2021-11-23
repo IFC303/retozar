@@ -52,7 +52,7 @@
                     verPreguntas();
                     ?>
                     <br><br>
-                    <a href="../cerrarSesion.php" class="btnvolver">Cerrar sesión</a>
+                    <a href="../cerrarSesion" class="btnvolver">Cerrar sesión</a>
                     
 <!-- 
                         <div id="contenedoraux">

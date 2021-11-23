@@ -37,7 +37,7 @@
             <input type="submit" value="Aceptar" name ="Aceptar" id="boton1" onclick="validarForm1()">
         </form>
 
-         <a class="btnvolver" href="verAlumnos.php">Volver Menu</a>
+         <a class="btnvolver" href="verAlumnos">Volver Menu</a>
     </div><!-- fin contenido -->
     </main>
 

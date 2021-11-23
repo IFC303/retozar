@@ -16,7 +16,7 @@
 
             if(!isset($_POST['Aceptar']))
                 {
-                    header('Location:./../index.php');
+                    header('Location:./../');
                     die();
                 }
 
@@ -43,20 +43,20 @@
                             
 
                             if ($_SESSION['tipo']=="alumno"){
-                                header('Location:alumno/iniAlumno.php');
+                                header('Location:alumno/iniAlumno');
                             }else if ($_SESSION['tipo']=="profesor"){
-                                header('Location:profesor/iniProfesor.php');
+                                header('Location:profesor/iniProfesor');
                             }else if ($_SESSION['tipo']=="admin centro"){
-                                header('Location:adminC/iniAdminCentro.php');
+                                header('Location:adminC/iniAdminCentro');
                             }else if ($_SESSION['tipo']=="admin general"){
-                                header('Location:adminG/iniAdminGeneral.php');
+                                header('Location:adminG/iniAdminGeneral');
                             }
                                  
                         } 
                     else if ($filas==0)
                         {
                             echo "Nombre de usuario y/o contraseña incorrecto.";
-                            header("refresh:1;url=./../index.php");
+                            header("refresh:1;url=./../");
                         }
                     else
                         {

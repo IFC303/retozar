@@ -1,4 +1,4 @@
-<a href="../iniAdminGeneral.php">Volver</a><br><br>
+<a href="../iniAdminGeneral">Volver</a><br><br>
 
 <form action="" method="post">
 

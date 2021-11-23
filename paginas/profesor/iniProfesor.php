@@ -33,7 +33,7 @@
                         ?>
                     </div>
 
-                <a href="../cerrarSesion.php" class="btnvolver">Cerrar sesión</a>
+                <a href="../cerrarSesion" class="btnvolver">Cerrar sesión</a>
 
                 <div id="contenedoraux">
 
@@ -48,8 +48,8 @@
 
                     <div id="result" style="visibility:hidden">
                         <ul id="gAlumnos" style="display:none">
-                            <li><a href="altaAlumnos.php">Alta alumnos</a></li><br>
-                            <li><a href="verAlumnos.php">Ver alumnos</a></li>
+                            <li><a href="altaAlumnos">Alta alumnos</a></li><br>
+                            <li><a href="verAlumnos">Ver alumnos</a></li>
                         </ul>              
                         <ul id="gGrupos" style="display:none">
                             <li><a href="#">Alta grupo</a></li><br>

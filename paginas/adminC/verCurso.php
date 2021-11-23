@@ -31,7 +31,7 @@
             <?php
              verCurso();
             ?>
-            <a class="btnvolver" href="iniAdminCentro.php" > Volver al menú</a>
+            <a class="btnvolver" href="iniAdminCentro" > Volver al menú</a>
         </div>
     </main>
 

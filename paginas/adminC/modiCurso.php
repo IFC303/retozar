@@ -28,14 +28,14 @@
     <main>
         <div id="contenido">
                 <h3>Editar Curso</h3>
-                <form action="modiCurso.php" method="POST" name="formCurso" class="styleform">
+                <form action="modiCurso" method="POST" name="formCurso" class="styleform">
                     <label for="nombre"></label><input class="inp" type="text" name="nombre" id="nombre" value="<?php echo $_POST['nombre'];?>" readonly placeholder="Nombre">
                     <br><br>
                     <label for="departamento"></label><input  class="inp" type="text" name="departamento" id="departamento" value ="<?php echo $_POST['departamento'];?>" placeholder="Departamento" required pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}">
                     <br><br>
                     <input id="boton1" type="submit" value="Aceptar" name ="Aceptar" onclick="validarform2()">
                 </form>
-                <a href="verCurso.php" class="btnvolver">Volver al menu</a>
+                <a href="verCurso" class="btnvolver">Volver al menu</a>
         </div>
     </main>
     <footer>

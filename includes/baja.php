@@ -14,7 +14,7 @@
                     $consulta2=$conexion->prepare($sql2);
                     $consulta2->execute();
 
-                    header('Location: url=../../verAlumnos.php');
+                    header('Location: url=../../verAlumnos');
                 }
             }
 
@@ -25,7 +25,7 @@
                     $sql="DELETE from usuarios WHERE dni='$dni'";
                     $consulta=$conexion->prepare($sql);
                     $consulta->execute();
-                    header('Location: url=../../verProfesor.php');
+                    header('Location: url=../../verProfesor');
                 }
             }
 
@@ -38,7 +38,7 @@
                     $sql="DELETE from cursos WHERE codigo='$nombre'";
                     $consulta=$conexion->prepare($sql);
                     $consulta->execute();
-                    header('Location: url=../../verCurso.php');
+                    header('Location: url=../../verCurso');
                     
                 }
             }
@@ -58,7 +58,7 @@
                     $sql1="DELETE from centros WHERE nombre='$nombre'" ;
                     $consulta1=$conexion1->prepare($sql1);
                     $consulta1->execute();
-                    header('Location: url=../../verCentro.php');
+                    header('Location: url=../../verCentro');
                 }
             }
 

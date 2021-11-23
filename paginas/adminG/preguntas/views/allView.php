@@ -1,4 +1,4 @@
-<a href="../iniAdminGeneral.php">Volver</a><br><br>
+<a href="../iniAdminGeneral">Volver</a><br><br>
 
 <table border="1" style="text-align: center;">
     <tr>
@@ -17,9 +17,9 @@
             <td><?php echo $pregunta->desc; ?></td>
             <td><?php echo $pregunta->color; ?></td>
             <td>
-                <a href="ver.php?id=<?php echo $pregunta->id; ?>">Ver </a>
-                <a href="editar.php?id=<?php echo $pregunta->id; ?>">Editar </a>
-                <a href="borrar.php?id=<?php echo $pregunta->id; ?>">Borrar</a>
+                <a href="<?php echo $pregunta->id; ?>">Ver </a>
+                <a href="editar/<?php echo $pregunta->id; ?>">Editar </a>
+                <a href="borrar/<?php echo $pregunta->id; ?>">Borrar</a>
             </td>
         </tr>
     <?php endforeach; ?>

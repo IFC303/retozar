@@ -30,7 +30,7 @@
             <div id="contenido">
                 <h3>NUEVO PROFESOR</h3>
 
-                <form action="altaProfesor.php" method="POST" name="formPro" class="styleform"><br><br>
+                <form action="altaProfesor" method="POST" name="formPro" class="styleform"><br><br>
                     <input type="text" class="inp" name="nombreP" id="nombreP" placeholder="Nombre" required pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}"><br><br>
                     <input type="text" class="inp"  name="apellidosP" id="apellidosP" placeholder="Apellidos" required pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}"><br><br>
                     <input type="text" class="inp" name="dniP" id="dniP" maxlength="9" placeholder="Dni" required><br><br>
@@ -40,7 +40,7 @@
                 </form>  
      
                 <br>
-        <a class="btnvolver" href="iniAdminCentro.php" > Volver al menú</a>
+        <a class="btnvolver" href="iniAdminCentro" > Volver al menú</a>
     </div><!-- fin contenido -->
 
     </main>

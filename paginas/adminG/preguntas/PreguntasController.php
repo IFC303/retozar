@@ -63,7 +63,7 @@ class PreguntasController
 
         if (isset($_POST['subModificar'])) {
             $this->model->update($id, $_POST['txtTerm'], $_POST['txtDesc'], $_POST['txtColor']);
-            header("Location: editar.php?id=$id");
+            header("Location: ../editar/$id");
         } else {
             $pregunta = $this->model->get_pregunta($id);
             require_once 'views/readView.php';

@@ -38,7 +38,7 @@ function verAlumnos(){
                 <td><?php echo $fila['nombre'];?> </td>
                 <td><?php echo $fila['apellidos'];?> </td>
                 <td>
-                    <FORM action="modiAlumnos.php" method="POST">
+                    <FORM action="modiAlumnos" method="POST">
                     <input type="hidden" name="dniA" value ="<?php echo $fila['dni']?>">
                     <input type="hidden" name="nombreA" value ="<?php echo $fila['nombre']?>">
                     <input type="hidden" name="apellidosA" value ="<?php echo $fila['apellidos']?>">
@@ -51,7 +51,7 @@ function verAlumnos(){
                     </FORM>
                 </td>
                 <td>
-                    <FORM action="bajaAlumnos.php" method="POST">
+                    <FORM action="bajaAlumnos" method="POST">
                         <input type="hidden" name="dniA" value ="<?php echo $fila['dni']?>">
                         <button type="submit" name="borrarAlumno" onclick="return confirm('¿Seguro que quieres eliminar este usuario?');">
                             <img src="../../img/trash.svg">
@@ -104,7 +104,7 @@ function verAlumnos(){
                 <td><?php echo $fila['apellidos'];?> </td>
                 
                 <td>
-                    <FORM action="modiProfesor.php" method="POST">
+                    <FORM action="modiProfesor" method="POST">
                         <input type="hidden" name="dniP" value ="<?php echo $fila['dni']?>">
                         <input type="hidden" name="nombreP" value ="<?php echo $fila['nombre']?>">
                         <input type="hidden" name="apellidosP" value ="<?php echo $fila['apellidos']?>">
@@ -116,7 +116,7 @@ function verAlumnos(){
                 </td>
 
                 <td>
-                   <FORM action="bajaProfesor.php" method="POST">
+                   <FORM action="bajaProfesor" method="POST">
                         <input type="hidden" name="dniP" value ="<?php echo $fila['dni']?>">
                         <button type="submit" name="borrarProfesor" onclick="return confirm('¿Seguro que quieres eliminar este usuario?');">
                             <img src="../../img/trash.svg">
@@ -160,7 +160,7 @@ function verAlumnos(){
                     <td><?php echo $fila['codigo'];?> </td>
                     <td><?php echo $fila['departamento'];?> </td>   
                     <td>
-                        <FORM action="modiCurso.php" method="POST">
+                        <FORM action="modiCurso" method="POST">
                             <input type="hidden" name="nombre" value ="<?php echo $fila['codigo']?>">
                             <input type="hidden" name="departamento" value ="<?php echo $fila['departamento']?>">
                             <button type="submit" name="modificarAlumnoA" onclick="modiCurso();">
@@ -169,7 +169,7 @@ function verAlumnos(){
                         </FORM>
                     </td>
                     <td>
-                        <FORM action="bajaCurso.php" method="POST">
+                        <FORM action="bajaCurso" method="POST">
                             <input type="hidden" name="nombre" value ="<?php echo $fila['codigo']?>">
                             <button type="submit" name="borrarCurso" onclick="return confirm('¿Seguro que quieres eliminar este curso?');">
                                 <img src="../../img/trash.svg">
@@ -226,7 +226,7 @@ function verAlumnos(){
                     <td><?php echo $fila2['nombre'];?></td>
 
                     <td>
-                        <FORM action="modiCentro.php" method="POST">
+                        <FORM action="modiCentro" method="POST">
                             <input type="hidden" name="n_centro" value ="<?php echo $fila['nombre']?>">
                             <input type="hidden" name="direccion" value ="<?php echo $fila['direccion']?>">
                             <input type="hidden" name="localidad" value ="<?php echo $fila['localidad']?>">
@@ -245,7 +245,7 @@ function verAlumnos(){
                     </td>
                     
                     <td>
-                        <FORM action="bajaCentro.php" method="POST">
+                        <FORM action="bajaCentro" method="POST">
                             <input type="hidden" name="n_centro" value ="<?php echo $fila['nombre']?>">
                             <button type="submit" name="borrarCentro" onclick="return confirm('¿Seguro que quieres eliminar este centro?');">
                                 <img src="../../img/trash.svg">

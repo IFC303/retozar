@@ -31,7 +31,7 @@ include "./../../includes/funciones.php";
                 nombreLog();
                 ?>
             </div>
-            <a href="../cerrarSesion.php" class="btnvolver">Cerrar sesión</a>
+            <a href="../cerrarSesion" class="btnvolver">Cerrar sesión</a>
 
             <div id="contenedoraux">
 
@@ -44,15 +44,15 @@ include "./../../includes/funciones.php";
 
                 <div id="result" style="visibility:hidden">
                     <ul id="gCentro" style="display:none">
-                        <li><a href="altaCentro.php">Alta centro</a></li><br>
-                        <li><a href="verCentro.php">Ver centros</a></li>
+                        <li><a href="altaCentro">Alta centro</a></li><br>
+                        <li><a href="verCentro">Ver centros</a></li>
                     </ul>
                     <ul id="gTest" style="display:none">
-                        <li><a href="preguntas/subir.php">Subir preguntas</a></li>
+                        <li><a href="preguntas/subir">Subir preguntas</a></li>
                         <br>
-                        <li><a href="preguntas/nuevo.php">Nueva pregunta</a></li>
+                        <li><a href="preguntas/nuevo">Nueva pregunta</a></li>
                         <br>
-                        <li><a href="preguntas/index.php">Ver preguntas</a></li>
+                        <li><a href="preguntas">Ver preguntas</a></li>
                     </ul>
                 </div> <!-- fin result -->
 

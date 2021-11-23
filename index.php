@@ -27,7 +27,7 @@
     
     <main>
         <div id="formulario">
-            <form action="paginas/iniSesion.php" method="post" name="formLogin">
+            <form action="paginas/iniSesion" method="post" name="formLogin">
                 <div class="divF">
                     <img class="iconc" src="img/usuario.png" alt=""><input class="inp" type="text" name="nombreL" id="nombreL" placeholder="Nombre" required>
                 </div> 

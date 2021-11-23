@@ -42,7 +42,7 @@
                 <br><br>
                 <input type="submit" value="Guardar" id="boton1" onclick="validarform2()">
         </form>     
-        <a class="btnvolver" href="verProfesor.php">Volver al menu</a>
+        <a class="btnvolver" href="verProfesor">Volver al menu</a>
     </div><!-- fin contenido -->
     </main>
     <footer>
