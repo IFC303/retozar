@@ -15,17 +15,17 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <main>
-
+    <header>
         <div id="img1">
-        <picture>
-            <source media="(min-width:650px)" srcset="img/logocpfip.png">
-            <source media="(min-width:465px)" srcset="img/logocpfip_bkzdvb_c_scale,w_200.png">
-            <img src="img/logocpfip_bkzdvb_c_scale,w_200.png" alt="Flowers" style="width:auto;">
-        </picture>
+            <picture>
+                <source media="(min-width:650px)" srcset="img/logocpfip.png">
+                <source media="(min-width:465px)" srcset="img/logocpfip_bkzdvb_c_scale,w_200.png">
+                <img src="img/logocpfip_bkzdvb_c_scale,w_200.png" alt="Flowers" style="width:auto;">
+            </picture>
         </div>
-
-        
+    </header>
+    
+    <main>
         <div id="formulario">
             <form action="paginas/iniSesion.php" method="post" name="formLogin">
                 <div class="divF">
@@ -40,8 +40,6 @@
             </form>
             
         </div>
-        
-
     </main>
     
     <footer>

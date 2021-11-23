@@ -17,13 +17,13 @@ include "./../../includes/funciones.php";
 </head>
 
 <body>
-    <main>
-
+    <header>
         <div id="texto">
             <p id="t1">Disc Aragón</p>
             <p id="t2">Test para formación de equipos de trabajo</p>
         </div>
-
+    </header>
+    <main>
         <div id="contenedormain">
 
             <div class="bienv">
