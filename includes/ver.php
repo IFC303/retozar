@@ -320,7 +320,7 @@ function verAlumnos(){
 
                 
 
-                        }
+                        
    
                     ?>
 
@@ -330,6 +330,8 @@ function verAlumnos(){
                   <?php
 
         }
+
+    
         
 
 ?>

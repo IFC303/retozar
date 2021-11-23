@@ -33,7 +33,7 @@
             <input type="text" class="inp" name="dniA" id="dniA" required placeholder="DNI"><br> <br>
             <input type="password" class="inp" name="claveA" id="claveA" placeholder="Contraseña" required><br><br>
             <input type="text" class="inp" name="curso" id="curso" placeholder="Curso"><br><br>
-            <input type="submit" value="Aceptar" name ="Aceptar" id="boton1" onclick="validarForm1()" >
+            <input type="submit" value="Aceptar" name="Aceptar" id="boton1" onclick="return confirm('¿Seguro que quieres añadir este alumno?');">
         </form>
 
          <br>
