@@ -53,7 +53,7 @@ function verAlumnos(){
                 <td>
                     <FORM action="bajaAlumnos.php" method="POST">
                         <input type="hidden" name="dniA" value ="<?php echo $fila['dni']?>">
-                        <button type="submit" name="borrarAlumno" onclick="bajaAlumnos();">
+                        <button type="submit" name="borrarAlumno" onclick="return confirm('¿Seguro que quieres eliminar este usuario?');">
                             <img src="../../img/trash.svg">
                         </button>
                     </FORM> 
@@ -118,7 +118,7 @@ function verAlumnos(){
                 <td>
                    <FORM action="bajaProfesor.php" method="POST">
                         <input type="hidden" name="dniP" value ="<?php echo $fila['dni']?>">
-                        <button type="submit" name="borrarProfesor" onclick="bajaProfesor();">
+                        <button type="submit" name="borrarProfesor" onclick="return confirm('¿Seguro que quieres eliminar este usuario?');">
                             <img src="../../img/trash.svg">
                         </button>
                     </FORM> 
@@ -171,7 +171,7 @@ function verAlumnos(){
                     <td>
                         <FORM action="bajaCurso.php" method="POST">
                             <input type="hidden" name="nombre" value ="<?php echo $fila['codigo']?>">
-                            <button type="submit" name="borrarAlumno" onclick="bajaCurso();">
+                            <button type="submit" name="borrarCurso" onclick="return confirm('¿Seguro que quieres eliminar este curso?');">
                                 <img src="../../img/trash.svg">
                             </button>
                         </FORM>
@@ -247,7 +247,7 @@ function verAlumnos(){
                     <td>
                         <FORM action="bajaCentro.php" method="POST">
                             <input type="hidden" name="n_centro" value ="<?php echo $fila['nombre']?>">
-                            <button type="submit" name="borrarAlumno" onclick="bajaCentro();">
+                            <button type="submit" name="borrarCentro" onclick="return confirm('¿Seguro que quieres eliminar este centro?');">
                                 <img src="../../img/trash.svg">
                             </button>
                         </FORM>
@@ -303,10 +303,7 @@ function verAlumnos(){
                             $consulta2->execute();
 
                         }
-
-                        
-            
-               
+   
                     ?>
 
                   <input type="submit" value="Aceptar" name="Aceptar" onclick="verPreguntas();">

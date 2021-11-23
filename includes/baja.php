@@ -14,11 +14,9 @@
                     $consulta2=$conexion->prepare($sql2);
                     $consulta2->execute();
 
-                    echo "Alumno borrado correctamente";
-                    header("refresh:1;url=verAlumnos.php");
+                    header('Location: url=../../verAlumnos.php');
                 }
             }
-
 
             function bajaProfesor(){
                 if (isset($_POST['dniP'])){
@@ -27,8 +25,7 @@
                     $sql="DELETE from usuarios WHERE dni='$dni'";
                     $consulta=$conexion->prepare($sql);
                     $consulta->execute();
-                    echo "<script> confirm(\"Estas seguro de querer borrar al profesor?\"); </script>";
-                    header("refresh:1;url=verProfesor.php");
+                    header('Location: url=../../verProfesor.php');
                 }
             }
 
@@ -41,8 +38,8 @@
                     $sql="DELETE from cursos WHERE codigo='$nombre'";
                     $consulta=$conexion->prepare($sql);
                     $consulta->execute();
-                    echo "<script> confirm(\"Estas seguro de querer borrar el curso?\"); </script>";
-                    header("refresh:1;url=verCurso.php");
+                    header('Location: url=../../verCurso.php');
+                    
                 }
             }
 
@@ -61,9 +58,7 @@
                     $sql1="DELETE from centros WHERE nombre='$nombre'" ;
                     $consulta1=$conexion1->prepare($sql1);
                     $consulta1->execute();
-
-                    echo "Centro eliminado correctamente";
-                    header("refresh:1;url=verCentro.php");
+                    header('Location: url=../../verCentro.php');
                 }
             }
 

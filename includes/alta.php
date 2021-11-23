@@ -68,7 +68,6 @@
             $sql="INSERT into usuarios values ('$dni','$nombre','$apellidos','$password','$nombrecentro','profesor');";
             $consulta=$conexion->prepare($sql);
             $consulta->execute();
-            echo "Profesor insertado correctamente";
         }
     }
 
@@ -82,7 +81,6 @@
             $sql="INSERT into cursos values ('$nombre','$departamento','Q4400415H');";
             $consulta=$conexion->prepare($sql);
             $consulta->execute();
-            echo "Curso insertado correctamente";
         }
     }
 
@@ -112,9 +110,12 @@
                 $sql3="INSERT into usuarios values ('$dni','$nombreAdmin','$apellidos','$password','$nombre','admin centro');";
                 $consulta3=$conexion1->prepare($sql3);
                 $consulta3->execute();
-                echo "insertado correctamente";
             }else{
-                echo "ERROR: Ya existe un administrador para ese centro";
+                ?>
+                    <script>
+                        alert('ERROR: Ya existe un administrador para ese centro')
+                    </script>
+                <?php    
             }
         }
     }
