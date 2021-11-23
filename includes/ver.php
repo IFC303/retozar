@@ -266,7 +266,8 @@ function verAlumnos(){
                 $conexion=conectarBD();
                 $sql="SELECT * FROM preguntas limit 1";
                 $consulta=$conexion->prepare($sql);
-                $consulta->execute();
+                $consulta->execute(); 
+
                 $dni=$_SESSION['nombreL'];
 
                 if (isset($_POST['respuesta'])){
@@ -276,11 +277,7 @@ function verAlumnos(){
                     $sql2="INSERT into alumnos_has_preguntas values ('$dni',$id,'$valor');";
                     $consulta2=$conexion->prepare($sql2);
                     $consulta2->execute();
-             
-                     }
-
-
-
+                    }
 
                 ?>
 
@@ -289,9 +286,10 @@ function verAlumnos(){
                     <?php
                     while($fila=$consulta->fetch(PDO::FETCH_ASSOC)){
 
-                            $pregunta=rand($fila['id'],80);
+                            /* $pregunta=rand($fila['id'],80); */
+                            /* $sql0="SELECT * FROM preguntas where id=$pregunta"; */
 
-                            $sql0="SELECT * FROM preguntas where id=$pregunta";
+                            $sql0="SELECT * FROM preguntas where id not in (select pregunta_id from alumnos_has_preguntas where alumno_dni=$dni) order by rand();";
                             $consulta0=$conexion->prepare($sql0);
                             $consulta0->execute();
                             $fila2=$consulta0->fetch(PDO::FETCH_ASSOC);
@@ -305,22 +303,15 @@ function verAlumnos(){
 
                     
                         ?>
-                            <input type="text" id="id" name="id" value="<?php echo $fila2['id'];?>">
+                            <input type="hidden" id="id" name="id" value="<?php echo $fila2['id'];?>">
                             <label for="respuesta">Verdadero<input type="radio" id=respuesta name="respuesta" value=1>
                             <label for="respuesta">Falso<input type="radio" id=respuesta name="respuesta" value=0>
                         <?php
 
-                     
                     }
 
+                    echo "<br>","<br>";
 
-                    
-                    
-                //        echo "<br>","<br>";
-
-                
-
-                        }
    
                     ?>
 
@@ -330,6 +321,8 @@ function verAlumnos(){
                   <?php
 
         }
+
+    
         
 
 ?>
