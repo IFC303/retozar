@@ -32,7 +32,10 @@
             <input type="text" class="inp" name="apellidosA" id="apellidosA" placeholder="Apellidos" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" required><br> <br>
             <input type="text" class="inp" name="dniA" id="dniA" required placeholder="DNI"><br> <br>
             <input type="password" class="inp" name="claveA" id="claveA" placeholder="Contraseña" required><br><br>
-            <input type="text" class="inp" name="curso" id="curso" placeholder="Curso"><br><br>
+            <option>
+                <select></select>
+            </option>
+            <!-- <input type="text" class="inp" name="curso" id="curso" placeholder="Curso"><br><br> -->
             <input type="submit" value="Aceptar" name="Aceptar" id="boton1" onclick="return confirm('¿Seguro que quieres añadir este alumno?');">
         </form>
 
