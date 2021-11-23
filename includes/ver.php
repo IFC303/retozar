@@ -264,60 +264,73 @@ function verAlumnos(){
        function verPreguntas(){
 
                 $conexion=conectarBD();
-                $sql="SELECT * FROM preguntas where id=1";
+                $sql="SELECT * FROM preguntas limit 1";
                 $consulta=$conexion->prepare($sql);
                 $consulta->execute();
+                $dni=$_SESSION['nombreL'];
+
+                if (isset($_POST['respuesta'])){
+
+                    $valor=$_POST['respuesta'];
+                    $id=$_POST['id'];
+                    $sql2="INSERT into alumnos_has_preguntas values ('$dni',$id,'$valor');";
+                    $consulta2=$conexion->prepare($sql2);
+                    $consulta2->execute();
+             
+                     }
+
+
+
+
                 ?>
 
                 <form action="#" method="POST">
 
                     <?php
                     while($fila=$consulta->fetch(PDO::FETCH_ASSOC)){
-                        echo $fila['id'].". ";
-                        echo $fila['term'];
-                        echo $fila['desc'];
-                        echo "<br>","<br>";
 
-                        $id=$fila['id'];
+                            $pregunta=rand($fila['id'],80);
 
-                   
-                    ?>
+                            $sql0="SELECT * FROM preguntas where id=$pregunta";
+                            $consulta0=$conexion->prepare($sql0);
+                            $consulta0->execute();
+                            $fila2=$consulta0->fetch(PDO::FETCH_ASSOC);
+                
+                            echo $fila2['id'].". ";
+                            echo $fila2['term'];
+                            echo $fila2['desc'];
+                            echo "<br>","<br>"; 
 
+                            $id=$fila2['id'];
 
-                      <label for="respuesta">Verdadero<input type="radio" id=respuesta name="respuesta" value=1>
-                      <label for="respuesta">Falso<input type="radio" id=respuesta name="respuesta" value=0>
+                    
+                        ?>
+                            <input type="text" id="id" name="id" value="<?php echo $fila2['id'];?>">
+                            <label for="respuesta">Verdadero<input type="radio" id=respuesta name="respuesta" value=1>
+                            <label for="respuesta">Falso<input type="radio" id=respuesta name="respuesta" value=0>
+                        <?php
 
-
-                    <?php
+                     
                     }
-                        echo "<br>","<br>";
 
-                        $dni=$_SESSION['nombreL'];
-                        
 
-                        if (isset($_POST['respuesta'])){
+                    
+                    
+                //        echo "<br>","<br>";
 
-                            $valor=$_POST['respuesta'];
-                            $sql2="INSERT into alumnos_has_preguntas values ('$dni',$id,'$valor');";
-                            $consulta2=$conexion->prepare($sql2);
-                            $consulta2->execute();
+                
 
                         }
    
                     ?>
 
-                  <input type="submit" value="Aceptar" name="Aceptar" onclick="verPreguntas();">
+                        <input type="submit" value="Aceptar" name="Aceptar" onclick="verPreguntas();">
                 
                 </form>
                   <?php
-                
-           
 
         }
         
-
-
-
 
 ?>
 
