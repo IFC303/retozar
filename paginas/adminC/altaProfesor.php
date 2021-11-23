@@ -28,7 +28,7 @@
             <main>
 
             <div id="contenido">
-                <h3>NUEVO PROFESOR</h3>
+                <h3>Nuevo Profesor</h3>
 
                 <form action="altaProfesor.php" method="POST" name="formPro" class="styleform"><br><br>
                     <input type="text" class="inp" name="nombreP" id="nombreP" placeholder="Nombre" required pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}"><br><br>
@@ -36,7 +36,7 @@
                     <input type="text" class="inp" name="dniP" id="dniP" maxlength="9" placeholder="Dni" required><br><br>
                     <input type="password" class="inp" name="password" id="password" placeholder="Contraseña" required><br><br>
                     <input type="text" class="inp" name="departamento" id="departamento" placeholder="Departamento" required pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}"><br><br>
-                    <input type="submit" value="Aceptar" name ="Aceptar" id="boton1" onclick="validarform2()">
+                    <input type="submit" value="Aceptar" name="Aceptar" id="boton1" onclick="return confirm('¿Seguro que quieres añadir este profesor?');">
                 </form>  
      
                 <br>

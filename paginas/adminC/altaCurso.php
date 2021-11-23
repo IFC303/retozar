@@ -32,7 +32,8 @@
                 <form action="altaCurso.php" method="POST" name="formCurso" class="styleform">
                     <input type="text" class="inp" name="nombre" id="nombre" placeholder="Nombre"><br><br>
                     <input type="text" class="inp" name="departamento" id="departamento" placeholder="Departamento" required pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}"><br><br>
-                    <input type="submit" value="Aceptar" name="Aceptar" id="boton1" onclick="validarform2()">
+                    
+                    <input type="submit" value="Aceptar" name="Aceptar" id="boton1" onclick="return confirm('¿Seguro que quieres añadir este curso?');">
                 </form>  
 
                 <br>

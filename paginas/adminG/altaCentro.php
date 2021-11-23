@@ -48,8 +48,8 @@
             <input type="text" name="dniA" class="inp" id="dniA" placeholder="Dni" required><br> <br>
             <input type="password" class="inp"  name="claveA" id="claveA" placeholder="Contraseña" required><br><br>
             <input type="text" class="inp" name="departamento" id="departamento" placeholder="Deoartamento"><br><br>
-        
-            <input type="submit" value="Aceptar" name ="Aceptar" id="boton1" onclick="validarForm1()">  
+
+            <input type="submit" value="Aceptar" name="Aceptar" id="boton1" onclick="return confirm('¿Seguro que quieres añadir este centro?');">
             <input type="submit" value="Borrar formulario" name ="Aceptar" id="boton1" onclick="validarForm1()">  
 
         </form>
