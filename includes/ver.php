@@ -272,6 +272,8 @@ function verAlumnos(){
                 $fila3=$consulta3->fetch(PDO::FETCH_ASSOC);
                 $num=$fila3['numero'];
 
+                
+
                 $dni=$_SESSION['nombreL'];
 
                  //INSERTA RESPUESTAS
@@ -285,27 +287,25 @@ function verAlumnos(){
                    
                     }
     
+
             if ($num<79){
 
-                     //MUESTRA PREGUNTAS DE UNA EN UNA
-                     $sql="SELECT * FROM preguntas limit 1";
-                     $consulta=$conexion->prepare($sql);
-                     $consulta->execute(); 
- 
                     ?>
 
                     <form action="#" method="POST">
 
                         <?php
-                        while($consulta->fetch(PDO::FETCH_ASSOC)){
-                            
-                                /* $pregunta=rand($fila['id'],80); */
-                                /* $sql0="SELECT * FROM preguntas where id=$pregunta"; */
-
-                                $sql0="SELECT * FROM preguntas where id not in (select pregunta_id from alumnos_has_preguntas where alumno_dni=$dni) order by rand();";
+     
+                                $sql0="SELECT * FROM preguntas where id not in (select pregunta_id from alumnos_has_preguntas where alumno_dni=$dni) order by rand() ;";
                                 $consulta0=$conexion->prepare($sql0);
                                 $consulta0->execute();
                                 $fila2=$consulta0->fetch(PDO::FETCH_ASSOC);
+
+                                $cuenta=$consulta0->rowCount();
+                                echo "Te falta ".$cuenta." preguntas por contestar";
+                                echo "<br>","<br>","<br>","<br>";
+                           
+
                     
                                 echo $fila2['id'].". ";
                                 echo $fila2['term'];
@@ -320,11 +320,9 @@ function verAlumnos(){
                                     <label for="respuesta">Falso<input type="radio" id=respuesta name="respuesta" value=0>
                                 <?php
 
-                        }
-
+                        
                                 echo "<br>","<br>";
 
-   
                                 ?>
 
                             <input type="submit" value="Aceptar" name="Aceptar" onclick="verPreguntas();">
@@ -333,6 +331,7 @@ function verAlumnos(){
 
             }else{
                 echo "Test finalizado";
+                echo porcentaje();
             }
 
         }
@@ -340,8 +339,9 @@ function verAlumnos(){
 
         function verRespuestas(){
 
-            $dni=$_SESSION['nombreL'];
+                $dni=$_SESSION['nombreL'];
 
+<<<<<<< Updated upstream
             $conexion=conectarBD();
             $sql="SELECT id,term,'desc',respuesta FROM preguntas,alumnos_has_preguntas where preguntas.id=alumnos_has_preguntas.pregunta_id and alumnos_has_preguntas.alumno_dni=$dni;";
             $consulta=$conexion->prepare($sql);
@@ -376,9 +376,51 @@ function verAlumnos(){
              </table>  
              <?php  
              echo "<br>";
+=======
+                $conexion=conectarBD();
+                $sql="SELECT id,term,'desc',respuesta FROM preguntas,alumnos_has_preguntas where preguntas.id=alumnos_has_preguntas.pregunta_id and alumnos_has_preguntas.alumno_dni=$dni;";
+                $consulta=$conexion->prepare($sql);
+                $consulta->execute();
+
+                while($fila = $consulta->fetch(PDO::FETCH_ASSOC)){ 
+
+                        echo $fila['id'].". ";
+                        echo $fila['term'];
+
+                        if($fila['respuesta']==1){
+                            echo "  Verdadero";
+                        }else{
+                            echo "  Falso";
+                        }
+                        echo "<br>";
+
+                }
+>>>>>>> Stashed changes
         }
 
 
+       function porcentaje(){
+        
+                $conexion=conectarBD();
+                $sql="SELECT id,color,alumno_dni,respuesta FROM preguntas,alumnos_has_preguntas where preguntas.id=alumnos_has_preguntas.pregunta_id;";
+                $consulta=$conexion->prepare($sql);
+                $consulta->execute();
+
+                while($fila = $consulta->fetch(PDO::FETCH_ASSOC)){
+
+                    $valor=$fila['respuesta'];
+                    $color=$fila['color'];
+
+
+
+
+                }
+               
+                
+
+
+
+        }
 
 
 
