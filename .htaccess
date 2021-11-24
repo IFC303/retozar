@@ -36,8 +36,8 @@ RewriteRule ^(.*)$ https://www.localhost/$1 [R,L]
 #RewriteRule ^profesor-([A-Za-z0-9-]+)/$ profesores.php?profesor=$1[L,NC]
 #RewriteRule ^centro-([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/$ grupos.php?centro=$1&profesor=$2 [L,NC]
 #RewriteRule ^equipos/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/$ equipo.php?centro=$1&curso=$2 [L,NC]
-RewriteRule ^paginas/adminC/iniAdminCentro paginas/adminC/iniAdminCentro.php [L,NC]
 
+RewriteRule ^paginas/adminC/iniAdminCentro paginas/adminC/iniAdminCentro.php [L,NC]
 RewriteRule ^paginas/adminC/altaProfesor paginas/adminC/altaProfesor.php [L,NC]
 RewriteRule ^paginas/adminC/verProfesor paginas/adminC/verProfesor.php [L,NC]
 RewriteRule ^paginas/adminC/bajaProfesor paginas/adminC/bajaProfesor.php [L,NC]
@@ -53,6 +53,8 @@ RewriteRule ^paginas/profesor/altaAlumnos paginas/profesor/altaAlumnos.php [L,NC
 RewriteRule ^paginas/profesor/verAlumnos paginas/profesor/verAlumnos.php [L,NC]
 RewriteRule ^paginas/profesor/bajaAlumnos paginas/profesor/bajaAlumnos.php [L,NC]
 RewriteRule ^paginas/profesor/modiAlumnos paginas/profesor/modiAlumnos.php [L,NC]
+
+RewriteRule ^paginas/alumno/iniAlumno paginas/alumno/iniAlumno.php [L,NC]
 
 RewriteRule ^paginas/adminG/iniAdminGeneral paginas/adminG/iniAdminGeneral.php [L,NC]
 RewriteRule ^paginas/adminG/altaCentro paginas/adminG/altaCentro.php [L,NC]
