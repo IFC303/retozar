@@ -346,20 +346,36 @@ function verAlumnos(){
             $sql="SELECT id,term,'desc',respuesta FROM preguntas,alumnos_has_preguntas where preguntas.id=alumnos_has_preguntas.pregunta_id and alumnos_has_preguntas.alumno_dni=$dni;";
             $consulta=$conexion->prepare($sql);
             $consulta->execute();
+            ?>
+                <table>
+                    <tr>
+                        <th>Nº pregunta</th>
+                        <th>Pregunta</th>
+                        <th>Respuesta</th>
+                    </tr>
+            <?php
 
             while($fila = $consulta->fetch(PDO::FETCH_ASSOC)){ 
-
-                    echo $fila['id'].". ";
-                    echo $fila['term'];
-
-                    if($fila['respuesta']==1){
-                        echo "  Verdadero";
-                    }else{
-                        echo "  Falso";
-                    }
-                    echo "<br>";
-
+                ?>
+                <tr>
+                    <td><?php echo $fila['id']?></td>
+                    <td><?php echo $fila['term']?></td>
+                    <td>
+                        <?php 
+                            if($fila['respuesta']==1){
+                                echo "  Verdadero";
+                            }else{
+                                echo "  Falso";
+                            }
+                        ?>
+                    </td>
+                </tr>
+                <?php
             }
+            ?>
+             </table>  
+             <?php  
+             echo "<br>";
         }
 
 
@@ -367,7 +383,7 @@ function verAlumnos(){
 
 
 
-?>
+
 
 
 

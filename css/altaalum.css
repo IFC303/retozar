@@ -93,10 +93,16 @@ table {
   }
   
   th {  
+    color:#102140 ;
+    background-color: #bdddf6;
     text-align: center;
     padding: 8px;
   }
+  tr:nth-child(even){
+      background-color: #CACACA;
+    }
   td {  
+    color:#102140 ;
     text-align: left;
     padding: 8px;
   }
