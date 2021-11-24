@@ -259,71 +259,85 @@ function verAlumnos(){
         <?php
         }
 
-
+       
 
        function verPreguntas(){
-
+                
                 $conexion=conectarBD();
-                $sql="SELECT * FROM preguntas limit 1";
-                $consulta=$conexion->prepare($sql);
-                $consulta->execute(); 
+
+                //CONTADOR RESPUESTAS
+                $sql3="SELECT count('respuesta') as 'numero' from alumnos_has_preguntas;";
+                $consulta3=$conexion->prepare($sql3);
+                $consulta3->execute(); 
+                $fila3=$consulta3->fetch(PDO::FETCH_ASSOC);
+                $num=$fila3['numero'];
 
                 $dni=$_SESSION['nombreL'];
 
-                if (isset($_POST['respuesta'])){
+                 //INSERTA RESPUESTAS
+                 if (isset($_POST['respuesta'])){
 
                     $valor=$_POST['respuesta'];
                     $id=$_POST['id'];
                     $sql2="INSERT into alumnos_has_preguntas values ('$dni',$id,'$valor');";
                     $consulta2=$conexion->prepare($sql2);
                     $consulta2->execute();
+                   
                     }
+    
+            if ($num<79){
 
-                ?>
-
-                <form action="#" method="POST">
-
-                    <?php
-                    while($fila=$consulta->fetch(PDO::FETCH_ASSOC)){
-
-                            /* $pregunta=rand($fila['id'],80); */
-                            /* $sql0="SELECT * FROM preguntas where id=$pregunta"; */
-
-                            $sql0="SELECT * FROM preguntas where id not in (select pregunta_id from alumnos_has_preguntas where alumno_dni=$dni) order by rand();";
-                            $consulta0=$conexion->prepare($sql0);
-                            $consulta0->execute();
-                            $fila2=$consulta0->fetch(PDO::FETCH_ASSOC);
-                
-                            echo $fila2['id'].". ";
-                            echo $fila2['term'];
-                            echo $fila2['desc'];
-                            echo "<br>","<br>"; 
-
-                            $id=$fila2['id'];
-
-                    
-                        ?>
-                            <input type="hidden" id="id" name="id" value="<?php echo $fila2['id'];?>">
-                            <label for="respuesta">Verdadero<input type="radio" id=respuesta name="respuesta" value=1>
-                            <label for="respuesta">Falso<input type="radio" id=respuesta name="respuesta" value=0>
-                        <?php
-
-                    }
-
-                    echo "<br>","<br>";
-
-   
+                     //MUESTRA PREGUNTAS DE UNA EN UNA
+                     $sql="SELECT * FROM preguntas limit 1";
+                     $consulta=$conexion->prepare($sql);
+                     $consulta->execute(); 
+ 
                     ?>
 
-                        <input type="submit" value="Aceptar" name="Aceptar" onclick="verPreguntas();">
-                
-                </form>
-                  <?php
+                    <form action="#" method="POST">
+
+                        <?php
+                        while($consulta->fetch(PDO::FETCH_ASSOC)){
+                            
+                                /* $pregunta=rand($fila['id'],80); */
+                                /* $sql0="SELECT * FROM preguntas where id=$pregunta"; */
+
+                                $sql0="SELECT * FROM preguntas where id not in (select pregunta_id from alumnos_has_preguntas where alumno_dni=$dni) order by rand();";
+                                $consulta0=$conexion->prepare($sql0);
+                                $consulta0->execute();
+                                $fila2=$consulta0->fetch(PDO::FETCH_ASSOC);
+                    
+                                echo $fila2['id'].". ";
+                                echo $fila2['term'];
+                                echo $fila2['desc'];
+                                echo "<br>","<br>"; 
+
+                                $id=$fila2['id'];
+
+                                ?>
+                                    <input type="hidden" id="id" name="id" value="<?php echo $fila2['id'];?>">
+                                    <label for="respuesta">Verdadero<input type="radio" id=respuesta name="respuesta" value=1 checked>
+                                    <label for="respuesta">Falso<input type="radio" id=respuesta name="respuesta" value=0>
+                                <?php
+
+                        }
+
+                                echo "<br>","<br>";
+
+   
+                                ?>
+
+                            <input type="submit" value="Aceptar" name="Aceptar" onclick="verPreguntas();">
+                    </form>
+                            <?php
+
+            }else{
+                echo "Test finalizado";?>
+                <input type="button" value="Ver respuestas">
+                <?php
+            }
 
         }
-
-    
-        
 
 ?>
 
