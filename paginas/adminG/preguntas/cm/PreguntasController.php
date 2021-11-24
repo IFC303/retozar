@@ -1,5 +1,5 @@
 <?php
-require_once 'PreguntasModel.php';
+require_once 'cm/PreguntasModel.php';
 
 class PreguntasController
 {

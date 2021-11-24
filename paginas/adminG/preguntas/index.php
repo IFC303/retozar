@@ -1,5 +1,5 @@
 <?php
-require_once 'PreguntasController.php';
+require_once 'cm/PreguntasController.php';
 
 // FrontController-NO
 $controller = new PreguntasController();
