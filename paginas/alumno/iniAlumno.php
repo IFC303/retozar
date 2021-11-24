@@ -38,18 +38,22 @@
                         <?php
                             /* echo "Bienvenido ".$_SESSION['nombreL']; */
                             nombreLog();
-                            echo "<br>","<br>";
-                            echo "Responde todas las preguntas del test .....";
-                            echo "<br>" ,"<br>","<br>";
                       
                         ?>
                     </div>
+
+                    <div id="enlaces">
+                    <ul>
+                        <li><a href="verPreguntas">Iniciar test</a></li><br>
+                        <li><a href="verRespuestas">Ver respuestas</a></li>
+                    </ul>
+                    </div> <!-- fin enlaces -->
                    
 
                        <!-- <input type="submit" value="iniciar test" name="iniciar test"> -->
 
                     <?php
-                    verPreguntas();
+                    /* verPreguntas(); */
                     ?>
                     <br><br>
                     <a href="../cerrarSesion" class="btnvolver">Cerrar sesión</a>

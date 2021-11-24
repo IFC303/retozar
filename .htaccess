@@ -55,6 +55,8 @@ RewriteRule ^paginas/profesor/bajaAlumnos paginas/profesor/bajaAlumnos.php [L,NC
 RewriteRule ^paginas/profesor/modiAlumnos paginas/profesor/modiAlumnos.php [L,NC]
 
 RewriteRule ^paginas/alumno/iniAlumno paginas/alumno/iniAlumno.php [L,NC]
+RewriteRule ^paginas/alumno/verPreguntas paginas/alumno/verPreguntas.php [L,NC]
+RewriteRule ^paginas/alumno/verRespuestas paginas/alumno/verRespuestas.php [L,NC]
 
 RewriteRule ^paginas/adminG/iniAdminGeneral paginas/adminG/iniAdminGeneral.php [L,NC]
 RewriteRule ^paginas/adminG/altaCentro paginas/adminG/altaCentro.php [L,NC]
