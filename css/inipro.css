@@ -52,17 +52,40 @@ footer{
     margin: auto;
     
 }
-#enlaces{
+/*----------------------------------*/
+#enlacesA {
   display: flex;
   justify-content: center;
 }
-
-#enlaces ul {
+#enlacesA ul{
   text-align: center;
     list-style-type: none;
     margin: 0;
     padding: 0;
     width: 50%;
+    background-color: #f1f1f1;
+}
+#enlacesA li a {
+  background-color: #bdddf6;
+  cursor: pointer;
+  display: block;
+  color: #102140;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#enlacesA li a:hover {
+  background-color: #102140;
+  color: white;
+  font-weight: bold;
+}
+/*----------------------------------*/
+#enlaces ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
     background-color: #f1f1f1;
   }
   
