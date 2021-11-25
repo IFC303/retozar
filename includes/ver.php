@@ -316,7 +316,7 @@ function verAlumnos(){
 
                                 ?>
                                     <input type="hidden" id="id" name="id" value="<?php echo $fila2['id'];?>">
-                                    <label for="respuesta">Verdadero<input type="radio" id=respuesta name="respuesta" value=1 checked>
+                                    <label for="respuesta">Verdadero<input type="radio" id=respuesta name="respuesta" value=5>
                                     <label for="respuesta">Falso<input type="radio" id=respuesta name="respuesta" value=0>
                                 <?php
 
@@ -361,7 +361,7 @@ function verAlumnos(){
                     <td><?php echo $fila['term']?></td>
                     <td>
                         <?php 
-                            if($fila['respuesta']==1){
+                            if($fila['respuesta']==5){
                                 echo "  Verdadero";
                             }else{
                                 echo "  Falso";
@@ -375,31 +375,27 @@ function verAlumnos(){
              </table>  
              <?php  
              echo "<br>";
-        }
 
 
-       function porcentaje(){
-        
-                $conexion=conectarBD();
-                $sql="SELECT id,color,alumno_dni,respuesta FROM preguntas,alumnos_has_preguntas where preguntas.id=alumnos_has_preguntas.pregunta_id;";
-                $consulta=$conexion->prepare($sql);
-                $consulta->execute();
+            
+             $sql1="SELECT color, sum(respuesta) as total from porcentaje group by color;";
+             $consulta1=$conexion->prepare($sql1);
+             $consulta1->execute();
 
-                while($fila = $consulta->fetch(PDO::FETCH_ASSOC)){
+             while($fila1 = $consulta1->fetch(PDO::FETCH_ASSOC)){
 
-                    $valor=$fila['respuesta'];
-                    $color=$fila['color'];
+                 echo $fila1['color']. ": ";
+                 echo $fila1['total']. "%";
+                 echo "<br>";
+                 
 
-
-
-
-                }
-               
-                
-
+             }
 
 
         }
+
+
+       
 
 
 
