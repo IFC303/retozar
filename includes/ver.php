@@ -331,7 +331,6 @@ function verAlumnos(){
 
             }else{
                 echo "Test finalizado";
-                echo porcentaje();
             }
 
         }
