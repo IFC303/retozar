@@ -52,12 +52,17 @@ footer{
     margin: auto;
     
 }
+#enlaces{
+  display: flex;
+  justify-content: center;
+}
 
 #enlaces ul {
+  text-align: center;
     list-style-type: none;
     margin: 0;
     padding: 0;
-    width: 100%;
+    width: 50%;
     background-color: #f1f1f1;
   }
   
