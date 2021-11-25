@@ -1,6 +1,8 @@
 <?php
 
        
+
+        //CONEXION A BASE DE DATOS
         function conectarBD(){
 
             $servidor="localhost:3306";
@@ -25,28 +27,25 @@
 
 
 
-
+        //NOMBRE INICIO SESION
         function nombreLog(){
-
             $dniLog=$_SESSION['nombreL'];
     
             $conexion=conectarBD();
             $sql="SELECT nombre from usuarios where dni='$dniLog'" ;
             $consulta=$conexion->prepare($sql);
             $consulta->execute();
-            
             $fila=$consulta->fetch(PDO::FETCH_ASSOC);
             echo "Bienvenido ". $fila['nombre'];
         }
   
 
-
+        
+        //NOMBRE CENTRO INICIO SESION
         function nombreCentroLog(){
-
             $clavelog = $_SESSION['nombreL'];
 
             $conexion=conectarBD();
-
             $sql2 = "SELECT centros_nombre from usuarios where dni = '$clavelog'";
             $consulta2=$conexion->prepare($sql2);
             $consulta2->execute();
@@ -54,7 +53,6 @@
             $nombrecentro = $fila['centros_nombre'];
 
             return $nombrecentro;
-
         }
 
 

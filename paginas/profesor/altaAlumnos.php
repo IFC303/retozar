@@ -38,7 +38,8 @@
                         <option value="0">Selecciona una clase/aula:</option>
                         <?php
                             $conexion=conectarBD();
-                            $sql="SELECT codigo from cursos";
+                            $nombreCentroLog=nombreCentroLog();
+                            $sql="SELECT codigo from cursos where centros_nombre='$nombreCentroLog'";
                             $consulta=$conexion->prepare($sql);
                             $consulta->execute();
                          while ($fila = $consulta->fetch(PDO::FETCH_ASSOC)) {

@@ -373,7 +373,6 @@ function verAlumnos(){
                 $consulta=$conexion->prepare($sql);
                 $consulta->execute();
 
-
                 while($fila=$consulta->fetch(PDO::FETCH_ASSOC)){
                     echo $fila['alumno_dni'];
                     echo $fila['cursos_codigo'];
