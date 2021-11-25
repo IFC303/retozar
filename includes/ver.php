@@ -341,7 +341,6 @@ function verAlumnos(){
 
                 $dni=$_SESSION['nombreL'];
 
-<<<<<<< Updated upstream
             $conexion=conectarBD();
             $sql="SELECT id,term,'desc',respuesta FROM preguntas,alumnos_has_preguntas where preguntas.id=alumnos_has_preguntas.pregunta_id and alumnos_has_preguntas.alumno_dni=$dni;";
             $consulta=$conexion->prepare($sql);
@@ -376,26 +375,6 @@ function verAlumnos(){
              </table>  
              <?php  
              echo "<br>";
-=======
-                $conexion=conectarBD();
-                $sql="SELECT id,term,'desc',respuesta FROM preguntas,alumnos_has_preguntas where preguntas.id=alumnos_has_preguntas.pregunta_id and alumnos_has_preguntas.alumno_dni=$dni;";
-                $consulta=$conexion->prepare($sql);
-                $consulta->execute();
-
-                while($fila = $consulta->fetch(PDO::FETCH_ASSOC)){ 
-
-                        echo $fila['id'].". ";
-                        echo $fila['term'];
-
-                        if($fila['respuesta']==1){
-                            echo "  Verdadero";
-                        }else{
-                            echo "  Falso";
-                        }
-                        echo "<br>";
-
-                }
->>>>>>> Stashed changes
         }
 
 
