@@ -41,6 +41,23 @@
   
 
 
+        function nombreCentroLog(){
+
+            $clavelog = $_SESSION['nombreL'];
+
+            $conexion=conectarBD();
+
+            $sql2 = "SELECT centros_nombre from usuarios where dni = '$clavelog'";
+            $consulta2=$conexion->prepare($sql2);
+            $consulta2->execute();
+            $fila = $consulta2->fetch(PDO::FETCH_ASSOC);
+            $nombrecentro = $fila['centros_nombre'];
+
+            return $nombrecentro;
+
+        }
+
+
 ?>
 
 
