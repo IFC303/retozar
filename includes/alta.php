@@ -9,23 +9,14 @@
             $password=$_POST['claveA'];
             $curso=$_POST['curso'];
 
-            $clavelog = $_SESSION['nombreL'];
             $conexion=conectarBD();
 
-
-            //CONSULTA PAAR RECUPERAR EL NOMBRE DEL CENTRO
-            $sql = "SELECT centros_nombre from usuarios where dni = '$clavelog'";
-            $consulta=$conexion->prepare($sql);
-            $consulta->execute();
-            $fila = $consulta->fetch(PDO::FETCH_ASSOC);
-            $nombrecentro = $fila['centros_nombre'];
-
+            $nombrecentro=nombreCentroLog();
 
             //INSERTAR ALUMNO EN USUARIOS
             $sql2="INSERT into usuarios values ('$dni','$nombre','$apellidos','$password','$nombrecentro','alumno');";
             $consulta2=$conexion->prepare($sql2);
             $consulta2->execute();
-
 
             //CONSULTA PARA SACAR EL EQUIPO
             $sql3="SELECT * FROM equipos";
@@ -53,17 +44,10 @@
             $dni=$_POST['dniP'];
             $password=$_POST['password'];
             $departamento=$_POST['departamento'];
-
-            $clavelog = $_SESSION['nombreL'];
+ 
             $conexion=conectarBD();
 
-            $sql2 = "SELECT centros_nombre from usuarios where dni = '$clavelog'";
-            $consulta2=$conexion->prepare($sql2);
-            $consulta2->execute();
-            $fila = $consulta2->fetch(PDO::FETCH_ASSOC);
-            $nombrecentro = $fila['centros_nombre'];
-
-
+            $nombrecentro=nombreCentroLog();
 
             $sql="INSERT into usuarios values ('$dni','$nombre','$apellidos','$password','$nombrecentro','profesor');";
             $consulta=$conexion->prepare($sql);
@@ -78,7 +62,11 @@
             $departamento=$_POST['departamento'];
 
             $conexion=conectarBD();
-            $sql="INSERT into cursos values ('$nombre','$departamento','Q4400415H');";
+
+            $nombrecentro=nombreCentroLog();
+
+            $conexion=conectarBD();
+            $sql="INSERT into cursos values ('$nombre','$departamento','$nombrecentro');";
             $consulta=$conexion->prepare($sql);
             $consulta->execute();
         }

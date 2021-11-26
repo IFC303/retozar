@@ -57,7 +57,7 @@
                         </ul>
                         <ul id="resultados" style="display:none">
                             <li><a href="#">Resultado por alumno</a></li><br>
-                            <li><a href="#">Resultado por grupos</a></li>
+                            <li><a href="verResultados">Resultado por grupos</a></li>
                         </ul>
                     </div> <!-- fin result -->
 
