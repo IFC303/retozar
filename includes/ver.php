@@ -268,7 +268,6 @@ function verAlumnos(){
                     $sql2="INSERT into alumnos_has_preguntas values ('$dni',$id,'$valor');";
                     $consulta2=$conexion->prepare($sql2);
                     $consulta2->execute();
-                   
                     }
     
 
@@ -365,11 +364,14 @@ function verAlumnos(){
 
         function verResultados(){
 
+          
                 $curso=$_POST['curso'];
                
                 $conexion=conectarBD();
             
-                $sql="SELECT alumno_dni,color,cursos_codigo, sum(respuesta) as total from total where cursos_codigo='$curso' group by color,alumno_dni;";
+                $sql="SELECT alumno_dni,color,cursos_codigo, sum(respuesta) as total from total 
+                where cursos_codigo='$curso' 
+                group by color,alumno_dni;";
                 $consulta=$conexion->prepare($sql);
                 $consulta->execute();
 
@@ -377,14 +379,14 @@ function verAlumnos(){
                     echo $fila['alumno_dni'];
                     echo $fila['cursos_codigo'];
                     echo $fila['color'];
-                    echo $fila['total'];
+                    echo $fila['total']." % ";
                     echo "<br>";
-
                 }
 
         }
 
 
+     
        
 
 

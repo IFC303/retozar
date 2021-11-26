@@ -40,8 +40,8 @@
                     <div id="enlaces">
                         <ul>
                             <li><a name="alumnos" onclick="mostrar(this.name);">Gestion alumnos</a></li>
-                            <li><a name="grupos" onclick="mostrar(this.name);">Gestion aulas</a></li>
-                            <li><a name="resultados" onclick="mostrar(this.name);">Ver resultados</a></li>
+                        <!--     <li><a name="grupos" onclick="mostrar(this.name);">Gestion grupos</a></li> -->
+                            <li><a name="resultados" onclick="mostrar(this.name);">Gestion equipos de trabajo</a></li>
                         </ul>
                     </div> <!-- fin enlaces -->     
                     
@@ -51,13 +51,13 @@
                             <li><a href="altaAlumnos">Alta alumnos</a></li><br>
                             <li><a href="verAlumnos">Ver alumnos</a></li>
                         </ul>              
-                        <ul id="gGrupos" style="display:none">
-                            <li><a href="#">Alta grupo</a></li><br>
+                      <!--   <ul id="gGrupos" style="display:none">
+                            <li><a href="#">Alta grupos</a></li><br>
                             <li><a href="#">Ver grupos</a></li>
-                        </ul>
+                        </ul> -->
                         <ul id="resultados" style="display:none">
+                            <li><a href="verResultados">Propuesta automatica de equipos</a></li><br>
                             <li><a href="#">Resultado por alumno</a></li><br>
-                            <li><a href="verResultados">Resultado por grupos</a></li>
                         </ul>
                     </div> <!-- fin result -->
 

@@ -6,6 +6,7 @@
     include "./../../includes/baja.php";
     include "./../../includes/modi.php";
     include "./../../includes/ver.php";
+    include "./../../includes/equipos.php";
 ?>
 
 <!DOCTYPE html>
@@ -31,36 +32,38 @@
         <div id="contenido">
 
             <?php
-        /*     verResultados(); */
+                $nombrecentro=nombreCentroLog();
             ?>
 
             <form action="#" method="POST">
-                <select name="curso" id="curso">
+                <select name="curso" id="curso" value="curso">
                         <option value="0">Selecciona una opcion:</option>
                         <?php
                             $conexion=conectarBD();
-                            $sql="SELECT codigo from cursos";
+                            $sql="SELECT codigo from cursos where centros_nombre='$nombrecentro';";
                             $consulta=$conexion->prepare($sql);
                             $consulta->execute();
                          while ($fila = $consulta->fetch(PDO::FETCH_ASSOC)) {
-                            echo '<option value="'.$fila['codigo'].'">'.$fila['codigo'].'</option>';
+                            echo '<option  value="'.$fila['codigo'].'">'.$fila['codigo'].'</option>';
                         }
                         ?>
                 </select>
 
-                <input type="submit" value="Aceptar" name="Aceptar" id="boton1">
+               <input type="submit" value="Aceptar" name="Aceptar" id="boton10">
+               <!-- <input type="submit" value="Propuesta" name="Propuesta" id="boton2">  -->
+               
 
             </form>
 
-
                 <?php
-                if(isset($_POST['Aceptar']))
+                 if(isset($_POST['Aceptar'])) 
                 {
                     verResultados();
-                }
+                    equiposAutomaticos();
+                } 
                 ?>   
 
-
+                
             <a class="btnvolver" href="iniProfesor" > Volver al menú</a>
 
         </div>
