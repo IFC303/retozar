@@ -53,6 +53,8 @@ RewriteRule ^paginas/profesor/altaAlumnos paginas/profesor/altaAlumnos.php [L,NC
 RewriteRule ^paginas/profesor/verAlumnos paginas/profesor/verAlumnos.php [L,NC]
 RewriteRule ^paginas/profesor/bajaAlumnos paginas/profesor/bajaAlumnos.php [L,NC]
 RewriteRule ^paginas/profesor/modiAlumnos paginas/profesor/modiAlumnos.php [L,NC]
+RewriteRule ^paginas/profesor/verResultados paginas/profesor/verResultados.php [L,NC]
+RewriteRule ^paginas/profesor/equiposAutomaticos paginas/profesor/equiposAutomaticos.php [L,NC]
 
 RewriteRule ^paginas/alumno/iniAlumno paginas/alumno/iniAlumno.php [L,NC]
 RewriteRule ^paginas/alumno/verPreguntas paginas/alumno/verPreguntas.php [L,NC]

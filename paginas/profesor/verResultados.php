@@ -1,10 +1,14 @@
+
 <?php
     session_start();
     include "./../../includes/funciones.php";
     include "./../../includes/alta.php";
     include "./../../includes/baja.php";
     include "./../../includes/modi.php";
+    include "./../../includes/ver.php";
+    include "./../../includes/equipos.php";
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -15,47 +19,59 @@
     <link rel="stylesheet" href="../../css/altaalum.css"> 
     <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;1,500&display=swap" rel="stylesheet">
 </head>
-<body>
+<body>  
+
     <header>
        <div id="texto" >
             <p id="t1">Disc Aragón</p>
             <p id="t2">Test para formación de equipos de trabajo</p>
         </div> 
     </header>
-    <main>
     
-    <div id="contenido">
-        <h3>NUEVO ALUMNO</h3>
+    <main>
+        <div id="contenido">
 
-        <form action="altaAlumnos" method="POST" name="formAlum" class="styleform">
-            <input type="text" class="inp" name="nombreA" id="nombreA" placeholder="Nombre" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" required><br> <br>
-            <input type="text" class="inp" name="apellidosA" id="apellidosA" placeholder="Apellidos" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" required><br> <br>
-            <input type="text" class="inp" name="dniA" id="dniA" required placeholder="DNI"><br> <br>
-            <input type="password" class="inp" name="claveA" id="claveA" placeholder="Contraseña" required><br><br>
+            <?php
+                $nombrecentro=nombreCentroLog();
+            ?>
 
-
-            <select name="curso" id="curso">
-                        <option value="0">Selecciona una clase/aula:</option>
+            <form action="#" method="POST">
+                <select name="curso" id="curso" value="curso">
+                        <option value="0">Selecciona una opcion:</option>
                         <?php
                             $conexion=conectarBD();
-                            $nombreCentroLog=nombreCentroLog();
-                            $sql="SELECT codigo from cursos where centros_nombre='$nombreCentroLog'";
+                            $sql="SELECT codigo from cursos where centros_nombre='$nombrecentro';";
                             $consulta=$conexion->prepare($sql);
                             $consulta->execute();
                          while ($fila = $consulta->fetch(PDO::FETCH_ASSOC)) {
-                            echo '<option value="'.$fila['codigo'].'">'.$fila['codigo'].'</option>';
+                            echo '<option  value="'.$fila['codigo'].'">'.$fila['codigo'].'</option>';
                         }
                         ?>
-            </select><br><br>
+                </select>
 
-            <input type="submit" value="Aceptar" name="Aceptar" id="boton1" onclick="return confirm('¿Seguro que quieres añadir este alumno?');">
-        </form>
+               <input type="submit" value="Aceptar" name="Aceptar" id="boton10">
+               <!-- <input type="submit" value="Propuesta" name="Propuesta" id="boton2">  -->
+               
 
-         <br>
-        <a class="btnvolver" href="iniProfesor" > Volver al menú</a>
-    </div><!-- fin contenido -->
+            </form>
+
+                <?php
+                 if(isset($_POST['Aceptar'])) 
+                {
+                    verResultados();
+                    equiposAutomaticos();
+                } 
+                ?>   
+
+                
+            <a class="btnvolver" href="iniProfesor" > Volver al menú</a>
+
+        </div>
+
 
     </main>
+
+
 
     <footer>
             <div id="img1">
@@ -76,18 +92,13 @@
 
     </footer><!-- fin footer -->
 
-    
-    <?php
-    if(isset($_POST['Aceptar']))
-            {
-                altaAlumnos();
-            }
-    ?>
-    
-    
 
+       
+                  
+    
 </body>
 </html>
 
 
 
+        
