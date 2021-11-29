@@ -25,11 +25,16 @@ body{
 
 main{
     flex: 1;
-    width: 50%;
-    margin: auto;
     display: flex;
     justify-content: center;
 }
+
+#contenido{
+    width: 40%;
+    margin-top: 5vh;
+    text-align: center;
+}
+
 h3{
     color:#102140;
 }
@@ -40,10 +45,8 @@ footer{
     justify-content:space-between; 
 }
 
-#contenido{
-    text-align: center;
-    margin-top: 5vh;
-}
+
+
 .inp{
     border: none;
     border-bottom: 1px solid #102140;
@@ -101,11 +104,20 @@ table {
   tr:nth-child(even){
       background-color: #CACACA;
     }
+    
   td {  
-    color:#102140 ;
+    color:#102140;
     text-align: left;
     padding: 8px;
   }
+  .tdT{
+      text-align: center;
+  }
+
+  .tdI{
+      text-align: right;
+  }
+
 
 #formularios{
     display: flex;

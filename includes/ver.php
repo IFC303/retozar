@@ -20,7 +20,7 @@ function verAlumnos(){
     //var_dump($resultado);
 
     ?>
-        <table border="1">
+        <table>
             <tr>
                 <th >DNI</th>
                 <th>NOMBRE</th>
@@ -34,10 +34,10 @@ function verAlumnos(){
 
         ?>
             <tr>
-                <td><?php echo $fila['dni'];?> </td>
-                <td><?php echo $fila['nombre'];?> </td>
-                <td><?php echo $fila['apellidos'];?> </td>
-                <td>
+                <td class="tdT"><?php echo $fila['dni'];?> </td>
+                <td class="tdT"><?php echo $fila['nombre'];?> </td>
+                <td class="tdT"><?php echo $fila['apellidos'];?> </td>
+                <td class="tdI">
                     <FORM action="modiAlumnos" method="POST">
                     <input type="hidden" name="dniA" value ="<?php echo $fila['dni']?>">
                     <input type="hidden" name="nombreA" value ="<?php echo $fila['nombre']?>">
@@ -87,7 +87,7 @@ function verAlumnos(){
 
 
         ?>
-        <table border="1">
+        <table>
             <tr>
                 <th>DNI</th>
                 <th>Nombre</th>
@@ -99,11 +99,11 @@ function verAlumnos(){
         while($fila = $consulta->fetch(PDO::FETCH_ASSOC)){ 
             ?>
             <tr>
-                <td><?php echo $fila['dni'];?> </td>
-                <td><?php echo $fila['nombre'];?> </td>
-                <td><?php echo $fila['apellidos'];?> </td>
+                <td class="tdT"><?php echo $fila['dni'];?> </td>
+                <td class="tdT"><?php echo $fila['nombre'];?> </td>
+                <td class="tdT"><?php echo $fila['apellidos'];?> </td>
                 
-                <td>
+                <td class="tdI">
                     <FORM action="modiProfesor" method="POST">
                         <input type="hidden" name="dniP" value ="<?php echo $fila['dni']?>">
                         <input type="hidden" name="nombreP" value ="<?php echo $fila['nombre']?>">
@@ -132,10 +132,6 @@ function verAlumnos(){
         <?php
     }
 
-
-
-
-
     function verCurso(){
 
         $conexion=conectarBD();
@@ -145,7 +141,7 @@ function verAlumnos(){
     
 
         ?>
-        <table border="1">
+        <table>
             <tr>
                 <th>NOMBRE</th>
                 <th>DEPARTAMENTO</th>
@@ -157,9 +153,9 @@ function verAlumnos(){
             ?>
             
                 <tr>
-                    <td><?php echo $fila['codigo'];?> </td>
-                    <td><?php echo $fila['departamento'];?> </td>   
-                    <td>
+                    <td class="tdT"><?php echo $fila['codigo'];?> </td>
+                    <td class="tdT"><?php echo $fila['departamento'];?> </td>   
+                    <td class="tdI">
                         <FORM action="modiCurso" method="POST">
                             <input type="hidden" name="nombre" value ="<?php echo $fila['codigo']?>">
                             <input type="hidden" name="departamento" value ="<?php echo $fila['departamento']?>">
@@ -196,7 +192,7 @@ function verAlumnos(){
             $consulta->execute();
             
             ?>
-                <table border="1">
+                <table>
                     <tr>
                         <th>Codigo Centro</th>
                         <th>Localidad</th>
@@ -219,13 +215,13 @@ function verAlumnos(){
 
                 ?>
                 
-                    <td><?php echo $fila['nombre'];?></td>
-                    <td><?php echo $fila['localidad'];?></td>
-                    <td><?php echo $fila['provincia'];?></td>
-                    <td><?php echo $fila['codigopostal'];?></td>
-                    <td><?php echo $fila2['nombre'];?></td>
+                    <td class="tdT"><?php echo $fila['nombre'];?></td>
+                    <td class="tdT"><?php echo $fila['localidad'];?></td>
+                    <td class="tdT"><?php echo $fila['provincia'];?></td>
+                    <td class="tdT"><?php echo $fila['codigopostal'];?></td>
+                    <td class="tdT"><?php echo $fila2['nombre'];?></td>
 
-                    <td>
+                    <td class="tdI">
                         <FORM action="modiCentro" method="POST">
                             <input type="hidden" name="n_centro" value ="<?php echo $fila['nombre']?>">
                             <input type="hidden" name="direccion" value ="<?php echo $fila['direccion']?>">
