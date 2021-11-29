@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="css/style.css">
-
 <a href="../iniAdminGeneral">Volver</a><br><br>
 
 <form action="" method="post" enctype="multipart/form-data">

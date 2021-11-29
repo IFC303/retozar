@@ -64,12 +64,6 @@ RewriteRule ^paginas/adminG/altaCentro paginas/adminG/altaCentro.php [L,NC]
 RewriteRule ^paginas/adminG/verCentro paginas/adminG/verCentro.php [L,NC]
 RewriteRule ^paginas/adminG/bajaCentro paginas/adminG/bajaCentro.php [L,NC]
 RewriteRule ^paginas/adminG/modiCentro paginas/adminG/modiCentro.php [L,NC]
-RewriteRule ^paginas/adminG/preguntas/subir paginas/adminG/preguntas/subir.php [L,NC]
-RewriteRule ^paginas/adminG/preguntas/nuevo paginas/adminG/preguntas/nuevo.php [L,NC]
-RewriteRule ^paginas/adminG/preguntas/([0-9]+)$ paginas/adminG/preguntas/ver.php?id=$1
-RewriteRule ^paginas/adminG/preguntas/editar/([0-9]+)$ paginas/adminG/preguntas/editar.php?id=$1
-RewriteRule ^paginas/adminG/preguntas/borrar/([0-9]+)$ paginas/adminG/preguntas/borrar.php?id=$1
-RewriteRule ^paginas/adminG/preguntas/ver/([0-9]+)$ paginas/adminG/preguntas/ver.php?id=$1
 
 RewriteRule ^paginas/iniSesion paginas/iniSesion.php [L,NC]
 RewriteRule ^paginas/cerrarSesion paginas/cerrarSesion.php [L,NC]
