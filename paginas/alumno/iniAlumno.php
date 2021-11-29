@@ -42,7 +42,7 @@
                         ?>
                     </div>
 
-                    <div id="enlaces">
+                    <div id="enlacesA">
                     <ul>
                         <li><a href="verPreguntas">Iniciar test</a></li><br>
                         <li><a href="verRespuestas">Ver respuestas</a></li>
