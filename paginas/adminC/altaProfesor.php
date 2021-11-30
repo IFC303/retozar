@@ -35,21 +35,7 @@
                     <input type="text" class="inp"  name="apellidosP" id="apellidosP" placeholder="Apellidos" required pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}"><br><br>
                     <input type="text" class="inp" name="dniP" id="dniP" maxlength="9" placeholder="Dni" required><br><br>
                     <input type="password" class="inp" name="password" id="password" placeholder="Contraseña" required><br><br>
-
-                    <select name="departamento" id="departamento">
-                        <option value="0">Selecciona un departamento:</option>
-                        <?php
-                            $conexion=conectarBD();
-                            $nombreCentroLog=nombreCentroLog();
-                            $sql="SELECT departamento from cursos where centros_nombre='$nombreCentroLog'";
-                            $consulta=$conexion->prepare($sql);
-                            $consulta->execute();
-                         while ($fila = $consulta->fetch(PDO::FETCH_ASSOC)) {
-                            echo '<option value="'.$fila['departamento'].'">'.$fila['departamento'].'</option>';
-                        }
-                        ?>
-                    </select><br><br>
-
+                    <?php echo listardepartamentos(); ?> <br><br>
                    <input type="submit" value="Aceptar" name="Aceptar" id="boton1" onclick="return confirm('¿Seguro que quieres añadir este profesor?');">
                 </form>  
      

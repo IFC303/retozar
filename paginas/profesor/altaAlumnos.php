@@ -34,12 +34,16 @@
             <input type="password" class="inp" name="claveA" id="claveA" placeholder="Contraseña" required><br><br>
 
 
-            <select name="curso" id="curso">
+            <select class="styleform1" name="curso" id="curso">
                         <option value="0">Selecciona una clase/aula:</option>
                         <?php
                             $conexion=conectarBD();
+
+                            $logcentro = departamentoLog();
+                            
                             $nombreCentroLog=nombreCentroLog();
-                            $sql="SELECT codigo from cursos where centros_nombre='$nombreCentroLog'";
+                            
+                            $sql="SELECT codigo from cursos where centros_nombre='$nombreCentroLog' and departamento = '$logcentro'";
                             $consulta=$conexion->prepare($sql);
                             $consulta->execute();
                          while ($fila = $consulta->fetch(PDO::FETCH_ASSOC)) {

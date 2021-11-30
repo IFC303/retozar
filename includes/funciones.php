@@ -1,7 +1,4 @@
 <?php
-
-       
-
         //CONEXION A BASE DE DATOS
         function conectarBD(){
 
@@ -55,6 +52,40 @@
             return $nombrecentro;
         }
 
+        function departamentoLog(){
+            $clavelog = $_SESSION['nombreL'];
+
+            $conexion=conectarBD();
+            $sql2 = "SELECT departamento from profesores where usuarios_dni = '$clavelog'";
+            $consulta2=$conexion->prepare($sql2);
+            $consulta2->execute();
+            $fila = $consulta2->fetch(PDO::FETCH_ASSOC);
+            $depart = $fila['departamento'];
+
+            return $depart;
+        }
+
+        //listar cursos por departamentos
+        
+        function listardepartamentos(){
+            $conexion=conectarBD();
+            $nombreCentroLog=nombreCentroLog();       
+            $sql="SELECT distinct departamento from cursos where centros_nombre='$nombreCentroLog'";
+            $consulta=$conexion->prepare($sql);
+            $consulta->execute();
+
+            $solucion="<select class='styleform1' id='departamento' name='departamento'>";
+            $solucion .="<option value=''>-- Selecciones un departamento --</option>"; 
+    
+            while ($fila = $consulta->fetch(PDO::FETCH_ASSOC)) {
+                $departamentos=$fila['departamento'];    
+                $solucion.="<option value='$departamentos'>$departamentos</option\n>";
+            }
+            $solucion.="</select>";
+            return $solucion;
+        }
+
+        
 
 ?>
 

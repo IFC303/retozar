@@ -45,8 +45,6 @@ footer{
     justify-content:space-between; 
 }
 
-
-
 .inp{
     border: none;
     border-bottom: 1px solid #102140;
@@ -62,8 +60,15 @@ footer{
 }
 
 .styleform input{
-    width: 250px;
+    width:250px;
     padding: 10px;
+}
+.styleform1 {
+    background-color: #f5f5f5;
+    border: 1px solid #102140;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 15px;
 }
 
 #boton1{

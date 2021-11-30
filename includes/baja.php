@@ -21,10 +21,19 @@
             function bajaProfesor(){
                 if (isset($_POST['dniP'])){
                     $dni=$_POST['dniP'];
+
                     $conexion=conectarBD();
+                    //primero borrado en la tabla profesores
+                    $sql2="DELETE from profesores WHERE usuarios_dni='$dni'";
+                    $consulta2=$conexion->prepare($sql2);
+                    $consulta2->execute();
+
                     $sql="DELETE from usuarios WHERE dni='$dni'";
                     $consulta=$conexion->prepare($sql);
                     $consulta->execute();
+
+                    
+
                     header('Location: url=../../verProfesor');
                 }
             }
@@ -42,21 +51,25 @@
                     
                 }
             }
-
-
+            
             
             function bajaCentro(){
                 if(isset($_POST['n_centro'])){
                     $nombre=$_POST['n_centro'];
+                    $dni=$_POST['dniA'];
 
-                    $conexion2=conectarBD();
-                    $sql2="DELETE from usuarios WHERE centros_nombre='$nombre'" ;
-                    $consulta2=$conexion2->prepare($sql2);
+                    $conexion=conectarBD();
+
+                    $sql2="DELETE from usuarios WHERE dni='$dni';" ;
+                    $consulta2=$conexion->prepare($sql2);
                     $consulta2->execute();
 
-                    $conexion1=conectarBD();
-                    $sql1="DELETE from centros WHERE nombre='$nombre'" ;
-                    $consulta1=$conexion1->prepare($sql1);
+                    $sql="DELETE from profesores WHERE usuarios_dni='$dni';";
+                    $consulta=$conexion->prepare($sql);
+                    $consulta->execute();
+
+                    $sql1="DELETE from centros WHERE nombre='$nombre';" ;
+                    $consulta1=$conexion->prepare($sql1);
                     $consulta1->execute();
                     header('Location: url=../../verCentro');
                 }

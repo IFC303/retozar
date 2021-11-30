@@ -13,26 +13,34 @@
 
             $nombrecentro=nombreCentroLog();
 
-            //INSERTAR ALUMNO EN USUARIOS
-            $sql2="INSERT into usuarios values ('$dni','$nombre','$apellidos','$password','$nombrecentro','alumno');";
+            $sql2 = "SELECT dni from usuarios where centros_nombre = '$nombrecentro' and dni = '$dni';";
             $consulta2=$conexion->prepare($sql2);
             $consulta2->execute();
+            $cuenta = $consulta2->rowCount();
 
-            //CONSULTA PARA SACAR EL EQUIPO
-            $sql3="SELECT * FROM equipos";
-            $consulta3=$conexion->prepare($sql3);
-            $consulta3->execute();
-            $fila3 = $consulta3->fetch(PDO::FETCH_ASSOC);
-            $idEquipo = $fila3['id'];
+            if ($cuenta >=1) {
+                ?>
+                    <script> alert ("ya existe, imposible insertar"); </script>
+                <?php
+            } else {
+                //INSERTAR ALUMNO EN USUARIOS
+                $sql2="INSERT into usuarios values ('$dni','$nombre','$apellidos','$password','$nombrecentro','alumno');";
+                $consulta2=$conexion->prepare($sql2);
+                $consulta2->execute();
 
+                //CONSULTA PARA SACAR EL EQUIPO
+                $sql3="SELECT * FROM equipos";
+                $consulta3=$conexion->prepare($sql3);
+                $consulta3->execute();
+                $fila3 = $consulta3->fetch(PDO::FETCH_ASSOC);
+                $idEquipo = $fila3['id'];
 
-            //INSERTAR EN TABLA ALUMNOS
-            $sql4="INSERT into alumnos values ('$dni',$idEquipo,'$curso','$nombrecentro');";
-            $consulta4=$conexion->prepare($sql4);
-            $consulta4->execute();
+                //INSERTAR EN TABLA ALUMNOS
+                $sql4="INSERT into alumnos values ('$dni',$idEquipo,'$curso','$nombrecentro');";
+                $consulta4=$conexion->prepare($sql4);
+                $consulta4->execute();
 
-
-
+            }
         }
     }
 
@@ -44,14 +52,30 @@
             $dni=$_POST['dniP'];
             $password=$_POST['password'];
             $departamento=$_POST['departamento'];
- 
             $conexion=conectarBD();
 
             $nombrecentro=nombreCentroLog();
 
-            $sql="INSERT into usuarios values ('$dni','$nombre','$apellidos','$password','$nombrecentro','profesor');";
-            $consulta=$conexion->prepare($sql);
-            $consulta->execute();
+
+            $sql2 = "SELECT dni from usuarios where centros_nombre = '$nombrecentro' and dni = '$dni';";
+            $consulta2=$conexion->prepare($sql2);
+            $consulta2->execute();
+            $cuenta = $consulta2->rowCount();
+
+            if ($cuenta >=1) {
+                ?>
+                    <script> alert ("ya existe, imposible insertar"); </script>
+                <?php
+            } else {
+                $sql="INSERT into usuarios values ('$dni','$nombre','$apellidos','$password','$nombrecentro','profesor');";
+                $consulta=$conexion->prepare($sql);
+                $consulta->execute();
+
+                $sql3="INSERT into profesores values ('$dni','$departamento',0);";
+                $consulta3=$conexion->prepare($sql3);
+                $consulta3->execute();
+
+            }
         }
     }
 
@@ -60,15 +84,25 @@
         if (isset($_POST['nombre'])){
             $nombre=$_POST['nombre'];
             $departamento=$_POST['departamento'];
-
             $conexion=conectarBD();
-
             $nombrecentro=nombreCentroLog();
 
-            $conexion=conectarBD();
-            $sql="INSERT into cursos values ('$nombre','$departamento','$nombrecentro');";
-            $consulta=$conexion->prepare($sql);
-            $consulta->execute();
+            $sql2 = "SELECT codigo from cursos where centros_nombre =  '$nombrecentro' and codigo ='$nombre';";
+            $consulta2=$conexion->prepare($sql2);
+            $consulta2->execute();
+            
+            $cuenta = $consulta2->rowCount();
+            //usar la funcion de php count row para saber si hay fila, si hay 1 fila, no se inserta,si son 0 se inserta
+
+            if ($cuenta >=1) {
+                ?>
+                    <script> alert ("ya existe, imposible insertar"); </script>
+                <?php
+            } else {
+                $sql="INSERT into cursos values ('$nombre','$departamento','$nombrecentro');";
+                $consulta=$conexion->prepare($sql);
+                $consulta->execute();
+            }
         }
     }
 
@@ -98,6 +132,11 @@
                 $sql3="INSERT into usuarios values ('$dni','$nombreAdmin','$apellidos','$password','$nombre','admin centro');";
                 $consulta3=$conexion1->prepare($sql3);
                 $consulta3->execute();
+
+                $sql4="INSERT into profesores values ('$dni','$departamento',1);";
+                $consulta4=$conexion1->prepare($sql4);
+                $consulta4->execute();
+
             }else{
                 ?>
                     <script>
