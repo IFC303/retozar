@@ -1,17 +1,14 @@
-<a href="../iniAdminGeneral">Volver</a><br><br>
+<div id="contenido">
+    <h3>NUEVA PREGUNTA</h3>
 
-<form action="" method="post">
+    <form action="" method="post" class="styleform">
+        <input type="text" name="txtTerm" placeholder="Term" required value="<?php echo $txtTerm; ?>"><br><br>
+        <input type="text" name="txtDesc" placeholder="Desc" required value="<?php echo $txtDesc; ?>"><br><br>
+        <input type="text" name="txtColor" placeholder="Color" required value="<?php echo $txtColor; ?>"><br><br>
 
-    <label for="idTerm">Term:</label>
-    <input type="text" name="txtTerm" id="idTerm" value="<?php echo $txtTerm; ?>"><br><br>
+        <input type="submit" name="subInsertar" id="boton1" value="Insertar">
+        <?php echo $subInsertar; ?>
+    </form>
 
-    <label for="idDesc">Desc:</label>
-    <input type="text" name="txtDesc" id="idDesc" value="<?php echo $txtDesc; ?>"><br><br>
-
-    <label for="idColor">Color:</label>
-    <input type="text" name="txtColor" id="idColor" value="<?php echo $txtColor; ?>"><br><br>
-
-    <input type="submit" name="subInsertar" value="Insertar">
-
-    <?php echo $subInsertar; ?>
-</form>
+    <a href="../iniAdminGeneral" class="btnvolver">Volver</a>
+</div>

@@ -98,13 +98,12 @@ table {
     text-align: center;
     padding: 8px;
   }
-  tr:nth-child(even){
-      background-color: #CACACA;
-    }
+
   td {  
     color:#102140 ;
     text-align: left;
     padding: 8px;
+    border-bottom: #102140 2px solid;
   }
 
 #formularios{
