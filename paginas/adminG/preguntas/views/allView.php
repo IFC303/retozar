@@ -1,26 +1,30 @@
-<a href="../iniAdminGeneral">Volver</a><br><br>
+<div id="contenido">
+    <a href="../iniAdminGeneral" class="btnvolver">Volver</a><br><br>
 
-<table border="1" style="text-align: center;">
-    <tr>
-        <th colspan="3">PREGUNTAS</th>
-        <th rowspan="2" style="background:#FFD767">ACCIONES</th>
-    </tr>
-    <tr>
-        <th>Term</th>
-        <th>Desc</th>
-        <th>Color</th>
-    </tr>
-
-    <?php foreach ($preguntas as $pregunta) : ?>
+    <table border="1" style="text-align: center;">
         <tr>
-            <td><?php echo $pregunta->term; ?></td>
-            <td><?php echo $pregunta->desc; ?></td>
-            <td><?php echo $pregunta->color; ?></td>
-            <td>
-                <a href="<?php echo $pregunta->id; ?>">Ver </a>
-                <a href="editar/<?php echo $pregunta->id; ?>">Editar </a>
-                <a href="borrar/<?php echo $pregunta->id; ?>">Borrar</a>
-            </td>
+            <th>Term</th>
+            <th>Desc</th>
+            <th>Color</th>
+            <th colspan="2">Opciones</th>
         </tr>
-    <?php endforeach; ?>
-</table><br>
+
+        <?php foreach ($preguntas as $pregunta) : ?>
+            <tr>
+                <td><?php echo $pregunta->term; ?></td>
+                <td><?php echo $pregunta->desc; ?></td>
+                <td><?php echo $pregunta->color; ?></td>
+                <td>
+                    <a href="editar/<?php echo $pregunta->id; ?>">
+                        <img src="/img/edit.svg">
+                    </a>
+                </td>
+                <td>
+                    <a href="borrar/<?php echo $pregunta->id; ?>">
+                        <img src="/img/trash.svg">
+                    </a>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+</div>

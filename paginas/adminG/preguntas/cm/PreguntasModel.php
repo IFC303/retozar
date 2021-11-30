@@ -1,8 +1,13 @@
 <?php
+include "../../../includes/config.php";
 
 class PreguntasModel
 {
     private $db;
+    private $user = DBUSER;
+    private $pass = DBPWD;
+    private $dbName = DBNAME;
+    private $dbHost = DBHOST;
 
     public function __construct()
     {
@@ -12,7 +17,7 @@ class PreguntasModel
     function conexion()
     {
         try {
-            $con = new PDO('mysql: host=localhost; dbname=disc', 'root', 'toor');
+            $con = new PDO("mysql: host=$this->dbHost; dbname=$this->dbName", "$this->user", "$this->pass");
             $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $con->exec("SET CHARACTER SET UTF8");
         } catch (PDOException $e) {
