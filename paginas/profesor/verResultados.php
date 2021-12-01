@@ -34,18 +34,28 @@
 
             <?php
                 $nombrecentro=nombreCentroLog();
+                
             ?>
 
             <form action="#" method="POST">
-                <select name="curso" id="curso" value="curso">
-                        <option value="0">Selecciona una opcion:</option>
+                
+                <select  class="styleform1" name="curso" id="curso" value="curso">
+                        <option value="0">Selecciona una clase/aula:</option>
                         <?php
                             $conexion=conectarBD();
-                            $sql="SELECT codigo from cursos where centros_nombre='$nombrecentro';";
+
+                            $logcentro = departamentoLog();
+                            
+                            $nombreCentroLog=nombreCentroLog();
+                            
+                            $sql="SELECT codigo from cursos where centros_nombre='$nombreCentroLog' and departamento = '$logcentro'";
                             $consulta=$conexion->prepare($sql);
                             $consulta->execute();
                          while ($fila = $consulta->fetch(PDO::FETCH_ASSOC)) {
-                            echo '<option  value="'.$fila['codigo'].'">'.$fila['codigo'].'</option>';
+                             $codcurso = $fila['codigo'];
+                             $codcurso = ucfirst($codcurso);
+                            echo "<option value='$codcurso'>$codcurso</option\n>";
+                            
                         }
                         ?>
                 </select> 
