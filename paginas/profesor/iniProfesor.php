@@ -31,9 +31,10 @@
                         <?php
                             nombreLog();
                         ?>
+                        <a href="../cerrarSesion" class="btnvolver">Cerrar sesión</a>
                     </div>
 
-                <a href="../cerrarSesion" class="btnvolver">Cerrar sesión</a>
+                
 
                 <div id="contenedoraux">
 
@@ -79,7 +80,10 @@
             </div> <!-- fin img1 -->
 
             <div id="img2">
-                <img src="../../img/logoSBR.png" alt="logo_SBR" width="95px" height="95px">
+            <picture>
+                    <source media="(min-width:650px)" srcset="../../img/logoSBR.png" width="95px" height="95px">
+                    <img src="../../img/logoSBR.png" alt="logo_SBR" width="70px" height="70px">
+                </picture>
             </div> <!-- fin img2 -->
 
         </footer><!-- fin footer -->
