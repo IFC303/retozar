@@ -47,7 +47,10 @@
                             $consulta=$conexion->prepare($sql);
                             $consulta->execute();
                          while ($fila = $consulta->fetch(PDO::FETCH_ASSOC)) {
-                            echo '<option value="'.$fila['codigo'].'">'.$fila['codigo'].'</option>';
+                             $codcurso = $fila['codigo'];
+                             $codcurso = ucfirst($codcurso);
+                            echo "<option value='$codcurso'>$codcurso</option\n>";
+                            
                         }
                         ?>
             </select><br><br>
