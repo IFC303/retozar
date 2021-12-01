@@ -18,8 +18,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="../../css/altaalum.css"> 
     <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;1,500&display=swap" rel="stylesheet">
+    <script src="equipos.js"></script>
 </head>
-<body>  
+<body id="body">  
 
     <header>
        <div id="texto" >
@@ -47,21 +48,34 @@
                             echo '<option  value="'.$fila['codigo'].'">'.$fila['codigo'].'</option>';
                         }
                         ?>
-                </select>
+                </select> 
 
-               <input type="submit" value="Aceptar" name="Aceptar" id="boton10">
-               <!-- <input type="submit" value="Propuesta" name="Propuesta" id="boton2">  -->
+                <input type="submit" value="Aceptar" name="Aceptar" id="boton10">
                
 
+                
             </form>
 
+            <div id="totales"></div>
+
+
                 <?php
-                 if(isset($_POST['Aceptar'])) 
+                  if(isset($_POST['Aceptar'])) 
                 {
-                    verResultados();
-                    equiposAutomaticos();
-                } 
+                    $alumnos= verResultados();
+                    
+                    ?> 
+
+                <script>
+                     var alumnos = <?php echo json_encode($alumnos); ?>;
+                     /* console.log(alumnos);  */
+                     ordenar(name,alumnos);
+                </script>
+
+                 <?php
+                }  
                 ?>   
+
 
                 
             <a class="btnvolver" href="iniProfesor" > Volver al menú</a>
