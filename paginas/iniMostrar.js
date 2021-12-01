@@ -6,7 +6,6 @@ function mostrar(nombre){
 
     if(nombre=="alumnos"){
             document.getElementById("gAlumnos").style.display="block";
-            document.getElementById("gGrupos").style.display="none";
             document.getElementById("resultados").style.display="none";
         }else if (nombre =="grupos"){
             document.getElementById("gGrupos").style.display="block";
@@ -14,7 +13,6 @@ function mostrar(nombre){
             document.getElementById("resultados").style.display="none";
         }else if(nombre=="resultados"){
             document.getElementById("resultados").style.display="block";
-            document.getElementById("gGrupos").style.display="none";
             document.getElementById("gAlumnos").style.display="none";
         }else if (nombre=="profesor"){
             document.getElementById("gProfesor").style.display="block";
@@ -36,9 +34,4 @@ function mostrar(nombre){
             document.getElementById("gAdmin").style.display="block";
         }  
  
-
-
-
-
-
 }
