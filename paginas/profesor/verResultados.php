@@ -61,9 +61,7 @@
                 </select> 
 
                 <input type="submit" value="Aceptar" name="Aceptar" id="boton10">
-               
 
-                
             </form>
 
             <div id="totales"></div>

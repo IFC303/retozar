@@ -36,13 +36,20 @@ function ordenar(name,alumnos){
                 amarillo.setAttribute("onclick","ordenar(this.name,alumnos);");
                 document.getElementById('botones').appendChild(amarillo);
 
-                
+
+                var boton = document.createElement("input");
+                boton.setAttribute("type","submit");
+                boton.setAttribute("value","Generar Grupo");
+                boton.setAttribute("name","generarG");
+                boton.setAttribute("id","boton1");
+                boton.setAttribute("onclick","generar(alumnos);");
+                document.getElementById("botones").appendChild(boton);
 
   }  
     
 
     
-    var resultados=document.createElement("div");
+    var resultados=document.createElement("table");
     resultados.setAttribute("id","resultados");
     document.getElementById("totales").appendChild(resultados);
 
@@ -110,24 +117,73 @@ function ordenar(name,alumnos){
                         return 0;
                         }); 
                     
-                } 
+                }      
+                
+                var nombre = alumnos[i].nombre;
+                var nodonom = document.createElement("tr");
+                var nodonombre=document.createElement("td"); 
+                var textonombre= document.createTextNode(nombre); 
+                nodonombre.appendChild(textonombre);
+                document.getElementById('resultados').appendChild(nodonom);
+                document.getElementById('resultados').appendChild(nodonombre);
 
-                var resultado=alumnos[i].nombre+ " "+alumnos[i].apellidos +"-> Rojo: " + alumnos[i].rojo+" Azul: "+alumnos[i].azul+" Verde: "+alumnos[i].verde+" Amarillo: "+alumnos[i].amarillo;     
-                var nodo=document.createElement("div"); 
-                nodo.setAttribute("id","alumno"+i);
-                var textoNodo=document.createTextNode(resultado); 
-                nodo.appendChild(textoNodo);
-                document.getElementById('resultados').appendChild(nodo);
 
+                var apellidos = alumnos[i].apellidos;
+                var nodoapellidos=document.createElement("td"); 
+                var textoapellidos= document.createTextNode(apellidos); 
+                nodoapellidos.appendChild(textoapellidos);
+                document.getElementById('resultados').appendChild(nodoapellidos);
 
+                var rojo = alumnos[i].rojo;
+                var nodorojo=document.createElement("td"); 
+                var textorojo= document.createTextNode(rojo); 
+                nodorojo.appendChild(textorojo);
+                document.getElementById('resultados').appendChild(nodorojo);
+
+                var azul = alumnos[i].azul;
+                var nodoazul=document.createElement("td"); 
+                var textoazul= document.createTextNode(azul); 
+                nodoazul.appendChild(textoazul);
+                document.getElementById('resultados').appendChild(nodoazul);
+
+                var verde = alumnos[i].verde;
+                var nodoverde=document.createElement("td"); 
+                var textoverde= document.createTextNode(verde); 
+                nodoverde.appendChild(textoverde);
+                document.getElementById('resultados').appendChild(nodoverde);
+
+                var amarillo = alumnos[i].amarillo;
+                var nodoamarillo=document.createElement("td"); 
+                var textoamarillo= document.createTextNode(amarillo); 
+                nodoamarillo.appendChild(textoamarillo);
+                document.getElementById('resultados').appendChild(nodoamarillo);
+                
                 }
 
                 return alumnos;
+}
 
-     
+function generar(){
 
-    
+    var equipos=ordenar();
 
+    console.log(equipos);
+
+
+    for(var i=0; i<equipos.length;i++){
+
+        var resultado=equipos[i].nombre+"-> Rojo: " + equipos[i].rojo+" Azul: "+equipos[i].azul+" Verde: "+equipos[i].verde+" Amarillo: "+equipos[i].amarillo;
+
+        var nodo=document.createElement("div"); 
+        var textoNodo=document.createTextNode(resultado); 
+        nodo.appendChild(textoNodo);
+        document.getElementById('resultado1').appendChild(nodo);
+
+        nodo.setAttribute("draggable","true");
+        nodo.setAttribute("id","alumno"+i);
+        nodo.setAttribute("ondragstart","arrastre(this.id);");
+        // y desaparece del array
+    }
 
 
 }
