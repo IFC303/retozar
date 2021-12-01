@@ -360,33 +360,31 @@ function verAlumnos(){
 
 
         function verResultados(){
-
-          
-                $curso=$_POST['curso'];
-               
-                $conexion=conectarBD();
             
-                $sql="SELECT alumno_dni,color,cursos_codigo, sum(respuesta) as total from total 
-                where cursos_codigo='$curso' 
-                group by color,alumno_dni;";
+            $nombreCentroLog=nombreCentroLog();
+            $curso=$_POST['curso'];
+
+            if (isset($_POST['curso'])){
+
+                $conexion=conectarBD();
+                $sql="SELECT nombre,apellidos, alumno_dni,azul,rojo,amarillo,verde,equipos_id,cursos_codigo, cursos_centros_nombre
+                 from total_colores, usuarios where alumno_dni=dni and cursos_codigo='$curso' and cursos_centros_nombre='$nombreCentroLog';";
                 $consulta=$conexion->prepare($sql);
                 $consulta->execute();
 
-                while($fila=$consulta->fetch(PDO::FETCH_ASSOC)){
-                    echo $fila['alumno_dni'];
-                    echo $fila['cursos_codigo'];
-                    echo $fila['color'];
-                    echo $fila['total']." % ";
-                    echo "<br>";
-                }
+                $fila=$consulta->fetchAll(PDO::FETCH_ASSOC);
+               
+                return $fila;
 
+            }
+     
         }
 
 
      
        
 
-
+?>
 
 
 
