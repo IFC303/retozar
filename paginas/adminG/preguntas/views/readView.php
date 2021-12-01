@@ -1,4 +1,4 @@
-<div>
+<div class="page-main__div1">
     <table border="1" style="text-align:center;">
         <tr>
             <th>Term</th>

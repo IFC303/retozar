@@ -77,7 +77,7 @@ class PreguntasController
 
         if (isset($_POST['subBorrar'])) {
             $this->model->delete($id);
-            header("Location: ../preguntas");
+            header("Location: /paginas/adminG/preguntas");
         } else {
             $pregunta = $this->model->get_pregunta($id);
             require_once 'views/readView.php';

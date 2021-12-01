@@ -17,14 +17,13 @@
 }
 
 .styleform input {
-    width: 250px;
+    width: 50%;
     padding: 10px;
 }
 
 #boton1 {
     width: 215px;
     border: none;
-    margin-top: 10px;
     padding: 10px;
     font-size: 14px;
     background-color: #102140;
@@ -40,7 +39,7 @@
 }
 
 .btnvolver {
-    margin-top: 15px;
+    margin-top: 20px;
     text-decoration: none;
     color: #102140;
     font-weight: bold;
@@ -92,8 +91,19 @@ input[type="file"] {
 .custom-file-upload {
     border: 1px solid #ccc;
     display: inline-block;
-    padding: 6px 12px;
+    padding: 8px 12px;
     cursor: pointer;
+}
+
+.page-main__div1 {
+    width: 100vh;
+    margin: auto;
+    margin-bottom: 5vh;
+}
+
+.page-main__div2 {
+    display: flex;
+    justify-content: center;
 }
 
 /**********************************/
@@ -150,7 +160,6 @@ body {
 
 .page-main {
     grid-column: 1/3;
-    display: grid;
     justify-content: center;
 }
 

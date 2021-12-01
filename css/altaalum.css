@@ -60,7 +60,7 @@ footer{
 }
 
 .styleform input{
-    width:250px;
+    width: 50%;
     padding: 10px;
 }
 .styleform1 {
@@ -75,7 +75,6 @@ footer{
     margin-bottom: 50px;
     width: 215px;
     border: none;
-    margin-top: 10px;
     padding: 10px;
     font-size: 14px;
     background-color: #102140;

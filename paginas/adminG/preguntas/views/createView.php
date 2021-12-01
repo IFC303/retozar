@@ -1,4 +1,4 @@
-<div id="contenido">
+<div id="contenido" class="page-main__div1">
     <form action="" method="post" class="styleform">
         <fieldset>
             <legend><h3>NUEVA PREGUNTA</h3></legend>

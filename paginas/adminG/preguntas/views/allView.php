@@ -1,4 +1,4 @@
-<div id="contenido">
+<div id="contenido" class="page-main__div1">
     <a href="../iniAdminGeneral" class="btnvolver">Volver</a><br><br>
 
     <table border="1" style="text-align: center;">

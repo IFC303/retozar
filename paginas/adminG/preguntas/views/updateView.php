@@ -1,4 +1,4 @@
-<div id="contenido">
+<div id="contenido" class="page-main__div1">
     <form action="" method="post" class="styleform">
         <label for="idTerm">Nuevo term:</label>
         <input type="text" name="txtTerm" id="idTerm" value="<?php echo $pregunta->term; ?>"><br><br>
