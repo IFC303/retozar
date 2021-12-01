@@ -78,6 +78,7 @@ function listardepartamentos()
 
     while ($fila = $consulta->fetch(PDO::FETCH_ASSOC)) {
         $departamentos = $fila['departamento'];
+        $departamentos = ucfirst($departamentos);
         $solucion .= "<option value='$departamentos'>$departamentos</option\n>";
     }
     $solucion .= "</select>";

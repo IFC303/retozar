@@ -26,8 +26,8 @@ function verAlumnos(){
         ?>
             <tr>
                 <td class="tdT"><?php echo $fila['dni'];?> </td>
-                <td class="tdT"><?php echo $fila['nombre'];?> </td>
-                <td class="tdT"><?php echo $fila['apellidos'];?> </td>
+                <td class="tdT"><?php echo ucwords($fila['nombre']);?> </td>
+                <td class="tdT"><?php echo ucwords($fila['apellidos']);?> </td>
                 <td class="tdI">
                     <FORM action="modiAlumnos" method="POST">
                     <input type="hidden" name="dniA" value ="<?php echo $fila['dni']?>">
@@ -83,8 +83,8 @@ function verAlumnos(){
             ?>
             <tr>
                 <td class="tdT"><?php echo $fila['dni'];?> </td>
-                <td class="tdT"><?php echo $fila['nombre'];?> </td>
-                <td class="tdT"><?php echo $fila['apellidos'];?> </td>
+                <td class="tdT"><?php echo ucfirst($fila['nombre']);?> </td>
+                <td class="tdT"><?php echo ucwords($fila['apellidos']);?> </td>
                 
                 <td class="tdI">
                     <FORM action="modiProfesor" method="POST">
@@ -133,13 +133,14 @@ function verAlumnos(){
                 <th colspan =2>Opciones</th>
             </tr>
         <?php
+    
 
         while($fila = $consulta->fetch(PDO::FETCH_ASSOC)){     
             ?>
             
                 <tr>
-                    <td class="tdT"><?php echo $fila['codigo'];?> </td>
-                    <td class="tdT"><?php echo $fila['departamento'];?> </td>   
+                    <td class="tdT"><?php echo ucfirst($fila['codigo']);?> </td>
+                    <td class="tdT"><?php echo ucfirst($fila['departamento']);?> </td>   
                     <td class="tdI">
                         <FORM action="modiCurso" method="POST">
                             <input type="hidden" name="nombre" value ="<?php echo $fila['codigo']?>">
@@ -200,11 +201,11 @@ function verAlumnos(){
 
                 ?>
                 
-                    <td class="tdT"><?php echo $fila['nombre'];?></td>
-                    <td class="tdT"><?php echo $fila['localidad'];?></td>
-                    <td class="tdT"><?php echo $fila['provincia'];?></td>
+                    <td class="tdT"><?php echo strtoupper($fila['nombre']);?></td>
+                    <td class="tdT"><?php echo ucwords($fila['localidad']);?></td>
+                    <td class="tdT"><?php echo ucwords($fila['provincia']);?></td>
                     <td class="tdT"><?php echo $fila['codigopostal'];?></td>
-                    <td class="tdT"><?php echo $fila2['nombre'];?></td>
+                    <td class="tdT"><?php echo ucwords($fila2['nombre']);?></td>
 
                     <td class="tdI">
                         <FORM action="modiCentro" method="POST">

@@ -114,6 +114,10 @@ table {
     border-bottom: #102140 2px solid;
   }
 
+  .tdT{
+    text-align: center;
+  }
+
   .tdI{
       text-align: right;
   }
