@@ -32,7 +32,7 @@ function nombreLog()
     $consulta = $conexion->prepare($sql);
     $consulta->execute();
     $fila = $consulta->fetch(PDO::FETCH_ASSOC);
-    echo "Bienvenido " . $fila['nombre'];
+    echo "Bienvenido " . ucwords($fila['nombre']);
 }
 
 //NOMBRE CENTRO INICIO SESION
