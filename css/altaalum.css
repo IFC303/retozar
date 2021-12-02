@@ -85,6 +85,11 @@ footer{
     opacity: 1;
     margin-left:15px ;
 }
+
+#boton10:hover{
+    transition: 0.3s;
+    opacity: 0.9;
+}
 #boton1{
     margin-bottom: 50px;
     width: 215px;
@@ -107,6 +112,15 @@ button{
     border: 0px;
     cursor: pointer;
     background-color:#f5f5f5;
+}
+
+.margen{
+    margin-right: 10px;
+}
+
+#botones{
+    display: flex;
+    justify-content: center;
 }
 table {
     border-collapse: collapse;
