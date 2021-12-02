@@ -1,5 +1,5 @@
 <div id="contenido" class="page-main__div1">
-    <a href=".." class="btnvolver">Volver</a><br><br>
+    <a href=".." class="btnvolver">Volver a adminG</a><br><br>
 
     <table style="text-align: center;">
         <tr>

@@ -1,3 +1,5 @@
+<a href=".. " class="btnvolver">Volver a adminG</a>
+
 <div id="contenido" class="page-main__div1">
     <form action="" method="post" class="styleform">
         <fieldset>
@@ -10,6 +12,4 @@
             <?php echo $subInsertar; ?>
         </fieldset>
     </form>
-
-    <a href=".. " class="btnvolver">Volver</a>
 </div>

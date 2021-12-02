@@ -1,3 +1,4 @@
+<a href="/paginas/adminG/preguntas" class="btnvolver">Volver a preguntas</a><br><br>
 <div class="page-main__div1">
     <table border="1" style="text-align:center;">
         <tr>

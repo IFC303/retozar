@@ -1,3 +1,5 @@
+<a href=".." class="btnvolver">Volver a adminG</a><br><br>
+
 <div id="contenido" class="page-main__div1">
     <form action="" method="post" class="styleform" enctype="multipart/form-data">
         <fieldset>
@@ -12,6 +14,4 @@
         </fieldset>
         <?php echo $subUpload; ?>
     </form>
-
-    <a href=".." class="btnvolver">Volver</a><br><br>
 </div>

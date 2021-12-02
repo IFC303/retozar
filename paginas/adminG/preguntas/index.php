@@ -9,11 +9,7 @@
 </header>
 
 <nav class="page-nav">
-    <ul id="menu" class="enlaces">
-        <li><a href=".">Ver preguntas</a></li>
-        <li><a href="nuevo">Nueva pregunta</a></li>
-        <li><a href="subir">Subir preguntas</a></li>
-    </ul>
+    <?php if (preg_match('~[0-9]+~', $_SERVER['REQUEST_URI'])) include 'views/menu1View.php'; else include 'views/menu2View.php'; ?>
 </nav>
 
 <main class="page-main">
