@@ -71,13 +71,13 @@
                   if(isset($_POST['Aceptar'])) 
                 {
                     $alumnos= verResultados();
-                    
+                    $numAlumnos=equiposAutomaticos();
                     ?> 
 
                 <script>
                      var alumnos = <?php echo json_encode($alumnos); ?>;
-                     /* console.log(alumnos);  */
-                     ordenar(name,alumnos);
+                     var numAlumnos = <?php echo json_encode($numAlumnos); ?>;
+                     ordenar(name,alumnos,numAlumnos);
                 </script>
 
                  <?php
