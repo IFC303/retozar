@@ -11,5 +11,5 @@
         </fieldset>
     </form>
 
-    <a href="../iniAdminGeneral" class="btnvolver">Volver</a>
+    <a href=".. " class="btnvolver">Volver</a>
 </div>

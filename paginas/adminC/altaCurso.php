@@ -37,7 +37,7 @@
                 </form>  
 
                 <br>
-        <a class="btnvolver" href="iniAdminCentro" > Volver al menú</a>
+        <a class="btnvolver" href="." > Volver al menú</a>
     </div><!-- fin contenido -->
 
     </main>

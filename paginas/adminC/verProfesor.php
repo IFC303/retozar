@@ -32,7 +32,7 @@
             <?php
                 verProfesor();
             ?>
-            <a class="btnvolver" href="iniAdminCentro">Volver al menu</a>
+            <a class="btnvolver" href=".">Volver al menu</a>
 
         </div>
     </main>

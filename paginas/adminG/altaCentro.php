@@ -55,7 +55,7 @@
         </form>
 
         <br>
-        <a class="btnvolver" href="iniAdminGeneral"> Volver al menú</a>
+        <a class="btnvolver" href="."> Volver al menú</a>
         </div><!-- fin contenido -->
 
         </main>

@@ -29,7 +29,7 @@
             <?php
                 verRespuestas();
             ?>
-            <a class="btnvolver" href="iniAlumno">Volver al menu</a>
+            <a class="btnvolver" href=".">Volver al menu</a>
         </div>
     </main>
     <footer>

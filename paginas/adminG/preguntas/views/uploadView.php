@@ -13,5 +13,5 @@
         <?php echo $subUpload; ?>
     </form>
 
-    <a href="../iniAdminGeneral" class="btnvolver">Volver</a><br><br>
+    <a href=".." class="btnvolver">Volver</a><br><br>
 </div>

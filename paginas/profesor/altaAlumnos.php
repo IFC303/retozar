@@ -59,7 +59,7 @@
         </form>
 
          <br>
-        <a class="btnvolver" href="iniProfesor" > Volver al menú</a>
+        <a class="btnvolver" href="." > Volver al menú</a>
     </div><!-- fin contenido -->
 
     </main>

@@ -64,7 +64,7 @@
                 <input type="submit" value="Aceptar" name ="Aceptar" id="boton1" onclick="validarForm1()">
                 <input type="submit" value="Borrar formularios" name ="Aceptar" id="boton1" onclick="validarForm1()">  
             </form>
-            <a href="iniAdminGeneral" class="btnvolver"> Volver al menú</a>
+            <a href="." class="btnvolver"> Volver al menú</a>
         </div>
     </main>  <!-- fin main --> 
     <footer>
