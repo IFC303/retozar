@@ -1,3 +1,4 @@
+/*Css general*/
 body{
     font-family: 'Barlow', sans-serif;
     background-color: #f5f5f5;
@@ -6,6 +7,7 @@ body{
     min-height: 100vh;
     margin: auto;
 }
+/*CSS HEADER*/
 #t1{
     margin: 0px;
     color:#102140;
@@ -17,16 +19,20 @@ body{
     color:#102140;
 }
 
+/*CSS MAIN*/
+
 main{
     flex: 1;
 }
 
+
+/*CSS FORMULARIO LOGIN*/
 #formulario{
     display: flex;
     justify-content: center;
     margin-top: 20vh;
 }
-
+/*CSS INPUT*/
 .inp{
     background-color: #f5f5f5;
     border: none;
@@ -35,13 +41,16 @@ main{
     width: 250px;
 }
 
-footer{
-    background-color: #bdddf6;
+/*CSS  contendedor iconos*/
+.divF{
+    margin-bottom: 15px;
     display: flex;
-    flex-shrink: 0;
-    padding: 20px;
-    justify-content:space-between
+    justify-content: center;
+    align-items: center;
 }
+
+/*CSS iconos*/
+
 .iconc{  
     margin-right: 10px;
     margin-top: 5px;
@@ -51,13 +60,10 @@ i{
     margin-top: 5px;
     font-size: 25px; 
 }
-.divF{
-    margin-bottom: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
+
+
+/*BOTON INICIAR SESION */
 #boton3{
     border: none;
     margin-top: 10px;
@@ -75,6 +81,14 @@ i{
 #boton3:hover{
     transition: 0.3s;
     opacity: 0.9;
+}
+/*CSS FOOTER*/
+footer{
+    background-color: #bdddf6;
+    display: flex;
+    flex-shrink: 0;
+    padding: 20px;
+    justify-content:space-between
 }
 
 @media (max-width: 650px) {
