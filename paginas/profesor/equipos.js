@@ -265,7 +265,7 @@
                     var numEquiposTres=0;
                     var suma=0;
                     var numAlumnos=parseInt(numAlumnos);
-                    var numAlumnos= numAlumnos+7;
+                    var numAlumnos= numAlumnos;
                     console.log(numAlumnos);
 
 
@@ -278,7 +278,7 @@
                             var equipos = new Array(suma);     
                                          
                             for (var i = 0; i < equipos.length; i++) {
-                              equipos[i] = new Array(4);
+                              equipos[i] = new Array();
                             }
                             
                             console.log(equipos);
@@ -291,11 +291,11 @@
                             var equipos = new Array(numEquiposTres); 
 
                             for (var i = 0; i < equipos.length; i++) {
-                                equipos[i] = new Array(3);
+                                equipos[i] = new Array();
                               }
 
                             for (var i=0; i<numEquiposCuatro;i++){
-                                equipos.push(new Array(4));
+                                equipos.push(new Array());
                             }
 
                             console.log(equipos);
@@ -308,11 +308,11 @@
                             var equipos = new Array(numEquiposTres); 
 
                             for (var i = 0; i < equipos.length; i++) {
-                                equipos[i] = new Array(3);
+                                equipos[i] = new Array();
                               }
 
                             for (var i=0; i<numEquiposCuatro;i++){
-                                equipos.push(new Array(4));
+                                equipos.push(new Array());
                             }
                 
                             console.log(equipos);
@@ -325,11 +325,11 @@
                             var equipos = new Array(numEquiposTres); 
 
                             for (var i = 0; i < equipos.length; i++) {
-                                equipos[i] = new Array(3);
+                                equipos[i] = new Array();
                               }
 
                             for (var i=0; i<numEquiposCuatro;i++){
-                                equipos.push(new Array(4));
+                                equipos.push(new Array());
                             }
                               
                               console.log(equipos);
