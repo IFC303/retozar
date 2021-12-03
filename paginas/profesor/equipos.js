@@ -56,20 +56,17 @@ function ordenar(name, alumnos, numAlumnos) {
         boton.setAttribute("value", "Generar Grupo");
         boton.setAttribute("name", "generarG");
         boton.setAttribute("id", "boton1");
-        boton.setAttribute("onclick", "generar(numAlumnos,alumnos);");
+        boton.setAttribute("onclick", "generar(alumnos);");
         document.getElementById("botones").appendChild(boton);
 
     }
-
 
     //CREACION DE TABLA (cabecera)
     var resultados = document.createElement("table");
     resultados.setAttribute("id", "resultados");
     document.getElementById("totales").appendChild(resultados);
 
-
     document.getElementById("resultados").innerHTML = "";
-
 
     var nombrea = "Nombre";
     var tr1 = document.createElement("tr");
@@ -248,102 +245,22 @@ function ordenar(name, alumnos, numAlumnos) {
     return alumnos, numAlumnos;
 }
 
+function generar(alumnos) {
 
-function generar(numAlumnos, alumnos) {
-
-
-    var numEquiposCuatro = 0;
-    var numEquiposTres = 0;
-    var suma = 0;
-    var numAlumnos = parseInt(numAlumnos);
-    var numAlumnos = numAlumnos;
-
-    var equipos = new Array(suma);
-    if (numAlumnos % 4 == 0) {
-        numEquiposCuatro = numAlumnos / 4;
-        numEquiposTres = 0;
-        suma = numEquiposCuatro + numEquiposTres;
-
-        equipos = new Array(suma);
-
-        for (var i = 0; i < equipos.length; i++) {
-            equipos[i] = new Array();
-        }
-
-    } else if (numAlumnos % 4 == 1) {
-        numEquiposCuatro = ((numAlumnos - 9) / 4);
-        numEquiposTres = 3;
-        suma = numEquiposCuatro + numEquiposTres;
-
-        equipos = new Array(numEquiposTres);
-
-        for (var i = 0; i < equipos.length; i++) {
-            equipos[i] = new Array();
-        }
-
-        for (var i = 0; i < numEquiposCuatro; i++) {
-            equipos.push(new Array());
-        }
-
-    } else if (numAlumnos % 4 == 2) {
-        numEquiposCuatro = ((numAlumnos - 6) / 4);
-        numEquiposTres = 2;
-        suma = numEquiposCuatro + numEquiposTres;
-
-        equipos = new Array(numEquiposTres);
-
-        for (var i = 0; i < equipos.length; i++) {
-            equipos[i] = new Array();
-        }
-
-        for (var i = 0; i < numEquiposCuatro; i++) {
-            equipos.push(new Array());
-        }
-
-    } else if (numAlumnos % 4 == 3) {
-        numEquiposCuatro = ((numAlumnos - 3) / 4);
-        numEquiposTres = 1;
-        suma = numEquiposCuatro + numEquiposTres;
-
-        equipos = new Array(numEquiposTres);
-
-        for (var i = 0; i < equipos.length; i++) {
-            equipos[i] = new Array();
-        }
-
-        for (var i = 0; i < numEquiposCuatro; i++) {
-            equipos.push(new Array());
-        }
-
+    var equipos = [];
+    for (var i = 0; i < 4; i++) {
+        equipos[i] = new Array(0);
     }
 
-    rellenar(equipos, alumnos);
-}
+    // var equipos = new Array(4);
+    var defecto = 3;
 
-function rellenar(equipos, alumnos) {
+    var j = 0;
+    var limit = alumnos.length / equipos.length;
+    for (var i = 0; i < alumnos.length; i++) {
+        equipos[j].push(alumnos[i]);
+        if (i > 0 && i % defecto == 0) j++;
+    }
 
-    // for (var i = 0; i < alumnos.length; i++) {
-    //     var alto = Math.max(alumnos[i].rojo);
-    // }
-
-    var alto = Math.max(alumnos.rojo);
-    console.log(alto);
-
-    // equipos[0].push(alumnos[0]);
-
-    // console.log(equipos);
-    //
-    // for(var i=0; i<equipos.length;i++){
-    //
-    //      var resultado=equipos[i].nombre+"-> Rojo: " + equipos[i].rojo+" Azul: "+equipos[i].azul+" Verde: "+equipos[i].verde+" Amarillo: "+equipos[i].amarillo;
-    //
-    //      var nodo=document.createElement("div");
-    //      var textoNodo=document.createTextNode(resultado);
-    //      nodo.appendChild(textoNodo);
-    //      document.getElementById('resultado1').appendChild(nodo);
-    //
-    //      nodo.setAttribute("draggable","true");
-    //      nodo.setAttribute("id","alumno"+i);
-    //      nodo.setAttribute("ondragstart","arrastre(this.id);");
-    //  }
+    console.log(equipos);
 }
