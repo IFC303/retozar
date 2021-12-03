@@ -20,22 +20,23 @@
 <body>
     <header>
         <div id="texto" >
-            <p id="t1"><a href="/" class="title">Disc Aragón</a></p>
+            <h1 id="t1"><a href="/" class="title">Disc Aragón</a></h1>
             <p id="t2">Test para formación de equipos de trabajo</p>
         </div> 
     </header>
     <main>
         <div id="contenido">
 
-            
+            <div class="bienv">
+                <?php
+                    nombreLog();
+                ?>
+            </div>
+
             <?php
-
-                echo "<br>","<br>";
-                echo nombreLog();
-                echo "<br>" ,"<br>","<br>";
-
                 verPreguntas();
             ?>
+
             <a class="btnvolver" href=".">Volver al menu</a>
         </div>
     </main>

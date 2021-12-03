@@ -29,6 +29,14 @@ main{
     justify-content: center;
 }
 
+.bienv{
+    margin-top: 5vh;
+    font-size: 15px;
+    color: #102140;
+    display: flex;
+    justify-content: space-between;
+}
+
 #contenido{
     width: 40%;
     margin-top: 5vh;

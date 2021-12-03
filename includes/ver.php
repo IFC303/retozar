@@ -308,7 +308,12 @@ function verAlumnos(){
                             <?php
 
             }else{
-                echo "Test finalizado";
+                ?>
+                <div class="testfin">
+                    <h3>Test finalizado</h3>
+                </div>
+                <?php
+                
             }
 
         }
