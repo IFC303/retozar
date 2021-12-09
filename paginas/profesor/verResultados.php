@@ -75,7 +75,7 @@
                 <div id="resultado">
                     <form action="final.php" method="post">
                         <input type="hidden" name="enviar" id="enviar">
-                        <input type="submit" value="Enviar" name="Enviar" id="boton10">
+                        <input type="submit" value="Enviar" name="Enviar" id="boton10" onclick="return confirm('¿Seguro que quieres guardar estos grupos?');">
                     </form>
                 </div>
             </div>
