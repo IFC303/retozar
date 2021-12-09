@@ -419,7 +419,7 @@ function generar(numAlumnos,alumnos2){
 
                         var div=document.createElement("div");
                         div.setAttribute("id",i);
-                        div.setAttribute("style","background-color: #bdddf6;height:100px;width:100px;border:2px solid #102140;");
+                        div.setAttribute("style","background-color: #bdddf6;height:110px;width:200px;border:2px solid #102140;");
                         div.setAttribute("ondragover","sobre(event)");
                         div.setAttribute("ondrop","suelta(this.id,event,equipos)");
                         document.getElementById("resultado").appendChild(div);
@@ -433,7 +433,7 @@ function generar(numAlumnos,alumnos2){
                         alumno.setAttribute("draggable",true);
                         alumno.setAttribute("ondragstart","arrastre(this.id,event);");
 
-                        var alu=equipos[i][j].nombre;
+                        var alu=equipos[i][j].nombre + " " + equipos[i][j].apellidos;
                         var textoNodo=document.createTextNode(alu);
 
                        
