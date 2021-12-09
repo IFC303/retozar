@@ -58,7 +58,6 @@
                         </ul> -->
                         <ul id="resultados" style="display:none">
                             <li><a href="verResultados">Propuesta automatica de equipos</a></li><br>
-                            <li><a href="#">Resultado por alumno</a></li><br>
                         </ul>
                     </div> <!-- fin result -->
 
