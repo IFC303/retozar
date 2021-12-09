@@ -1,4 +1,5 @@
-function ordenar(name, alumnos, numAlumnos) {
+
+function ordenar(name, alumnos, numAlumnos,equipos) {
     if (document.getElementById("botones") == null) {
 
         var botones = document.createElement("div");
@@ -54,9 +55,9 @@ function ordenar(name, alumnos, numAlumnos) {
         var boton = document.createElement("input");
         boton.setAttribute("type", "submit");
         boton.setAttribute("value", "Generar Grupo");
-        boton.setAttribute("name", "generarG");
+        boton.setAttribute("name", "generar");
         boton.setAttribute("id", "boton1");
-        boton.setAttribute("onclick", "generar(alumnos);");
+        boton.setAttribute("onclick", "generar(numAlumnos,alumnos);");
         document.getElementById("botones").appendChild(boton);
 
     }
@@ -243,24 +244,282 @@ function ordenar(name, alumnos, numAlumnos) {
     }
 
     return alumnos, numAlumnos;
+
 }
 
-function generar(alumnos) {
 
-    var equipos = [];
-    for (var i = 0; i < 4; i++) {
-        equipos[i] = new Array(0);
-    }
 
-    // var equipos = new Array(4);
-    var defecto = 3;
 
-    var j = 0;
-    var limit = alumnos.length / equipos.length;
-    for (var i = 0; i < alumnos.length; i++) {
-        equipos[j].push(alumnos[i]);
-        if (i > 0 && i % defecto == 0) j++;
-    }
+function generar(numAlumnos,alumnos){
 
-    console.log(equipos);
-}
+            var numEquiposCuatro=0;
+            var numEquiposTres=0;
+            var suma=0;
+            var numAlumnos=parseInt(numAlumnos);
+    
+
+
+                //CREA MATRIZ EN FUNCION DE LOS ALUMNOS QUE HAY
+                if(numAlumnos%4==0){
+                        numEquiposCuatro=numAlumnos/4;
+                        numEquiposTres=0;
+                        suma=numEquiposCuatro+numEquiposTres;
+                        
+                         var equipos = new Array(suma);     
+                                    
+                        for (var i = 0; i < equipos.length; i++) {
+                        equipos[i] = new Array();
+                        }
+                        var equipos=equipos.reverse();
+                    
+
+                }else if (numAlumnos%4==1){
+                        numEquiposCuatro=((numAlumnos-9)/4);
+                        numEquiposTres=3;
+                        suma=numEquiposCuatro+numEquiposTres;
+
+                         var equipos = new Array(numEquiposTres); 
+
+                        for (var i = 0; i < equipos.length; i++) {
+                            equipos[i] = new Array();
+                        }
+
+                        for (var i=0; i<numEquiposCuatro;i++){
+                            equipos.push(new Array());
+                        }
+                        var equipos=equipos.reverse();
+                    
+                        
+                }else if (numAlumnos%4==2){
+                        numEquiposCuatro=((numAlumnos-6)/4);
+                        numEquiposTres=2;
+                        suma=numEquiposCuatro+numEquiposTres;
+
+                        var equipos = new Array(numEquiposTres); 
+
+                        for (var i = 0; i < equipos.length; i++) {
+                            equipos[i] = new Array();
+                        }
+
+                        for (var i=0; i<numEquiposCuatro;i++){
+                            equipos.push(new Array());
+                        }
+                        var equipos=equipos.reverse();
+                    
+                        
+                }else if (numAlumnos%4==3){
+                        numEquiposCuatro=((numAlumnos-3)/4);
+                        numEquiposTres=1;
+                        suma=numEquiposCuatro+numEquiposTres;     
+                        
+                         var equipos = new Array(numEquiposTres); 
+
+                        for (var i = 0; i < equipos.length; i++) {
+                            equipos[i] = new Array();
+                        }
+
+                        for (var i=0; i<numEquiposCuatro;i++){
+                            equipos.push(new Array());
+                        }
+                        var equipos=equipos.reverse();
+                 
+                }  
+
+
+
+            //REPARTO DE ROJOS              
+             for (var i=0;i<equipos.length;i++){
+
+                    alumnos.sort(function (a, b) {
+                        if (a.rojo < b.rojo) {
+                            return 1;
+                        }
+                        if (a.rojo > b.rojo) {
+                            return -1;
+                        }
+                        return 0;
+                    });
+
+                    equipos[i].push(alumnos[0]);
+                    alumnos.shift();
+             
+                }
+
+
+             //REPARTO DE AZULES
+            for (var i=0;i<equipos.length;i++){
+
+                    alumnos.sort(function (a, b) {
+                        if (a.azul < b.azul) {
+                            return 1;
+                        }
+                        if (a.azul > b.azul) {
+                            return -1;
+                        }
+                        return 0;
+                    });
+
+                    equipos[i].push(alumnos[0]);
+                    alumnos.shift();
+              }
+ 
+
+
+             //REPARTO DE VERDES
+             for (var i=0;i<equipos.length;i++){
+
+                alumnos.sort(function (a, b) {
+                    if (a.verde < b.verde) {
+                        return 1;
+                    }
+                    if (a.verde > b.verde) {
+                        return -1;
+                    }
+                    return 0;
+                });
+
+                equipos[i].push(alumnos[0]);
+                alumnos.shift();
+             } 
+
+             
+
+             //REPARTO DE AMARILLOS
+             for (var i=0;i<equipos.length;i++){
+
+                alumnos.sort(function (a, b) {
+                    if (a.amarillo < b.amarillo) {
+                        return 1;
+                    }
+                    if (a.amarillo > b.amarillo) {
+                        return -1;
+                    }
+                    return 0;
+                });
+
+                equipos[i].push(alumnos[0]);
+                alumnos.shift();  
+
+                
+             } 
+   
+
+             //BORRA ELEMENTOS UNDEFINED
+             for (var i=0;i<equipos.length;i++){
+                equipos[i] = equipos[i].filter(function(dato){
+                    return dato != undefined
+                  });
+             } 
+    
+        
+                         
+            //CREA LOS DIVS DE LOS GRUPOS
+             for (var i=0;i<equipos.length;i++){
+
+                        var div=document.createElement("div");
+                        div.setAttribute("id",i);
+                        div.setAttribute("style","background-color: yellow;height:100px;width:100px;border:2px solid;");
+                        div.setAttribute("ondragover","sobre(event)");
+                        div.setAttribute("ondrop","suelta(this.id,event,equipos)");
+                        document.getElementById("resultado").appendChild(div);
+
+                        var grupo=document.getElementById(i);
+                    
+                    for(var j=0;j<equipos[i].length;j++){
+                         
+                        var alumno=document.createElement("div");
+                        alumno.setAttribute("id",i+' '+j);
+                        alumno.setAttribute("draggable",true);
+                        alumno.setAttribute("ondragstart","arrastre(this.id,event);");
+
+                        var alu=equipos[i][j].nombre;
+                        var textoNodo=document.createTextNode(alu);
+
+                       
+                        alumno.appendChild(textoNodo);
+                        grupo.appendChild(alumno);
+
+
+                    }
+            } 
+
+            //BOTON GUARDAR
+            var guardar = document.createElement("div");
+            guardar.setAttribute("id", "guardar");
+            document.getElementById("resultado").appendChild(guardar);
+            var botonguardar = document.createElement("input");
+            botonguardar.setAttribute("type", "submit");
+            botonguardar.setAttribute("value", "Guardar equipos");
+            botonguardar.setAttribute("name", "Guardar grupo");
+            botonguardar.setAttribute("id", "boton1");
+            botonguardar.setAttribute("onclick", "guardar(equipos);");
+            document.getElementById("guardar").appendChild(botonguardar);
+
+ 
+            return equipos;
+           
+      }
+
+
+
+
+
+       function guardar(equipos){
+
+            console.log(equipos);
+         
+      } 
+
+
+
+
+       function arrastre(id,ev) {
+            var id=document.getElementById(id);
+            ev.dataTransfer.setData('Data',ev.target.id);
+        }  
+
+
+        function sobre(ev) {
+            ev.preventDefault();
+        }
+
+
+        function suelta(id,ev,equipos){
+            var caja=document.getElementById(id);
+            
+            ev.preventDefault();
+            var dato=ev.dataTransfer.getData('Data');
+            caja.appendChild(document.getElementById(dato));
+
+
+            for(var i=0; i<equipos.length;i++){
+                for(j=0;j<equipos.length;j++){
+                     if (dato==i+" "+j){
+                         var alu=equipos[i][j];
+                         var indice=equipos.indexOf(equipos[i][j]);
+                         console.log(indice);
+                         /* equipos[i].splice(i,1);  */
+                         console.log(equipos[i][j]);
+                         equipos[caja.id].push(alu);
+                    }else{
+                        console.log("no");
+                    }
+                } 
+            }
+              console.log(equipos);  
+
+         
+
+
+
+}  
+ 
+
+
+
+
+
+
+
+
+

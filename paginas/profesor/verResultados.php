@@ -66,23 +66,35 @@
 
             <div id="totales"></div>
 
+            <div id="resultado"></div>
+            
 
-                <?php
-                  if(isset($_POST['Aceptar'])) 
-                {
-                    $alumnos= verResultados();
-                    $numAlumnos=equiposAutomaticos();
-                    ?> 
 
-                <script>
-                     var alumnos = <?php echo json_encode($alumnos); ?>;
-                     var numAlumnos = <?php echo json_encode($numAlumnos); ?>;
-                     ordenar(name,alumnos,numAlumnos);
-                </script>
+            <?php
+              if(isset($_POST['Aceptar'])) 
+            {
+                $alumnos= verResultados();
+                $numAlumnos=equiposAutomaticos();
+                ?> 
 
-                 <?php
-                }  
-                ?>   
+            <script>
+                 var alumnos = <?php echo json_encode($alumnos); ?>;
+                 var numAlumnos = <?php echo json_encode($numAlumnos); ?>;
+                 ordenar(name,alumnos,numAlumnos);
+                
+                var equipos=generar(numAlumnos,alumnos); 
+                console.log(equipos);
+                             
+            </script>
+
+             <?php
+
+
+                $equipos = "<script> document.writeln(equipos); </script>"; 
+
+
+            }  
+            ?>  
 
 
                 
