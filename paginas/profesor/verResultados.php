@@ -7,6 +7,12 @@
     include "./../../includes/modi.php";
     include "./../../includes/ver.php";
     include "./../../includes/equipos.php";
+
+//    if (isset($_POST['Enviar'])){
+//        echo $_POST['enviar'];
+//    } else{
+//    //    header('Location: url=localhost/no');
+//    }
 ?>
 
 <!DOCTYPE html>
@@ -16,38 +22,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../../css/altaalum.css"> 
+    <link rel="stylesheet" href="../../css/altaalum.css">
     <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;1,500&display=swap" rel="stylesheet">
     <script src="equipos.js"></script>
 </head>
-<body id="body">  
+<body id="body">
 
     <header>
        <div id="texto" >
             <h1 id="t1"><a href="/" class="title">Disc Aragón</a></h1>
             <p id="t2">Test para formación de equipos de trabajo</p>
-        </div> 
+        </div>
     </header>
-    
+
     <main>
         <div id="contenido">
 
             <?php
                 $nombrecentro=nombreCentroLog();
-                
+
             ?>
 
             <form action="#" method="POST">
-                
+
                 <select  class="styleform1" name="curso" id="curso" value="curso">
                         <option value="0">Selecciona una clase/aula:</option>
                         <?php
                             $conexion=conectarBD();
 
                             $logcentro = departamentoLog();
-                            
+
                             $nombreCentroLog=nombreCentroLog();
-                            
+
                             $sql="SELECT codigo from cursos where centros_nombre='$nombreCentroLog' and departamento = '$logcentro'";
                             $consulta=$conexion->prepare($sql);
                             $consulta->execute();
@@ -55,10 +61,10 @@
                              $codcurso = $fila['codigo'];
                              $codcurso = ucfirst($codcurso);
                             echo "<option value='$codcurso'>$codcurso</option\n>";
-                            
+
                         }
                         ?>
-                </select> 
+                </select>
 
                 <input type="submit" value="Aceptar" name="Aceptar" id="boton10">
 
@@ -66,38 +72,47 @@
 
             <div class="grid-container">
                 <div id="totales"></div>
-                <div id="resultado"></div>
+                <div id="resultado">
+                    <form action="final.php" method="post">
+                        <input type="hidden" name="enviar" id="enviar">
+                        <input type="submit" value="Enviar" name="Enviar" id="boton10">
+                    </form>
+                </div>
             </div>
 
 
             <?php
-              if(isset($_POST['Aceptar'])) 
+              if(isset($_POST['Aceptar']))
             {
                 $alumnos= verResultados();
                 $numAlumnos=equiposAutomaticos();
-                ?> 
+
+                ?>
 
             <script>
                  var alumnos = <?php echo json_encode($alumnos); ?>;
                  var numAlumnos = <?php echo json_encode($numAlumnos); ?>;
                  ordenar(name,alumnos,numAlumnos);
-                
-                var equipos=generar(numAlumnos,alumnos); 
+
+                var equipos=generar(numAlumnos,alumnos);
+
                 console.log(equipos);
-                             
+                var enviar = document.getElementById("enviar");
+                enviar.setAttribute("value", equipos);
+
             </script>
 
              <?php
 
-
-                $equipos = "<script> document.writeln(equipos); </script>"; 
-
-
-            }  
-            ?>  
+//                $equipos = "<script> document.writeln(equipos); </script>";
 
 
-                
+            }
+
+            ?>
+
+
+
             <a class="btnvolver" href="." > Volver al menú</a>
 
         </div>
@@ -121,15 +136,15 @@
                     <source media="(min-width:650px)" srcset="../../img/logoSBR.png" width="95px" height="95px">
                     <img src="../../img/logoSBR.png" alt="logo_SBR" width="70px" height="70px">
                 </picture>
-               
+
             </div> <!-- fin img2 -->
 
     </footer><!-- fin footer -->
 
 
-       
-                  
-    
+
+
+
 </body>
 </html>
 

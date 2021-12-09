@@ -52,13 +52,13 @@ function ordenar(name, alumnos, numAlumnos,equipos) {
         amarillo.setAttribute("class", "margen");
 
         //BOTON GENERAR GRUPOS
-        var boton = document.createElement("input");
-        boton.setAttribute("type", "submit");
-        boton.setAttribute("value", "Generar Grupo");
-        boton.setAttribute("name", "generar");
-        boton.setAttribute("id", "boton1");
-        boton.setAttribute("onclick", "generar(numAlumnos,alumnos);");
-        document.getElementById("botones").appendChild(boton);
+        // var boton = document.createElement("input");
+        // boton.setAttribute("type", "submit");
+        // boton.setAttribute("value", "Generar Grupo");
+        // boton.setAttribute("name", "generar");
+        // boton.setAttribute("id", "boton1");
+        // boton.setAttribute("onclick", "generar(numAlumnos,alumnos);");
+        // document.getElementById("botones").appendChild(boton);
 
     }
 
@@ -252,6 +252,7 @@ function ordenar(name, alumnos, numAlumnos,equipos) {
 
 function generar(numAlumnos,alumnos){
 
+
             var numEquiposCuatro=0;
             var numEquiposTres=0;
             var suma=0;
@@ -444,19 +445,21 @@ function generar(numAlumnos,alumnos){
             } 
 
             //BOTON GUARDAR
-            var guardar = document.createElement("div");
-            guardar.setAttribute("id", "guardar");
-            document.getElementById("resultado").appendChild(guardar);
-            var botonguardar = document.createElement("input");
-            botonguardar.setAttribute("type", "submit");
-            botonguardar.setAttribute("value", "Guardar equipos");
-            botonguardar.setAttribute("name", "Guardar grupo");
-            botonguardar.setAttribute("id", "boton1");
-            botonguardar.setAttribute("onclick", "guardar(equipos);");
-            document.getElementById("guardar").appendChild(botonguardar);
+            // var guardar = document.createElement("div");
+            // guardar.setAttribute("id", "guardar");
+            // document.getElementById("resultado").appendChild(guardar);
+            // var botonguardar = document.createElement("input");
+            // botonguardar.setAttribute("type", "submit");
+            // botonguardar.setAttribute("value", "Guardar equipos");
+            // botonguardar.setAttribute("name", "enviar");
+            // botonguardar.setAttribute("id", "boton1");
+            // // botonguardar.setAttribute("onclick", "guardar(equipos);");
+            // document.getElementById("guardar").appendChild(botonguardar);
 
- 
-            return equipos;
+            var equiposGenerados = JSON.stringify(equipos);
+            // console.log(equiposGenerados);
+
+            return equiposGenerados;
            
       }
 
