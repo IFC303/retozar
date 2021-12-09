@@ -73,9 +73,9 @@
             <div class="grid-container">
                 <div id="totales"></div>
                 <div id="resultado">
-                    <form action="final.php" method="post">
+                    <form action="final.php" method="post" id="formulario">
                         <input type="hidden" name="enviar" id="enviar">
-                        <input type="submit" value="Enviar" name="Enviar" id="boton10" onclick="return confirm('¿Seguro que quieres guardar estos grupos?');">
+<!--                        <input type="submit" value="Enviar" name="Enviar" id="boton10" onclick="">-->
                     </form>
                 </div>
             </div>

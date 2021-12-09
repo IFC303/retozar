@@ -445,16 +445,17 @@ function generar(numAlumnos,alumnos){
             } 
 
             //BOTON GUARDAR
-            // var guardar = document.createElement("div");
-            // guardar.setAttribute("id", "guardar");
-            // document.getElementById("resultado").appendChild(guardar);
-            // var botonguardar = document.createElement("input");
-            // botonguardar.setAttribute("type", "submit");
-            // botonguardar.setAttribute("value", "Guardar equipos");
-            // botonguardar.setAttribute("name", "enviar");
-            // botonguardar.setAttribute("id", "boton1");
-            // // botonguardar.setAttribute("onclick", "guardar(equipos);");
-            // document.getElementById("guardar").appendChild(botonguardar);
+            var guardar = document.createElement("div");
+            guardar.setAttribute("id", "guardar");
+            document.getElementById("resultado").appendChild(guardar);
+            var botonguardar = document.createElement("input");
+            botonguardar.setAttribute("type", "submit");
+            botonguardar.setAttribute("value", "Guardar equipos");
+            botonguardar.setAttribute("name", "guardar");
+            botonguardar.setAttribute("id", "boton1");
+            botonguardar.setAttribute("onclick", "return confirm('¿Seguro que quieres guardar estos grupos?');");
+
+            document.getElementById("formulario").appendChild(botonguardar);
 
             var equiposGenerados = JSON.stringify(equipos);
             // console.log(equiposGenerados);
