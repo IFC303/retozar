@@ -65,6 +65,8 @@ RewriteRule ^paginas/adminG/modiCentro paginas/adminG/modiCentro.php [L,NC]
 RewriteRule ^paginas/iniSesion paginas/iniSesion.php [L,NC]
 RewriteRule ^paginas/cerrarSesion paginas/cerrarSesion.php [L,NC]
 
+RewriteRule ^paginas/profesor/final paginas/profesor/final.php [L,NC]
+
 RewriteRule ^error error.php [L,NC]
 
 # ---------------------------------------------------------------------------

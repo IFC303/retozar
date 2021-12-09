@@ -73,7 +73,7 @@
             <div class="grid-container">
                 <div id="totales"></div>
                 <div id="resultado">
-                    <form action="final.php" method="post" id="formulario">
+                    <form action="final" method="post" id="formulario">
                         <input type="hidden" name="enviar" id="enviar">
 <!--                        <input type="submit" value="Enviar" name="Enviar" id="boton10" onclick="">-->
                     </form>
