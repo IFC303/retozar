@@ -40,7 +40,7 @@
     </main>
     <footer>
         <div id="texto">
-            <p id="t1">Disc Aragón</p>
+            <h1 id="t1">Disc Aragón</h1>
             <p id="t2">Test para formación de equipos de trabajo</p>
         </div>
         <div id="img2">
