@@ -64,10 +64,10 @@
 
             </form>
 
-            <div id="totales"></div>
-
-            <div id="resultado"></div>
-            
+            <div class="grid-container">
+                <div id="totales"></div>
+                <div id="resultado"></div>
+            </div>
 
 
             <?php
