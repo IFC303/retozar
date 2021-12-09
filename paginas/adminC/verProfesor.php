@@ -21,7 +21,7 @@
     
     <header>
        <div id="texto" >
-            <p id="t1"><a href="/" class="title">Disc Aragón</a></p>
+            <h1 id="t1"><a href="/" class="title">Disc Aragón</a></h1>
             <p id="t2">Test para formación de equipos de trabajo</p>
         </div> 
     </header>

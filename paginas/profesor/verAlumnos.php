@@ -22,7 +22,7 @@
 
     <header>
        <div id="texto" >
-            <p id="t1"><a href="/" class="title">Disc Aragón</a></p>
+            <h1 id="t1"><a href="/" class="title">Disc Aragón</a></h1>
             <p id="t2">Test para formación de equipos de trabajo</p>
         </div> 
     </header>
@@ -30,16 +30,45 @@
     <main>
         <div id="contenido">
 
-            <?php
-            verAlumnos();
-            ?>
+            <form action="#" method="POST">
+                
+                <select  class="styleform1" name="curso" id="curso" value="curso">
+                        <option value="0">Selecciona una clase/aula:</option>
+                        <?php
+                            $conexion=conectarBD();
 
+                            $logcentro = departamentoLog();
+                            
+                            $nombreCentroLog=nombreCentroLog();
+                            
+                            $sql="SELECT codigo from cursos where centros_nombre='$nombreCentroLog' and departamento = '$logcentro'";
+                            $consulta=$conexion->prepare($sql);
+                            $consulta->execute();
+                            while ($fila = $consulta->fetch(PDO::FETCH_ASSOC)) {
+                                $codcurso = $fila['codigo'];
+                                $codcurso = ucfirst($codcurso);
+                            echo "<option value='$codcurso'>$codcurso</option\n>";
+                            
+                        }
+                        ?>
+                </select> 
+
+                <input type="submit" value="Aceptar" name="Aceptar" id="boton10">
+
+            </form>
+            
+            <div id="totales"></div>
+            <?php
+                    if(isset($_POST['Aceptar'])) 
+                {
+                    $alumnos= verAlumnos();
+                }
+                    
+            ?> 
 
             <a class="btnvolver" href="." > Volver al menú</a>
 
         </div>
-
-
     </main>
 
 
