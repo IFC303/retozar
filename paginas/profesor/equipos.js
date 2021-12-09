@@ -499,6 +499,7 @@ function generar(numAlumnos,alumnos){
                          var indice=equipos.indexOf(equipos[i][j]);
                          console.log(indice);
                          /* equipos[i].splice(i,1);  */
+                         equipos[i].splice(j, 1);
                          console.log(equipos[i][j]);
                          equipos[caja.id].push(alu);
                     }else{
