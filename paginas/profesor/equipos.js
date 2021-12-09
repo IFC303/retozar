@@ -419,7 +419,7 @@ function generar(numAlumnos,alumnos2){
 
                         var div=document.createElement("div");
                         div.setAttribute("id",i);
-                        div.setAttribute("style","background-color: yellow;height:100px;width:100px;border:2px solid;");
+                        div.setAttribute("style","background-color: #bdddf6;height:100px;width:100px;border:2px solid #102140;");
                         div.setAttribute("ondragover","sobre(event)");
                         div.setAttribute("ondrop","suelta(this.id,event,equipos)");
                         document.getElementById("resultado").appendChild(div);
@@ -458,7 +458,6 @@ function generar(numAlumnos,alumnos2){
             document.getElementById("formulario").appendChild(botonguardar);
 
             var equiposGenerados = JSON.stringify(equipos);
-            // console.log(equiposGenerados);
 
             return equiposGenerados;
            
@@ -499,14 +498,9 @@ function generar(numAlumnos,alumnos2){
                 for(j=0;j<equipos.length;j++){
                      if (dato==i+" "+j){
                          var alu=equipos[i][j];
-                         var indice=equipos.indexOf(equipos[i][j]);
-                         console.log(indice);
-                         /* equipos[i].splice(i,1);  */
                          equipos[i].splice(j, 1);
                          console.log(equipos[i][j]);
                          equipos[caja.id].push(alu);
-                    }else{
-                        console.log("no");
                     }
                 } 
             }
