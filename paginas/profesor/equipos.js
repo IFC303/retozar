@@ -250,9 +250,9 @@ function ordenar(name, alumnos, numAlumnos,equipos) {
 
 
 
-function generar(numAlumnos,alumnos){
+function generar(numAlumnos,alumnos2){
 
-
+            var alumnos = JSON.parse(JSON.stringify(alumnos2));
             var numEquiposCuatro=0;
             var numEquiposTres=0;
             var suma=0;
