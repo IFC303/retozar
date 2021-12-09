@@ -465,9 +465,8 @@ function generar(numAlumnos,alumnos){
 
 
        function guardar(equipos){
-
             console.log(equipos);
-         
+            return confirm('¿Son correctos los datos modificados?');
       } 
 
 
