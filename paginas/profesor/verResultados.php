@@ -8,11 +8,7 @@
     include "./../../includes/ver.php";
     include "./../../includes/equipos.php";
 
-//    if (isset($_POST['Enviar'])){
-//        echo $_POST['enviar'];
-//    } else{
-//    //    header('Location: url=localhost/no');
-//    }
+
 ?>
 
 <!DOCTYPE html>

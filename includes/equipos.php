@@ -17,7 +17,27 @@ function equiposAutomaticos(){
         }
 
 
-function caracter(){
+function insertarEquipos($grupo){
+
+        $conexion=conectarBD();
+        $equipos=json_decode($grupo,true);
+        var_dump($equipos);       
+
+        foreach($equipos as $gruposAlumnos){
+                foreach($gruposAlumnos as $alumno){
+                        
+                }
+        }
+/* 
+        $sql="UPDATE alumnos SET equipos_id='$departamento' where codigo='$nombre';" */;
+          /*           echo $sql;
+                    $consulta=$conexion->prepare($sql);
+                    $consulta->execute(); */
+
+             
+           
+
+
 
     
 

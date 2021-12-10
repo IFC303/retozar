@@ -1,3 +1,16 @@
+<?php
+    session_start();
+    include "./../../includes/funciones.php";
+    include "./../../includes/alta.php";
+    include "./../../includes/baja.php";
+    include "./../../includes/modi.php";
+    include "./../../includes/ver.php";
+    include "./../../includes/equipos.php";
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +35,9 @@
 
         <?php
                 if (isset($_POST['guardar'])){
-               // echo $_POST['enviar'];
+                    $grupo=$_POST['enviar'];
+                    insertarEquipos($grupo);
+                    
                 } else{
                 //    header('Location: url=localhost/no');
                 }

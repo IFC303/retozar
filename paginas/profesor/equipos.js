@@ -424,6 +424,16 @@ function generar(numAlumnos,alumnos2){
                         div.setAttribute("ondrop","suelta(this.id,event,equipos)");
                         document.getElementById("resultado").appendChild(div);
 
+
+                        var equiponum=document.createElement("span");
+                        equiponum.setAttribute("style","text-align:centre;font-weight:bold;color:white;background-color:#102140;padding:0px 50px;");
+                        var textequipo=document.createTextNode("Grupo"+" "+(i+1));
+                       
+                        equiponum.appendChild(textequipo);
+                        div.appendChild(equiponum);
+
+
+
                         var grupo=document.getElementById(i);
                     
                     for(var j=0;j<equipos[i].length;j++){
@@ -433,10 +443,13 @@ function generar(numAlumnos,alumnos2){
                         alumno.setAttribute("draggable",true);
                         alumno.setAttribute("ondragstart","arrastre(this.id,event);");
 
+
                         var alu=equipos[i][j].nombre + " " + equipos[i][j].apellidos;
                         var textoNodo=document.createTextNode(alu);
+                        
+                        
 
-                       
+
                         alumno.appendChild(textoNodo);
                         grupo.appendChild(alumno);
 
@@ -457,6 +470,7 @@ function generar(numAlumnos,alumnos2){
 
             document.getElementById("formulario").appendChild(botonguardar);
 
+            //devuelve la matriz en formato texto
             var equiposGenerados = JSON.stringify(equipos);
 
             return equiposGenerados;
