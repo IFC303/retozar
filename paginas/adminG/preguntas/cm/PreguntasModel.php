@@ -88,7 +88,7 @@ class PreguntasModel
     public function delete($id)
     {
         try {
-            $stmt = $this->db->prepare('DELETE FROM preguntas WHERE id = ?');
+            $stmt = $this->db->prepare('DELETE IGNORE FROM preguntas WHERE id = ?');
             $stmt->execute(array($id));
         } catch (PDOException $e) {
             die('Error ' . $e->getMessage());
