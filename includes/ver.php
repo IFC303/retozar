@@ -272,7 +272,7 @@ function verAlumnos(){
 
                     ?>
 
-                    <form action="#" method="POST">
+                    <form action="#" method="POST" class="stiloform">
 
                         <?php
      
@@ -294,7 +294,7 @@ function verAlumnos(){
 
                                 ?>
                                     <input type="hidden" id="id" name="id" value="<?php echo $fila2['id'];?>">
-                                    <label for="respuesta">Verdadero<input type="radio" id=respuesta name="respuesta" value=5 checked>
+                                    <label for="respuesta">Verdadero<input type="radio" id=respuesta name="respuesta" value=5>
                                     <label for="respuesta">Falso<input type="radio" id=respuesta name="respuesta" value=0>
                                 <?php
 
@@ -303,7 +303,7 @@ function verAlumnos(){
 
                                 ?>
 
-                            <input type="submit" value="Aceptar" name="Aceptar" onclick="verPreguntas();">
+                            <input type="submit" value="Aceptar" name="Aceptar" onclick="verPreguntas();" id="boton10">
                     </form>
                             <?php
 

@@ -32,10 +32,13 @@
                     nombreLog();
                 ?>
             </div>
-
-            <?php
-                verPreguntas();
-            ?>
+            
+            <div class="preguntas">
+                <?php
+                    verPreguntas();
+                ?>
+            </div>
+            
 
             <a class="btnvolver" href=".">Volver al menu</a>
         </div>
