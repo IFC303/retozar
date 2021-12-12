@@ -21,7 +21,6 @@
         function insertarEquipos($grupo){
 
                 $equipos=json_decode($grupo);
-                var_dump($equipos);
                 $i=0;
 
                 foreach($equipos as $gruposAlumnos){
@@ -30,8 +29,7 @@
                         foreach($gruposAlumnos as $alumno){
                                 $nombre=$alumno->nombre;
                                 $dni=$alumno->alumno_dni;
-                                $equipo=set  $alumno->equipos_id;
-                                $equipo=$i;
+                                $equipo=$alumno->equipos_id;
                                 $apellidos=$alumno->apellidos;
                                 echo "Nombre: ".$nombre." ".$apellidos."<br>";
                         }      
@@ -46,7 +44,7 @@
                 $sql2="UPDATE alumnos set equipos_id=0;";
                 $consulta=$conexion->prepare($sql);
                 $consulta->execute(); */
-
+/* 
                 $sql="INSERT into equipos values ($equipo);";
                 $consulta=$conexion->prepare($sql);
                 $consulta->execute();
@@ -54,7 +52,7 @@
 
                 $sql2="UPDATE alumnos set equipos_id='$equipo' where usuarios_dni='$dni';";
                 $consulta2=$conexion->prepare($sql2);
-                $consulta2->execute(); 
+                $consulta2->execute();  */
 
             }
           
