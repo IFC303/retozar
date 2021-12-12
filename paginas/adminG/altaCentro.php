@@ -8,6 +8,8 @@
 ?>
 <!DOCTYPE html>
 <html lang="es">
+
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,6 +18,8 @@
     <link rel="stylesheet" href="../../css/altaalum.css"> 
     <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;1,500&display=swap" rel="stylesheet">
 </head>
+
+
 <body>
 
         <header>
@@ -24,40 +28,36 @@
                     <p id="t2">Test para formación de equipos de trabajo</p>
             </div> 
         </header>
+
+
         <main>
+            <div id="contenido">
+                        <h3>DATOS DEL CENTRO</h3>
+                    <form action="altaCentro" method="POST" name="formCentro" class="styleform">
+                            <input type="text" class="inp" name="n_centro" id="n_centro" placeholder="Nombre" required pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}">
+                            <br><br>
+                            <input type="text" class="inp" name="direccion" id="direccion" placeholder="Direccion" required>
+                            <br><br>
+                            <input type="text" class="inp" name="localidad" id="localidad" placeholder="Localidad" required pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}">
+                            <br><br>
+                            <input type="text" class="inp" name="c_postal" id="c_postal" pattern="[0-9]{5}" maxlength="5" placeholder="Codigo postal" required>
+                            <br><br>
+                            <input type="text" class="inp" name="provincia" id="provincia" required placeholder="provincia" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}">
 
-        <div id="contenido">
-            <h3>DATOS DEL CENTRO</h3>
-        <form action="altaCentro" method="POST" name="formCentro" class="styleform">
-            <input type="text" class="inp" name="n_centro" id="n_centro" placeholder="Nombre" required pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}">
-            <br><br>
-            <input type="text" class="inp" name="direccion" id="direccion" placeholder="Direccion" required>
-            <br><br>
-            <input type="text" class="inp" name="localidad" id="localidad" placeholder="Localidad" required pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}">
-            <br><br>
-            <input type="text" class="inp" name="c_postal" id="c_postal" pattern="[0-9]{5}" maxlength="5" placeholder="Codigo postal" required>
-            <br><br>
-            <input type="text" class="inp" name="provincia" id="provincia" required placeholder="provincia" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}">
+                            <h3>DATOS DEL ADMINISTRADOR</h3>
 
-           <!--  <input type="submit" value="Guardar" onclick="validarform3()"> -->
-     
-           <h3>DATOS DEL ADMINISTRADOR</h3>
+                            <input type="text" class="inp"  name="nombreA" id="nombreA" placeholder="Nombre" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" required><br> <br>
+                            <input type="text" class="inp" name="apellidosA" id="apellidosA" placeholder="Apellidos" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" required><br> <br>
+                            <input type="text" name="dniA" class="inp" id="dniA" placeholder="Dni" required><br> <br>
+                            <input type="password" class="inp"  name="claveA" id="claveA" placeholder="Contraseña" required><br><br>
+                            <input type="text" class="inp" name="departamento" id="departamento" placeholder="Departamento"><br><br>
 
-            <input type="text" class="inp"  name="nombreA" id="nombreA" placeholder="Nombre" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" required><br> <br>
-            <input type="text" class="inp" name="apellidosA" id="apellidosA" placeholder="Apellidos" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" required><br> <br>
-            <input type="text" name="dniA" class="inp" id="dniA" placeholder="Dni" required><br> <br>
-            <input type="password" class="inp"  name="claveA" id="claveA" placeholder="Contraseña" required><br><br>
-            <input type="text" class="inp" name="departamento" id="departamento" placeholder="Departamento"><br><br>
+                            <input type="submit" value="Aceptar" name="Aceptar" id="boton1" onclick="return confirm('¿Seguro que quieres añadir este centro?');">
+                    </form>
 
-            <input type="submit" value="Aceptar" name="Aceptar" id="boton1" onclick="return confirm('¿Seguro que quieres añadir este centro?');">
-            <!-- <input type="submit" value="Borrar formulario" name ="Aceptar" id="boton1" onclick="validarForm1()">   -->
-
-        </form>
-
-        <br>
-        <a class="btnvolver" href="."> Volver al menú</a>
-        </div><!-- fin contenido -->
-
+                    <br>
+                    <a class="btnvolver" href="."> Volver al menú</a>
+            </div><!-- fin contenido -->
         </main>
 
 
@@ -75,9 +75,7 @@
                     <source media="(min-width:650px)" srcset="../../img/logoSBR.png" width="95px" height="95px">
                     <img src="../../img/logoSBR.png" alt="logo_SBR" width="70px" height="70px">
                 </picture>
-               
             </div> <!-- fin img2 -->
-
     </footer><!-- fin footer -->
    
 

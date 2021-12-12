@@ -14,6 +14,7 @@
 </head>
 
 <body>
+
     <header>
         <div id="img1">
             <picture>
@@ -23,6 +24,8 @@
             </picture>
         </div>
     </header>
+
+
     <main>
         <div id="formulario">
             <form action="paginas/iniSesion" method="post" name="formLogin">
@@ -38,15 +41,20 @@
             </form>
         </div>
     </main>
+
+
     <footer>
         <div id="texto">
             <h1 id="t1">Disc Aragón</h1>
             <p id="t2">Test para formación de equipos de trabajo</p>
         </div>
+        
         <div id="img2">
             <img src="img/logoSBR.png" alt="logo_SBR" width="95" height="95">
         </div>
     </footer>
+
+
 </body>
 
 </html>

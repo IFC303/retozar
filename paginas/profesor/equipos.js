@@ -234,9 +234,7 @@ function ordenar(name, alumnos, numAlumnos) {
 
 
     }
-
     return alumnos, numAlumnos;
-
 }
 
 
@@ -250,7 +248,6 @@ function generar(numAlumnos,alumnos2){
             var suma=0;
             var numAlumnos=parseInt(numAlumnos);
     
-
 
                 //CREA MATRIZ EN FUNCION DE LOS ALUMNOS QUE HAY
                 if(numAlumnos%4==0){
@@ -474,7 +471,7 @@ function generar(numAlumnos,alumnos2){
        function guardar(equipos){
             console.log(equipos);
             return confirm('¿Son correctos los datos modificados?');
-      } 
+        } 
 
 
 
@@ -487,7 +484,6 @@ function generar(numAlumnos,alumnos2){
         function sobre(ev) {
             ev.preventDefault();
         }
-
 
 
         function suelta(id,ev){
@@ -515,13 +511,11 @@ function generar(numAlumnos,alumnos2){
                 
             console.log(equipo) 
 
-
             var equipo = JSON.stringify(equipo); 
             var enviar=document.getElementById("enviar");
             enviar.setAttribute("value",equipo);
 
             
- 
         }  
  
 
