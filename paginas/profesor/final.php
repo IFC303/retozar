@@ -34,13 +34,10 @@
         <h3>Grupos insertados correctamente</h3>
 
         <?php
-                if (isset($_POST['guardar'])){
+                 if (isset($_POST['guardar'])){
                     $grupo=$_POST['enviar'];
                     insertarEquipos($grupo);
-                    
-                } else{
-                //    header('Location: url=localhost/no');
-                }
+                }  
         ?>
          <br>
         <a class="btnvolver" href="." > Volver al menú</a>

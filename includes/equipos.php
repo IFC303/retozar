@@ -19,16 +19,26 @@ function equiposAutomaticos(){
 
 function insertarEquipos($grupo){
 
-        $conexion=conectarBD();
-        $equipos=json_decode($grupo,true);
-        var_dump($equipos);       
+        $equipos=json_decode($grupo,true);      
 
-        foreach($equipos as $gruposAlumnos){
+          foreach($equipos as $gruposAlumnos){
                 foreach($gruposAlumnos as $alumno){
+                        foreach($alumno as $campos=>$valores)
+                        echo $campos.": ".$valores;
+                        echo "<br>";
+                }    
                         
                 }
-        }
+
+              
+
+     
+}
+
+
 /* 
+
+        $conexion=conectarBD();
         $sql="UPDATE alumnos SET equipos_id='$departamento' where codigo='$nombre';" */;
           /*           echo $sql;
                     $consulta=$conexion->prepare($sql);
@@ -41,7 +51,6 @@ function insertarEquipos($grupo){
 
     
 
-}
 
 
 

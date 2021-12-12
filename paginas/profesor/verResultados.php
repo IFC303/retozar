@@ -70,17 +70,17 @@
                 <div id="totales"></div>
                 <div id="resultado">
                     <form action="final" method="post" id="formulario">
-                        <input type="hidden" name="enviar" id="enviar">
-<!--                        <input type="submit" value="Enviar" name="Enviar" id="boton10" onclick="">-->
+                        <input type="text" name="enviar" id="enviar">
                     </form>
+
                 </div>
             </div>
 
 
             <?php
-              if(isset($_POST['Aceptar']))
-            {
-                $alumnos= verResultados();
+              if(isset($_POST['Aceptar'])){
+            
+                $alumnos=verResultados();
                 $numAlumnos=equiposAutomaticos();
 
                 ?>
@@ -90,23 +90,17 @@
                  var numAlumnos = <?php echo json_encode($numAlumnos); ?>;
                  ordenar(name,alumnos,numAlumnos);
 
-                var equipos=generar(numAlumnos,alumnos);
+                 generar(numAlumnos,alumnos);
+             
 
-                console.log(equipos);
-                var enviar = document.getElementById("enviar");
-                enviar.setAttribute("value", equipos);
 
             </script>
 
              <?php
 
-//                $equipos = "<script> document.writeln(equipos); </script>";
-
-
             }
-
+          
             ?>
-
 
 
             <a class="btnvolver" href="." > Volver al menú</a>
