@@ -295,7 +295,7 @@
 
                             ?>
 
-                            <form action="#" method="POST">
+                            <form action="#" method="POST" class="stiloform">
                                 <?php
             
                                     $sql0="SELECT * FROM preguntas where id not in (select pregunta_id from alumnos_has_preguntas where alumno_dni=$dni) order by rand() ;";
@@ -326,7 +326,7 @@
 
                                         ?>
 
-                                    <input type="submit" value="Aceptar" name="Aceptar" onclick="verPreguntas();">
+                                    <input type="submit" value="Aceptar" name="Aceptar" onclick="verPreguntas();" id="boton10">
 
                             </form>
                                     <?php
