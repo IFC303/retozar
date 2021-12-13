@@ -37,13 +37,6 @@
         
                 $conexion=conectarBD();
 
-              /*   $sql="INSERT into equipos values (0);";
-                $consulta=$conexion->prepare($sql);
-                $consulta->execute();
-
-                $sql2="UPDATE alumnos set equipos_id=0;";
-                $consulta=$conexion->prepare($sql);
-                $consulta->execute(); */
 /* 
                 $sql="INSERT into equipos values ($equipo);";
                 $consulta=$conexion->prepare($sql);
