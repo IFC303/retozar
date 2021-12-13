@@ -10,6 +10,7 @@
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,13 +19,18 @@
     <link rel="stylesheet" href="../../css/altaalum.css"> 
     <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;1,500&display=swap" rel="stylesheet">
 </head>
+
+
 <body>  
+
     <header>
         <div id="texto" >
             <h1 id="t1"><a href="/" class="title">Disc Aragón</a></h1>
             <p id="t2">Test para formación de equipos de trabajo</p>
         </div> 
     </header>
+
+
 
     <main>
         <div id="contenido">
@@ -34,6 +40,7 @@
             <a class="btnvolver" href="." > Volver al menú</a>
         </div>
     </main>
+
 
     <footer>
         <div id="img1">
@@ -51,5 +58,7 @@
             </picture>
         </div> <!-- fin img2 -->
     </footer>
+
+    
 </body>
 </html>

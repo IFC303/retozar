@@ -10,6 +10,7 @@
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,6 +19,8 @@
     <link rel="stylesheet" href="../../css/altaalum.css"> 
     <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;1,500&display=swap" rel="stylesheet">
 </head>
+
+
 <body>  
 
     <header>
@@ -27,6 +30,7 @@
         </div> 
     </header>
     
+
     <main>
         <div id="contenido">
 
@@ -67,7 +71,6 @@
             ?> 
 
             <a class="btnvolver" href="." > Volver al menú</a>
-
         </div>
     </main>
 

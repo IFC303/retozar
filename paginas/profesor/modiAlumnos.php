@@ -8,7 +8,8 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,29 +18,34 @@
     <link rel="stylesheet" href="../../css/altaalum.css"> 
     <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;1,500&display=swap" rel="stylesheet">
 </head>
+
+
 <body>
+
     <header>
        <div id="texto" >
             <p id="t1"><a href="/" class="title">Disc Aragón</a></p>
             <p id="t2">Test para formación de equipos de trabajo</p>
         </div> 
     </header>
+
+
     <main>
-    <div id="contenido">
-        <h3>MODIFICAR ALUMNO</h3>
+        <div id="contenido">
+            <h3>MODIFICAR ALUMNO</h3>
 
-        <form action="" method="POST" name="formAlum" class="styleform">
-            <label for="dni"></label><input class="inp" type="text" name="dniA" id="dniA" required value="<?php echo $_POST['dniA'];?>" readonly><br> <br>
-            <label for="nombreA"></label><input class="inp" type="text" name="nombreA" id="nombreA" value="<?php echo $_POST['nombreA'];?>" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" required><br> <br>
-            <label for="apellidosA"></label><input class="inp" type="text" name="apellidosA" id="apellidosA"  value="<?php echo $_POST['apellidosA'];?>" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" required><br> <br>
-            <label for="claveA"></label><input class="inp" type="password" name="claveA" id="claveA" required placeholder="Contraseña"> <br> <br>
-            <label for="curso"></label><input class="inp" type="text" name="curso" id="curso" placeholder="Curso"><br><br>
-            <input type="submit" value="Aceptar" name ="Aceptar" id="boton1" onclick="validarForm1()">
-        </form>
-
-         <a class="btnvolver" href="verAlumnos">Volver Menu</a>
-    </div><!-- fin contenido -->
+            <form action="" method="POST" name="formAlum" class="styleform">
+                <label for="dni"></label><input class="inp" type="text" name="dniA" id="dniA" required value="<?php echo $_POST['dniA'];?>" readonly><br> <br>
+                <label for="nombreA"></label><input class="inp" type="text" name="nombreA" id="nombreA" value="<?php echo $_POST['nombreA'];?>" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" required><br> <br>
+                <label for="apellidosA"></label><input class="inp" type="text" name="apellidosA" id="apellidosA"  value="<?php echo $_POST['apellidosA'];?>" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,64}" required><br> <br>
+                <label for="claveA"></label><input class="inp" type="password" name="claveA" id="claveA" required placeholder="Contraseña"> <br> <br>
+                <label for="curso"></label><input class="inp" type="text" name="curso" id="curso" placeholder="Curso"><br><br>
+                <input type="submit" value="Aceptar" name ="Aceptar" id="boton1" onclick="validarForm1()">
+            </form>
+            <a class="btnvolver" href="verAlumnos">Volver Menu</a>
+        </div><!-- fin contenido -->
     </main>
+
 
     <footer>
             <div id="img1">
@@ -57,7 +63,6 @@
                 </picture>
                
             </div> <!-- fin img2 -->
-
     </footer><!-- fin footer -->
 
 </body>

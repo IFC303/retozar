@@ -1,5 +1,5 @@
 
-function ordenar(name, alumnos, numAlumnos,equipos) {
+function ordenar(name, alumnos, numAlumnos) {
     if (document.getElementById("botones") == null) {
 
         var botones = document.createElement("div");
@@ -51,14 +51,6 @@ function ordenar(name, alumnos, numAlumnos,equipos) {
         document.getElementById('botones').appendChild(amarillo);
         amarillo.setAttribute("class", "margen");
 
-        //BOTON GENERAR GRUPOS
-        // var boton = document.createElement("input");
-        // boton.setAttribute("type", "submit");
-        // boton.setAttribute("value", "Generar Grupo");
-        // boton.setAttribute("name", "generar");
-        // boton.setAttribute("id", "boton1");
-        // boton.setAttribute("onclick", "generar(numAlumnos,alumnos);");
-        // document.getElementById("botones").appendChild(boton);
 
     }
 
@@ -242,9 +234,7 @@ function ordenar(name, alumnos, numAlumnos,equipos) {
 
 
     }
-
     return alumnos, numAlumnos;
-
 }
 
 
@@ -258,7 +248,6 @@ function generar(numAlumnos,alumnos2){
             var suma=0;
             var numAlumnos=parseInt(numAlumnos);
     
-
 
                 //CREA MATRIZ EN FUNCION DE LOS ALUMNOS QUE HAY
                 if(numAlumnos%4==0){
@@ -419,24 +408,35 @@ function generar(numAlumnos,alumnos2){
 
                         var div=document.createElement("div");
                         div.setAttribute("id",i);
+                        div.setAttribute("class","array");
                         div.setAttribute("style","background-color: #bdddf6;height:110px;width:200px;border:2px solid #102140;");
                         div.setAttribute("ondragover","sobre(event)");
-                        div.setAttribute("ondrop","suelta(this.id,event,equipos)");
+                        div.setAttribute("ondrop","suelta(this.id,event)");
                         document.getElementById("resultado").appendChild(div);
 
+
+                        var equiponum=document.createElement("span");
+                        equiponum.setAttribute("style","text-align:centre;font-weight:bold;color:white;background-color:#102140;padding:0px 50px;");
+                        var textequipo=document.createTextNode("Grupo"+" "+(i+1)); 
+                       
+                        equiponum.appendChild(textequipo);
+                        div.appendChild(equiponum); 
+
+
                         var grupo=document.getElementById(i);
+
                     
                     for(var j=0;j<equipos[i].length;j++){
                          
-                        var alumno=document.createElement("div");
+                        var alumno=document.createElement("div"); 
                         alumno.setAttribute("id",i+' '+j);
                         alumno.setAttribute("draggable",true);
                         alumno.setAttribute("ondragstart","arrastre(this.id,event);");
 
-                        var alu=equipos[i][j].nombre + " " + equipos[i][j].apellidos;
-                        var textoNodo=document.createTextNode(alu);
+                        alu=equipos[i][j].nombre + " " + equipos[i][j].apellidos;
 
-                       
+                        var textoNodo=document.createTextNode(alu);
+                        
                         alumno.appendChild(textoNodo);
                         grupo.appendChild(alumno);
 
@@ -457,10 +457,11 @@ function generar(numAlumnos,alumnos2){
 
             document.getElementById("formulario").appendChild(botonguardar);
 
-            var equiposGenerados = JSON.stringify(equipos);
-
-            return equiposGenerados;
-           
+            //devuelve la matriz en formato texto
+            var equipos = JSON.stringify(equipos); 
+            var enviar = document.getElementById("enviar");
+            enviar.setAttribute("value", equipos);  
+  
       }
 
 
@@ -470,8 +471,7 @@ function generar(numAlumnos,alumnos2){
        function guardar(equipos){
             console.log(equipos);
             return confirm('¿Son correctos los datos modificados?');
-      } 
-
+        } 
 
 
 
@@ -486,7 +486,11 @@ function generar(numAlumnos,alumnos2){
         }
 
 
-        function suelta(id,ev,equipos){
+        function suelta(id,ev){
+
+            var equipos=document.getElementById("enviar").value;
+      
+            var equipo=JSON.parse(equipos);
             var caja=document.getElementById(id);
             
             ev.preventDefault();
@@ -494,23 +498,25 @@ function generar(numAlumnos,alumnos2){
             caja.appendChild(document.getElementById(dato));
 
 
-            for(var i=0; i<equipos.length;i++){
-                for(j=0;j<equipos.length;j++){
+             for(var i=0; i<equipo.length;i++){
+                for(j=0;j<equipo.length;j++){
                      if (dato==i+" "+j){
-                         var alu=equipos[i][j];
-                         equipos[i].splice(j, 1);
-                         console.log(equipos[i][j]);
-                         equipos[caja.id].push(alu);
+                         console.log(equipo[i][j])
+                         var alu=equipo[i][j];
+                         equipo[i].splice(j, 1);
+                         equipo[caja.id].push(alu);
                     }
-                } 
-            }
-              console.log(equipos);  
+                }
+            } 
+                
+            console.log(equipo) 
 
-         
+            var equipo = JSON.stringify(equipo); 
+            var enviar=document.getElementById("enviar");
+            enviar.setAttribute("value",equipo);
 
-
-
-}  
+            
+        }  
  
 
 

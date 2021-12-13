@@ -10,6 +10,7 @@
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,13 +19,18 @@
     <link rel="stylesheet" href="../../css/altaalum.css"> 
     <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;1,500&display=swap" rel="stylesheet">
 </head>
+
+
 <body>
+
     <header>
         <div id="texto" >
             <p id="t1"><a href="/" class="title">Disc Aragón</a></p>
             <p id="t2">Test para formación de equipos de trabajo</p>
         </div> 
     </header>
+
+
     <main>
         <div id="contenido">
                 <h3>Editar Curso</h3>
@@ -38,6 +44,8 @@
                 <a href="verCurso" class="btnvolver">Volver al menu</a>
         </div>
     </main>
+
+
     <footer>
         <div id="img1">
             <picture>
@@ -52,12 +60,13 @@
                 <source media="(min-width:650px)" srcset="../../img/logoSBR.png" width="95px" height="95px">
                 <img src="../../img/logoSBR.png" alt="logo_SBR" width="70px" height="70px">
             </picture>
-            
         </div> <!-- fin img2 -->
-
     </footer><!-- fin footer -->
+
+
 </body>
 </html>
+
 <?php
     if(isset($_POST['Aceptar'])) {
         modiCurso();

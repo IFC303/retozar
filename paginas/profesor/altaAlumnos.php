@@ -33,7 +33,6 @@
             <input type="text" class="inp" name="dniA" id="dniA" required placeholder="DNI"><br> <br>
             <input type="password" class="inp" name="claveA" id="claveA" placeholder="Contraseña" required><br><br>
 
-
             <select class="styleform1" name="curso" id="curso">
                         <option value="0">Selecciona una clase/aula:</option>
                         <?php
@@ -46,12 +45,12 @@
                             $sql="SELECT codigo from cursos where centros_nombre='$nombreCentroLog' and departamento = '$logcentro'";
                             $consulta=$conexion->prepare($sql);
                             $consulta->execute();
-                         while ($fila = $consulta->fetch(PDO::FETCH_ASSOC)) {
+
+                            while ($fila = $consulta->fetch(PDO::FETCH_ASSOC)) {
                              $codcurso = $fila['codigo'];
                              $codcurso = ucfirst($codcurso);
-                            echo "<option value='$codcurso'>$codcurso</option\n>";
-                            
-                        }
+                             echo "<option value='$codcurso'>$codcurso</option\n>"; 
+                            }
                         ?>
             </select><br><br>
 

@@ -8,15 +8,12 @@
     include "./../../includes/ver.php";
     include "./../../includes/equipos.php";
 
-//    if (isset($_POST['Enviar'])){
-//        echo $_POST['enviar'];
-//    } else{
-//    //    header('Location: url=localhost/no');
-//    }
+
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,7 +23,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;1,500&display=swap" rel="stylesheet">
     <script src="equipos.js"></script>
 </head>
+
+
 <body id="body">
+
 
     <header>
        <div id="texto" >
@@ -34,6 +34,7 @@
             <p id="t2">Test para formación de equipos de trabajo</p>
         </div>
     </header>
+
 
     <main>
         <div id="contenido">
@@ -75,16 +76,16 @@
                 <div id="resultado">
                     <form action="final" method="post" id="formulario">
                         <input type="hidden" name="enviar" id="enviar">
-<!--                        <input type="submit" value="Enviar" name="Enviar" id="boton10" onclick="">-->
                     </form>
+
                 </div>
             </div>
 
 
             <?php
-              if(isset($_POST['Aceptar']))
-            {
-                $alumnos= verResultados();
+              if(isset($_POST['Aceptar'])){
+            
+                $alumnos=verResultados();
                 $numAlumnos=equiposAutomaticos();
 
                 ?>
@@ -94,30 +95,17 @@
                  var numAlumnos = <?php echo json_encode($numAlumnos); ?>;
                  ordenar(name,alumnos,numAlumnos);
 
-                var equipos=generar(numAlumnos,alumnos);
-
-                console.log(equipos);
-                var enviar = document.getElementById("enviar");
-                enviar.setAttribute("value", equipos);
-
+                 generar(numAlumnos,alumnos);
             </script>
 
              <?php
 
-//                $equipos = "<script> document.writeln(equipos); </script>";
-
-
             }
-
+          
             ?>
-
-
-
             <a class="btnvolver" href="." > Volver al menú</a>
 
         </div>
-
-
     </main>
 
 

@@ -41,7 +41,6 @@ RewriteRule ^paginas/adminC/altaProfesor paginas/adminC/altaProfesor.php [L,NC]
 RewriteRule ^paginas/adminC/verProfesor paginas/adminC/verProfesor.php [L,NC]
 RewriteRule ^paginas/adminC/bajaProfesor paginas/adminC/bajaProfesor.php [L,NC]
 RewriteRule ^paginas/adminC/modiProfesor paginas/adminC/modiProfesor.php [L,NC]
-
 RewriteRule ^paginas/adminC/altaCurso paginas/adminC/altaCurso.php [L,NC]
 RewriteRule ^paginas/adminC/verCurso paginas/adminC/verCurso.php [L,NC]
 RewriteRule ^paginas/adminC/bajaCurso paginas/adminC/bajaCurso.php [L,NC]

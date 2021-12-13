@@ -17,50 +17,51 @@ include "./../../includes/funciones.php";
 </head>
 
 <body>
+
+
     <header>
         <div id="texto">
             <p id="t1"><a href="/" class="title">Disc Aragón</a></p>
             <p id="t2">Test para formación de equipos de trabajo</p>
         </div>
     </header>
+
+
     <main>
         <div id="contenedormain">
 
-            <div class="bienv">
-                <?php
-                nombreLog();
-                ?>
-                <a href="../cerrarSesion" class="btnvolver">Cerrar sesión</a>
-            </div>
+                <div class="bienv">
+                    <?php
+                    nombreLog();
+                    ?>
+                    <a href="../cerrarSesion" class="btnvolver">Cerrar sesión</a>
+                </div>
             
 
-            <div id="contenedoraux">
+                <div id="contenedoraux">
+                    <div id="enlaces">
+                        <ul>
+                            <li><a name="centro" onclick="mostrar(this.name);">Gestion centros</a></li>
+                            <li><a name="test" onclick="mostrar(this.name);">Gestion test</a></li>
+                        </ul>
+                    </div> <!-- fin enlaces -->
 
-                <div id="enlaces">
-                    <ul>
-                        <li><a name="centro" onclick="mostrar(this.name);">Gestion centros</a></li>
-                        <li><a name="test" onclick="mostrar(this.name);">Gestion test</a></li>
-                    </ul>
-                </div> <!-- fin enlaces -->
-
-                <div id="result" style="visibility:hidden">
-                    <ul id="gCentro" style="display:none">
-                        <li><a href="altaCentro">Alta centro</a></li><br>
-                        <li><a href="verCentro">Ver centros</a></li>
-                    </ul>
-                    <ul id="gTest" style="display:none">
-                        <li><a href="preguntas">Ver preguntas</a></li>
-                        <br>
-                        <li><a href="preguntas/nuevo">Nueva pregunta</a></li>
-                        <br>
-                        <li><a href="preguntas/subir">Subir preguntas</a></li>
-                    </ul>
-                </div> <!-- fin result -->
-
-            </div> <!-- fin contenedoraux-->
+                    <div id="result" style="visibility:hidden">
+                        <ul id="gCentro" style="display:none">
+                            <li><a href="altaCentro">Alta centro</a></li><br>
+                            <li><a href="verCentro">Ver centros</a></li>
+                        </ul>
+                        <ul id="gTest" style="display:none">
+                            <li><a href="preguntas">Ver preguntas</a></li>
+                            <br>
+                            <li><a href="preguntas/nuevo">Nueva pregunta</a></li>
+                            <br>
+                            <li><a href="preguntas/subir">Subir preguntas</a></li>
+                        </ul>
+                    </div> <!-- fin result -->
+                </div> <!-- fin contenedoraux-->
 
         </div> <!-- fin contenedor main -->
-
     </main> <!-- fin main -->
 
 
@@ -79,11 +80,10 @@ include "./../../includes/funciones.php";
             <img src="../../img/logoSBR.png" alt="logo_SBR" width="70px" height="70px">
         </picture>
         </div> <!-- fin img2 -->
-
     </footer><!-- fin footer -->
 
-</body> <!-- fin body -->
 
+</body> <!-- fin body -->
 </html>
 
 
